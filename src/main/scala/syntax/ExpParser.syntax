@@ -1,0 +1,39 @@
+module syntax.ExpParser;
+
+header {
+    import syntax.ExpParserSyntax.*;
+}
+
+Program =
+    Exp.
+
+Exp =
+    Cell Spacing '=' Spacing Val.
+
+Val {paren}
+    Val sp "+" Val     {Add, left, 2}
+  | Val sp "-" Val     {Sub, left, 2}
+  | Val sp "*" Val     {Mul, left, 1}
+  | Integer            {Num, 1: Integer.parseInt : Int}
+  | '(' Val ')'.
+
+CallCell : String =
+    '[.' Cell ']'.
+
+Cell : String =
+    Letters Digits.
+
+Integer : String =
+  Digits Spacing.
+
+Digits : String =
+  Digit+.
+
+Digit : String =
+  [0-9].
+
+Letters : String =
+  Letter+.
+
+Letter : String =
+  [A-Z]
