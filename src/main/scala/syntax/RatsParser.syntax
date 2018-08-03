@@ -5,13 +5,26 @@ header {
 }
 
 Program =
-    Exp.
+    Exp*.
 
 Exp {paren} =
-    Exp sp "+" Exp     {Add, left, 2}
-  | Exp sp "*" Exp     {Mul, left, 1}
+    Assign.
+
+Stmt =
+  Stmt sp "+" Stmt     {Add, left, 2}
+  | Stmt sp "*" Stmt     {Mul, left, 1}
+  | CellRef             {Use}
   | Integer            {Num, 1: Integer.parseInt : Int}
-  | '(' Exp ')'.
+  | '(' Stmt ')'.
+
+Assign : Exp =
+  Cell sp "=" Stmt ",".
+
+CellRef : String =
+  "[" Cell "]".
+
+Cell : String =
+  Letters Digits.
 
 Integer : String =
   Digits Spacing.
@@ -21,3 +34,9 @@ Digits : String =
 
 Digit : String =
   [0-9].
+
+Letters : String =
+  Letter+.
+
+Letter : String =
+  [A-Z].

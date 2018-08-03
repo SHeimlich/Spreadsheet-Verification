@@ -1,67 +1,50 @@
-//import org.jopendocument.dom.spreadsheet.Sheet
-//import org.jopendocument.dom.spreadsheet.SpreadSheet
-import java.io.{File, FileReader, IOException, PrintWriter}
-
-import org.jopendocument.dom.spreadsheet.{Sheet, SpreadSheet}
 import org.bitbucket.inkytonik.kiama.util.{CompilerBase, Config}
-import syntax.ExpParser
-import syntax.ExpParserSyntax.Exp
+import syntax.ExpParserSyntax.{Exp, Program}
 
+object Main extends CompilerBase[Exp,Config] {
 
-object Main {
+  import java.io.Reader
+  import org.bitbucket.inkytonik.kiama.output.PrettyPrinterTypes.Document
+  import org.bitbucket.inkytonik.kiama.util.Source
+  import org.bitbucket.inkytonik.kiama.util.Messaging.Messages
+  import syntax.ExpParser
+  import syntax.ExpParserPrettyPrinter
+  import syntax.ExpParserPrettyPrinter.{any, layout}
 
-  var sheet: Sheet = null
+  def createConfig(args : Seq[String]) : Config =
+    new Config(args)
 
-  def main(args: Array[String]): Unit = { // Load the file.
-    val file = new File("simpleAddition.ods")
-    try {
-      val writer = new PrintWriter(new File("file.exp"))
-      sheet = SpreadSheet.createFromFile(file).getSheet(0)
-      val start = sheet.getUsedRange.getStartPoint
-      val end = sheet.getUsedRange.getEndPoint
-      val p = new Parsing(sheet)
-      var r = start.y
-      while (r <= end.y) {
-        var c = start.x
-        while (c <= end.x) {
-          val line = p.parseCell(c, r)
-          c += 1;
-        }
-        r += 1;
-      }
-
-
-
-      val g = p getGraph;
-      println(g.head)
-      println(g.topologicalSort().toString)
-      println("cycles: " + g.findCycle)
-      var str = g.componentTraverser().topologicalSortByComponent.toString()
-      str = str.substring(27, str.length-3)
-      println("str = " + str)
-      writer.write(str)
-      writer.close()
-      System.out.println("Succesfully output to File")
-
-      val reader = new FileReader("input.exp");
-      val par = new ExpParser(reader, "input.exp")
-      //val p = new Parser();
-
-      val pr = par.pExp(0);
-
-
-
-      println("pr = " + pr)
-
-      if(pr.parseError() != null) {
-        println("In thing!")
-        println(par.formatParseError(pr.parseError(), true));
-      }
-    } catch {
-      case e: IOException =>
-        e.printStackTrace()
-    }
+  override def makeast (source : Source, config : Config) : Either[Exp,Messages] = {
+    val p = new ExpParser (source, positions)
+    val pr = p.pExp (0)
+    if (pr.hasValue)
+      Left (p.value (pr).asInstanceOf[Exp])
+    else
+      Right (Vector (p.errorToMessage (pr.parseError)))
   }
 
+  def process (source : Source, e : Exp, config : Config) {
+    val output = config.output()
+    output.emitln ("e = " + e)
+    output.emitln ("e tree:")
+    output.emitln (layout (any (e)))
+    output.emitln ("e tree pretty printed:")
+    output.emitln (format (e).layout)
+  }
+
+  def process (source : Source, p : Program, config : Config) {
+    val output = config.output()
+    output.emitln ("e = " + p)
+    output.emitln ("e tree:")
+    output.emitln (layout (any (p)))
+    output.emitln ("e tree pretty printed:")
+    output.emitln (format (p).layout)
+  }
+
+  override def format (ast : Exp) : Document =
+    ExpParserPrettyPrinter.format (ast, 5)
+
+  def format (ast : Program) : Document =
+    ExpParserPrettyPrinter.format (ast, 5)
 
 }
