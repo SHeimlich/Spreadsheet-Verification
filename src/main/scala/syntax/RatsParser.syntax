@@ -1,0 +1,23 @@
+module syntax.ExpParser;
+
+header {
+    import syntax.ExpParserSyntax.*;
+}
+
+Program =
+    Exp.
+
+Exp {paren} =
+    Exp sp "+" Exp     {Add, left, 2}
+  | Exp sp "*" Exp     {Mul, left, 1}
+  | Integer            {Num, 1: Integer.parseInt : Int}
+  | '(' Exp ')'.
+
+Integer : String =
+  Digits Spacing.
+
+Digits : String =
+  Digit+.
+
+Digit : String =
+  [0-9].

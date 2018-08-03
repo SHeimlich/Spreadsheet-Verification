@@ -41,7 +41,7 @@ class Parsing (s:Sheet){
 
       val cell = sheet.getCellAt(getLocationName(row, col));
       println(cell)
-      val formula = cell.getFormula();
+      val formula = getParsedFormula(cell);
 
       if (formula != null) {
         val newCell = getMyCell(cell, getColNum(col), getRowChar(row));
@@ -89,8 +89,16 @@ class Parsing (s:Sheet){
     return sBuild + "";
   }
 
+  def getParsedFormula(cell: MutableCell[SpreadSheet]) : String = {
+    val formula = cell.getFormula;
+    if (formula == null) {
+      return null
+    }
+    return formula.substring(4)
+  }
+
   def getMyCell(cell: MutableCell[SpreadSheet], col: Int, row: Char): MyCell = {
-    val formula = cell.getFormula
+    val formula = getParsedFormula(cell)
     if (formula != null) {
       return MyCell(row, col, formula, false);
     }
