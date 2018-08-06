@@ -11,14 +11,28 @@ Exp {paren} =
     Assign.
 
 Stmt =
-  Stmt sp "+" Stmt     {Add, left, 2}
-  | Stmt sp "*" Stmt     {Mul, left, 1}
+  Stmt sp BinOp Stmt   {Form, left, 1}
   | CellRef             {Use}
   | Integer            {Num, 1: Integer.parseInt : Int}
   | '(' Stmt ')'.
 
 Assign : Exp =
   Cell sp "=" Stmt ",".
+
+
+BinOp =
+     "+"        {add}
+  |  "-"        {sub}
+  |  "*"        {mult}
+  |  "/"        {div}
+  |  "^"        {pow}
+  |  "&"        {and}
+  |  "<"        {less}
+  |  ">"        {great}
+  |  "="        {equal}
+  |  "<="       {lessEqual}
+  |  ">="       {greatEqual}
+  |  "<>"       {lessGreat}.
 
 CellRef : String =
   "[" Cell "]".
