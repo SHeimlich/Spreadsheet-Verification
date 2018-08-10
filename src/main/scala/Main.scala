@@ -1,5 +1,7 @@
 import org.bitbucket.inkytonik.kiama.util.{CompilerBase, Config}
 import syntax.ExpParserSyntax.{Exp, Program}
+import Evaluator.expvalue
+
 
 object Main extends CompilerBase[Exp,Config] {
 
@@ -30,6 +32,7 @@ object Main extends CompilerBase[Exp,Config] {
     output.emitln (layout (any (e)))
     output.emitln ("e tree pretty printed:")
     output.emitln (format (e).layout)
+    output.emitln ("value (e) = " + expvalue (e))
   }
 
   def process (source : Source, p : Program, config : Config) {

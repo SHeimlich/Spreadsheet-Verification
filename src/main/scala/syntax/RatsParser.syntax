@@ -10,32 +10,37 @@ Program =
 Exp {paren} =
     Assign.
 
-Stmt =
-  Stmt sp BinOp Stmt   {Form, left, 1}
-  | CellRef             {Use}
-  | Integer            {Num, 1: Integer.parseInt : Int}
-  | '(' Stmt ')'.
-
 Assign : Exp =
-  Cell sp "=" Stmt ",".
+  Cell sp "=" Formula ",".
+
+Formula =
+    Formula "+" Formula             {Add, left, 2}
+    | Formula "-" Formula           {Sub, left, 2}
+    | Formula "*" Formula           {Mul, left, 1}
+    | Formula "/" Formula           {Div, left, 1}
+    | Formula "^" Formula        {pow, left, 3}
+    | Formula "&" Formula        {and, left, 3}
+    | Formula "<" Formula        {less, left, 3}
+    | Formula ">" Formula        {great, left, 3}
+    | Formula "=" Formula        {equal, left, 3}
+    | Formula "<=" Formula       {lessEqual, left, 3}
+    | Formula ">=" Formula       {greatEqual, left, 3}
+    | Constant
+    | Array
+    | CellRef
+    | '(' Formula ')'.
 
 
-BinOp =
-     "+"        {add}
-  |  "-"        {sub}
-  |  "*"        {mult}
-  |  "/"        {div}
-  |  "^"        {pow}
-  |  "&"        {and}
-  |  "<"        {less}
-  |  ">"        {great}
-  |  "="        {equal}
-  |  "<="       {lessEqual}
-  |  ">="       {greatEqual}
-  |  "<>"       {lessGreat}.
+Constant : Formula =
+    Integer     {Num}
+  | Letters     {S}
+  | Bool        {Boo}.
 
-CellRef : String =
-  "[" Cell "]".
+Array : Formula =
+    CellRef ":" CellRef         {Arr}.
+
+CellRef : Formula =
+  "[." Cell "]"      {Ref}.
 
 Cell : String =
   Letters Digits.
@@ -54,3 +59,7 @@ Letters : String =
 
 Letter : String =
   [A-Z].
+
+Bool : String =
+    'false'
+  | 'true'.
