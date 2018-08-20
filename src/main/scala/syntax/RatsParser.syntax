@@ -4,6 +4,8 @@ header {
     import syntax.ExpParserSyntax.*;
 }
 
+option verbose;
+
 Program =
     Exp*.
 
@@ -14,7 +16,8 @@ Assign : Exp =
   Cell sp "=" Formula ",".
 
 Formula =
-    Formula "+" Formula             {Add, left, 2}
+    "SUM(" + Arguments + ")"    {SUM}
+    | Formula "+" Formula             {Add, left, 2}
     | Formula "-" Formula           {Sub, left, 2}
     | Formula "*" Formula           {Mul, left, 1}
     | Formula "/" Formula           {Div, left, 1}
@@ -25,10 +28,21 @@ Formula =
     | Formula "=" Formula        {equal, left, 3}
     | Formula "<=" Formula       {lessEqual, left, 3}
     | Formula ">=" Formula       {greatEqual, left, 3}
-    | Constant
-    | Array
-    | CellRef
+    | Reference                  {R, none, 4}
+    | Constant                   {C, none, 5}
     | '(' Formula ')'.
+
+Arguments =
+    Argument ";" Arguments       {Args}
+  | ArrayVec                     {AV}
+  | Formula                    {Arg}.
+
+Argument =
+   Formula.
+
+Reference  =
+  Array
+  | CellRef.
 
 
 Constant : Formula =
@@ -36,10 +50,14 @@ Constant : Formula =
   | Letters     {S}
   | Bool        {Boo}.
 
-Array : Formula =
+
+Array : Reference =
     CellRef ":" CellRef         {Arr}.
 
-CellRef : Formula =
+ArrayVec : Reference =
+    CellRef+.
+
+CellRef : Reference =
   "[." Cell "]"      {Ref}.
 
 Cell : String =
