@@ -28,22 +28,17 @@ Formula =
     | Formula "=" Formula        {equal, left, 3}
     | Formula "<=" Formula       {lessEqual, left, 3}
     | Formula ">=" Formula       {greatEqual, left, 3}
-    | Reference                  {R, none, 4}
-    | Constant                   {C, none, 5}
+    | Array
+    | CellRef
+    | Constant
     | '(' Formula ')'.
 
 Arguments =
-    Argument ";" Arguments       {Args}
-  | ArrayVec                     {AV}
-  | Formula                    {Arg}.
+    Formula ";" Arguments {Args}
+  | Formula     {Arg}.
 
 Argument =
    Formula.
-
-Reference  =
-  Array
-  | CellRef.
-
 
 Constant : Formula =
     Integer     {Num}
@@ -51,13 +46,13 @@ Constant : Formula =
   | Bool        {Boo}.
 
 
-Array : Reference =
+Array : Formula =
     CellRef ":" CellRef         {Arr}.
 
-ArrayVec : Reference =
+ArrayVec : Formula =
     CellRef+.
 
-CellRef : Reference =
+CellRef : Formula =
   "[." Cell "]"      {Ref}.
 
 Cell : String =
