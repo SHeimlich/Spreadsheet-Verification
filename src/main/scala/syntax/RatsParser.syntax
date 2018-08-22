@@ -17,6 +17,7 @@ Assign : Exp =
 
 Formula =
     "SUM(" + Arguments + ")"    {SUM}
+    | "AVERAGE(" + Arguments + ")"    {AVERAGE}
     | Formula "+" Formula             {Add, left, 2}
     | Formula "-" Formula           {Sub, left, 2}
     | Formula "*" Formula           {Mul, left, 1}
@@ -37,20 +38,14 @@ Arguments =
     Formula ";" Arguments {Args}
   | Formula     {Arg}.
 
-Argument =
-   Formula.
-
 Constant : Formula =
     Integer     {Num}
-  | Letters     {S}
+  | Str     {S}
   | Bool        {Boo}.
 
 
 Array : Formula =
     CellRef ":" CellRef         {Arr}.
-
-ArrayVec : Formula =
-    CellRef+.
 
 CellRef : Formula =
   "[." Cell "]"      {Ref}.
@@ -63,6 +58,13 @@ Integer : String =
 
 Digits : String =
   Digit+.
+
+Str : String =
+  "\'" middleOfString+ .
+
+middleOfString : String =
+    "\'"
+  | _ middleOfString.
 
 Digit : String =
   [0-9].

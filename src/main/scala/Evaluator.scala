@@ -32,6 +32,7 @@ object Evaluator extends Attribution {
       case Arr(b, e) => getArray(formvalue(b), formvalue(e))
       case Ref(b) => b
       case SUM(a) => getSum(a)
+      case AVERAGE(a) => getAverage(a)
     }
 
   def combine(str1: String, str2: String): String = {
@@ -40,15 +41,12 @@ object Evaluator extends Attribution {
 
   val argumentsValue : Arguments => List[Formula] =
     attr {
+      case Args(Arr(b, e), r) => argumentsValue(r) ::: getArrayList(formvalue(b), formvalue(e))
       case Args(l, r) => argumentsValue(r) :+ l
       case Arg(Arr(b, e)) => getArrayList(formvalue(b), formvalue(e))
       case Arg(r) => List(r)
     }
 
-  val argValue : Argument => Formula =
-    attr {
-      case Argument(r) => r
-    }
 
 
 
@@ -67,7 +65,7 @@ object Evaluator extends Attribution {
     for( i <- b.charAt(0) to e.charAt(0)){
       for (j <- b.charAt(1) to e.charAt(1)) {
         val cellStr = i + "" + j
-        val cellRef = Ref("A2")
+        val cellRef = Ref(cellStr)
         l = cellRef :: l
       }
     }
@@ -85,6 +83,21 @@ object Evaluator extends Attribution {
       builder += str
     }
     builder += formvalue(argsVec.last)
+    return builder
+  }
+
+  def getAverage (v: Vector[Arguments]) : String = {
+    var argsVec = List[Formula]()
+    for (i <- 0 until v.length) {
+      argsVec = argsVec ::: argumentsValue(v(i))
+    }
+    var builder = "("
+    for (j <- 0 until argsVec.length - 1) {
+      val str = formvalue(argsVec(j)) + " + "
+      builder += str
+    }
+    builder += (formvalue(argsVec.last) + ") / ")
+    builder += (argsVec.length.toString)
     return builder
   }
 
