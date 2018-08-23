@@ -61,9 +61,23 @@ object Evaluator extends Attribution {
     }
 
 
+  def nextColString(str: String): String = {
+    var i = str;
+    val lastChar = i.charAt(i.length - 1) + 1
+    i = i.substring(0, i.length -1) + lastChar.toChar
+    val pastZ = 'Z' + 1
+    var k : Int = i.length() - 1
+    while (i.charAt(k) == pastZ) {
+      val pt1 = i.substring(0, k - 1)
+      val pt2 = (i.charAt(k-1) + 1).toChar + "A"
+      val pt3 = i.substring(k+1, i.length)
+      i = pt1 + pt2 + pt3
+      k = k - 1
+    }
+    return i
+  }
 
-
-  def getArray (b : Formula, e : Formula) : String = {
+  def getArray(b : Formula, e : Formula) : String = {
     println("b = " + b + " e = " + e)
     var str = "["
 
@@ -72,9 +86,7 @@ object Evaluator extends Attribution {
     val bRow = getRow(b)
     val eRow = getRow(e)
 
-    println("bCol = " + bCol + " bRow = " + bRow)
-    println("eCol = " + eCol + " eRow = " + eRow)
-
+    // Make both strings the same length
     var i = bCol.toString
     while(i.length != eCol.length) {
       val at = "@"
@@ -82,35 +94,12 @@ object Evaluator extends Attribution {
       println("increasing str length to: " + i)
     }
 
-
-    var tmp2 = 0
-    while( !i.equals(eCol) ){
-
+    // Create the array.
+    while (getColNum(eCol) >= getColNum(i)){
       for (j <- bRow to eRow ) {
-        println("Col = " + i + " Row = " + j)
         str = str + i.replace("@", "") + j + ", "
       }
-      val lastChar = i.charAt(i.length - 1) + 1
-      i = i.substring(0, i.length -1) + lastChar.toChar
-      println("Last char = " + lastChar.toChar)
-      val pastZ = 'Z' + 1
-      if (lastChar == pastZ) {  // "[" is one past "Z" in ASCII
-        var k : Int = i.length() - 1
-        var tmp = 0
-        println("k = " + k + " Char at K=" + i.charAt(k))
-        while (i.charAt(k) == pastZ) {
-          val pt1 = i.substring(0, k - 1)
-          val pt2 = (i.charAt(k-1) + 1).toChar + "A"
-          val pt3 = i.substring(k+1, i.length)
-          println("pt1=" + pt1 + " pt2=" + pt2 + " pt3=" + pt3 )
-          i = pt1 + pt2 + pt3
-          tmp = tmp + 1
-          k = k - 1
-        }
-      }
-      tmp2 = tmp2 + 1
-
-
+      i = nextColString(i);
     }
     return (str.substring(0, str.length - 2) + "]")
   }
@@ -154,6 +143,15 @@ object Evaluator extends Attribution {
     builder += (formvalue(argsVec.last) + ") / ")
     builder += (argsVec.length.toString)
     return builder
+  }
+
+  def getColNum (c: String) : Int = {
+    var rtn = 0
+    val str = c.replace("@", "")
+    for(i <- 0 until str.length) {
+      rtn = rtn + ( Math.pow(26, str.length - i - 1).toInt * (str.charAt(i) - 'A' + 1))
+    }
+    return rtn
   }
 
 }
