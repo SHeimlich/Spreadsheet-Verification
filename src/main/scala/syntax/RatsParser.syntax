@@ -50,8 +50,14 @@ Array : Formula =
 CellRef : Formula =
   "[." Cell "]"      {Ref}.
 
-Cell : String =
-  Letters Digits.
+Cell : Formula =
+  col row.
+
+col : String =
+  [A-Z]+.
+
+row : String =
+  [1-9][0-9]*.
 
 Integer : String =
   Digits Spacing.
