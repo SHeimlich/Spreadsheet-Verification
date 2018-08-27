@@ -78,7 +78,6 @@ object Evaluator extends Attribution {
   }
 
   def getArray(b : Formula, e : Formula) : String = {
-    println("b = " + b + " e = " + e)
     var str = "["
 
     val bCol = getCol(b)
@@ -86,20 +85,11 @@ object Evaluator extends Attribution {
     val bRow = getRow(b)
     val eRow = getRow(e)
 
-    // Make both strings the same length
-    var i = getColNum(bCol)
-    /*while(i.length != eCol.length) {
-      val at = "@"
-      i = at.toString + i.toString // "@" is just before "A" in ASCII
-      println("increasing str length to: " + i)
-    }*/
-
     // Create the array.
-    while (getColNum(eCol) >= i){
+    for (i <- getColNum(bCol) to getColNum(eCol)) {
       for (j <- bRow to eRow ) {
         str = str + getColStr(i) + j + ", "
       }
-      i = i + 1;
     }
     return (str.substring(0, str.length - 2) + "]")
   }
