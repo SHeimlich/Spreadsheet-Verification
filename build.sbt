@@ -37,9 +37,10 @@ libraryDependencies ++=
     Seq (
         "org.bitbucket.inkytonik.kiama" %% "kiama" % "2.2.0",
         "org.bitbucket.inkytonik.kiama" %% "kiama-extras" % "2.2.0",
-	"org.scala-graph" %% "graph-constrained" % "1.12.3"
+	      "org.scala-graph" %% "graph-constrained" % "1.12.3",
+        "org.jopendocument" % "jOpenDocument" % "1.3"
     )
-unmanagedJars in Compile += file(Path.userHome+"/Downloads/jOpenDocument-1.3.jar")
+
 dependencyOverrides += "jline" % "jline" % "2.15-SNAPSHOT"
 resolvers ++= Seq (
     Resolver.sonatypeRepo ("releases"),
