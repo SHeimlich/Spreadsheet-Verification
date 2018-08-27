@@ -54,9 +54,9 @@ object Evaluator extends Attribution {
 
   val argumentsValue : Arguments => List[Formula] =
     attr {
-      case Args(Arr(b, e), r) => argumentsValue(r) ::: getArrayList(formvalue(b), formvalue(e))
+      case Args(Arr(b, e), r) => argumentsValue(r) ::: getArrayList(b, e)
       case Args(l, r) => argumentsValue(r) :+ l
-      case Arg(Arr(b, e)) => getArrayList(formvalue(b), formvalue(e))
+      case Arg(Arr(b, e)) => getArrayList(b, e)
       case Arg(r) => List(r)
     }
 
@@ -94,12 +94,17 @@ object Evaluator extends Attribution {
     return (str.substring(0, str.length - 2) + "]")
   }
 
-  def getArrayList (b : String, e : String) : List[Formula] = {
+  def getArrayList (b : Formula, e : Formula) : List[Formula] = {
     var l = List[Ref]()
-    for( i <- b.charAt(0) to e.charAt(0)){
-      for (j <- b.charAt(1) to e.charAt(1)) {
-        val cellStr = i + "" + j
-        val cellRef = Ref(Cell(i.toString, j.toString))
+
+    val bCol = getCol(b)
+    val eCol = getCol(e)
+    val bRow = getRow(b)
+    val eRow = getRow(e)
+
+    for(i <- getColNum(bCol) to getColNum(eCol)){
+      for (j <- bRow to eRow ) {
+        val cellRef = Ref(Cell(getColStr(i), j.toString))
         l = cellRef :: l
       }
     }
