@@ -87,19 +87,19 @@ object Evaluator extends Attribution {
     val eRow = getRow(e)
 
     // Make both strings the same length
-    var i = bCol.toString
-    while(i.length != eCol.length) {
+    var i = getColNum(bCol)
+    /*while(i.length != eCol.length) {
       val at = "@"
       i = at.toString + i.toString // "@" is just before "A" in ASCII
       println("increasing str length to: " + i)
-    }
+    }*/
 
     // Create the array.
-    while (getColNum(eCol) >= getColNum(i)){
+    while (getColNum(eCol) >= i){
       for (j <- bRow to eRow ) {
-        str = str + i.replace("@", "") + j + ", "
+        str = str + getColStr(i) + j + ", "
       }
-      i = nextColString(i);
+      i = i + 1;
     }
     return (str.substring(0, str.length - 2) + "]")
   }
@@ -150,6 +150,19 @@ object Evaluator extends Attribution {
     val str = c.replace("@", "")
     for(i <- 0 until str.length) {
       rtn = rtn + ( Math.pow(26, str.length - i - 1).toInt * (str.charAt(i) - 'A' + 1))
+    }
+    return rtn
+  }
+
+  def getColStr (c: Int) : String = {
+    var rtn = ""
+    var col = c;
+    while(col > 0) {
+      col = col - 1;
+      val mod = col % 26
+      val charAdd = 'A' + mod
+      rtn = charAdd.toChar + rtn
+      col = (col - mod) / 26
     }
     return rtn
   }
