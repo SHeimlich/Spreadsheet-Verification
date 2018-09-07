@@ -2,9 +2,8 @@ import java.io.{File, IOException, PrintWriter}
 
 import org.jopendocument.dom.spreadsheet.SpreadSheet
 
-class OuterParser {
+object OuterParser {
 
-  def parse = {
     val file = new File("simpleAddition.ods")
     try {
       val writer = new PrintWriter(new File("file.exp"))
@@ -38,5 +37,5 @@ class OuterParser {
       case e: IOException =>
         e.printStackTrace()
     }
-  }
+
 }

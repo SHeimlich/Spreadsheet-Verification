@@ -1,3 +1,5 @@
+import java.util
+
 import org.bitbucket.inkytonik.kiama.attribution.Attribution
 import syntax.ExpParserSyntax
 
@@ -10,7 +12,37 @@ object Evaluator extends Attribution {
 
   val expvalue : Exp => String =
     attr {
-      case Assign(l, r) => l + "=" + formvalue(r)
+      case Assign(l, r) => formAsserts(r) + l + "=" + formvalue(r) + ";"
+    }
+
+
+  def getArgsLength(v: Vector[Arguments]): Int = {
+    var sum = 0;
+    v.foreach((a: Arguments) => sum = sum + argumentsValue(a).length)
+    return sum
+  }
+
+  val formAsserts: Formula => String =
+    attr {
+      case Num (i)    => ""
+      case Boo (b)    => ""
+      case S (s)    => ""
+      case Cell(c, r) => ""
+      case Div(l, r) => formAsserts(l) + "if(" + formvalue(r) + " == 0) \n\t __VERIFIER_error(); \n"
+      case Add (l, r) => formAsserts (l) + formAsserts (r)
+      case Mul (l, r) => formAsserts (l)  + formAsserts (r)
+      case Sub (l, r) => formAsserts (l) + formAsserts (r)
+      case and (l, r) => formAsserts(l) + formAsserts (r)
+      case equal (l, r) => formAsserts(l) + formAsserts (r)
+      case great (l, r)  => formAsserts(l) + formAsserts (r)
+      case greatEqual (l, r)  => formAsserts(l) + formAsserts (r)
+      case less (l, r)  => formAsserts(l) + formAsserts (r)
+      case lessEqual (l, r)  => formAsserts(l) + formAsserts (r)
+      case pow (l, r)  => formAsserts(l) + formAsserts (r)
+      case Arr(b, e) => ""
+      case Ref(c) => ""
+      case SUM(a) => getArgAsserts(a)
+      case AVERAGE(a) => getArgAsserts(a) + "if(" + getArgsLength(a) + " == 0) \n\t __VERIFIER_error(); \n"
     }
 
   val formvalue : Formula => String =
@@ -18,6 +50,7 @@ object Evaluator extends Attribution {
       case Num (i)    => i
       case Boo (b)    => b
       case S (s)    => s
+      case Cell(c, r) => c + r
       case Div(l, r) => formvalue (l) + "/" + formvalue (r)
       case Add (l, r) => formvalue (l) + "+" + formvalue (r)
       case Mul (l, r) => formvalue (l) + "*" + formvalue (r)
@@ -31,7 +64,6 @@ object Evaluator extends Attribution {
       case pow (l, r)  => formvalue(l) + "^" + formvalue (r)
       case Arr(b, e) => getArray(b, e)
       case Ref(c) => formvalue(c)
-      case Cell(c, r) => c + r
       case SUM(a) => getSum(a)
       case AVERAGE(a) => getAverage(a)
     }
@@ -59,6 +91,19 @@ object Evaluator extends Attribution {
       case Arg(Arr(b, e)) => getArrayList(b, e)
       case Arg(r) => List(r)
     }
+
+  def getArgAsserts(v: Vector[Arguments]): String = {
+    var rtn = ""
+    v.foreach((a: Arguments) => rtn = rtn + argAsserts(a))
+    return rtn
+  }
+
+  val argAsserts : Arguments => String =
+    attr {
+      case Args(l, r) => argAsserts(r) + formAsserts(l)
+      case Arg(r) => formAsserts(r)
+    }
+
 
 
   def nextColString(str: String): String = {

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Spreadsheet-Verification.iml" filepath="$PROJECT_DIR$/.idea/modules/Spreadsheet-Verification.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/rats-build.iml" filepath="$PROJECT_DIR$/.idea/modules/rats-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spreadsheet-verification.iml" filepath="$PROJECT_DIR$/.idea/modules/spreadsheet-verification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/spreadsheet-verification-build.iml" filepath="$PROJECT_DIR$/.idea/modules/spreadsheet-verification-build.iml" />
     </modules>
   </component>
 </project>
