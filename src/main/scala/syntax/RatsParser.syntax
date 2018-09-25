@@ -16,41 +16,49 @@ Assign : Exp =
   Cell sp "=" Formula ",".
 
 Formula =
-    "SUM(" + Arguments + ")"    {SUM}
-    | "AVERAGE(" + Arguments + ")"    {AVERAGE}
-    | Formula "+" Formula             {Add, left, 2}
-    | Formula "-" Formula           {Sub, left, 2}
-    | Formula "*" Formula           {Mul, left, 1}
-    | Formula "/" Formula           {Div, left, 1}
-    | Formula "^" Formula        {pow, left, 3}
-    | Formula "&" Formula        {and, left, 3}
-    | Formula "<" Formula        {less, left, 3}
-    | Formula ">" Formula        {great, left, 3}
-    | Formula "=" Formula        {equal, left, 3}
-    | Formula "<=" Formula       {lessEqual, left, 3}
-    | Formula ">=" Formula       {greatEqual, left, 3}
+     NumFormula  {nf}
+     |     StringFormula {sf}.
+
+NumFormula =
+      "IF(" + NumFormula + ";" + NumFormula + ";" + NumFormula + ")" {numIF}
+    | "SUM(" + NumArguments + ")"    {SUM}
+    | "AVERAGE(" + NumArguments + ")"    {AVERAGE}
+    | NumFormula "+" NumFormula             {Add, left, 2}
+    | NumFormula "-" NumFormula           {Sub, left, 2}
+    | NumFormula "*" NumFormula           {Mul, left, 1}
+    | NumFormula "/" NumFormula           {Div, left, 1}
+    | NumFormula "^" NumFormula        {pow, left, 3}
+    | NumFormula "&" NumFormula        {and, left, 3}
+    | NumFormula "<" NumFormula        {less, left, 3}
+    | NumFormula ">" NumFormula        {great, left, 3}
+    | NumFormula "=" NumFormula        {equal, left, 3}
+    | NumFormula "<=" NumFormula       {lessEqual, left, 3}
+    | NumFormula ">=" NumFormula       {greatEqual, left, 3}
     | Array
     | CellRef
-    | Constant
-    | '(' Formula ')'.
+    | NumConstant
+    | '(' NumFormula ')'.
 
-Arguments =
-    Formula ";" Arguments {Args}
-  | Formula     {Arg}.
+StringFormula =
+    Str {strConst}
+    | NumFormula   {NumAsStr}.
 
-Constant : Formula =
+
+NumArguments =
+    NumFormula ";" NumArguments {Args}
+  | NumFormula     {Arg}.
+
+NumConstant : NumFormula =
     Integer     {Num}
-  | Str     {S}
   | Bool        {Boo}.
 
-
-Array : Formula =
+Array : NumFormula =
     CellRef ":" CellRef         {Arr}.
 
-CellRef : Formula =
+CellRef : NumFormula =
   "[." Cell "]"      {Ref}.
 
-Cell : Formula =
+Cell : NumFormula =
   col row.
 
 col : String =

@@ -12,69 +12,127 @@ object Evaluator extends Attribution {
 
   val expvalue : Exp => String =
     attr {
-      case Assign(l, r) => formAsserts(r) + l + "=" + formvalue(r) + ";"
+      case Assign(l, nf(numIF(fb, f1, f2))) => numIfVal(l, fb, f1, f2)
+      case Assign(l, r) => FormAsserts(r) + l + "=" + FormValue(r) + ";"
     }
 
 
-  def getArgsLength(v: Vector[Arguments]): Int = {
+  def getArgsLength(v: Vector[NumArguments]): Int = {
     var sum = 0;
-    v.foreach((a: Arguments) => sum = sum + argumentsValue(a).length)
+    v.foreach((a: NumArguments) => sum = sum + argumentsValue(a).length)
     return sum
   }
 
-  val formAsserts: Formula => String =
+
+  val FormAsserts : Formula => String =
+    attr {
+      case nf(f) => NumFormAsserts(f)
+      case sf(f) => StrFormAsserts(f)
+    }
+
+  val FormValue : Formula => String =
+    attr {
+      case nf(f) => NumFormValue(f)
+      case sf(f) => StrFormValue(f)
+    }
+
+  val NumFormAsserts: NumFormula => String =
     attr {
       case Num (i)    => ""
       case Boo (b)    => ""
-      case S (s)    => ""
+      //case S (s)    => ""
       case Cell(c, r) => ""
-      case Div(l, r) => formAsserts(l) + "if(" + formvalue(r) + " == 0) \n\t __VERIFIER_error(); \n"
-      case Add (l, r) => formAsserts (l) + formAsserts (r)
-      case Mul (l, r) => formAsserts (l)  + formAsserts (r)
-      case Sub (l, r) => formAsserts (l) + formAsserts (r)
-      case and (l, r) => formAsserts(l) + formAsserts (r)
-      case equal (l, r) => formAsserts(l) + formAsserts (r)
-      case great (l, r)  => formAsserts(l) + formAsserts (r)
-      case greatEqual (l, r)  => formAsserts(l) + formAsserts (r)
-      case less (l, r)  => formAsserts(l) + formAsserts (r)
-      case lessEqual (l, r)  => formAsserts(l) + formAsserts (r)
-      case pow (l, r)  => formAsserts(l) + formAsserts (r)
+      case Div(l, r) => NumFormAsserts(l) + "if(" + NumFormValue(r) + " == 0) \n\t __VERIFIER_error(); \n"
+      case Add (l, r) => NumFormAsserts (l) + NumFormAsserts (r)
+      case Mul (l, r) => NumFormAsserts (l)  + NumFormAsserts (r)
+      case Sub (l, r) => NumFormAsserts (l) + NumFormAsserts (r)
+      case and (l, r) => NumFormAsserts(l) + NumFormAsserts (r)
+      case equal (l, r) => NumFormAsserts(l) + NumFormAsserts (r)
+      case great (l, r)  => NumFormAsserts(l) + NumFormAsserts (r)
+      case greatEqual (l, r)  => NumFormAsserts(l) + NumFormAsserts (r)
+      case less (l, r)  => NumFormAsserts(l) + NumFormAsserts (r)
+      case lessEqual (l, r)  => NumFormAsserts(l) + NumFormAsserts (r)
+      case pow (l, r)  => NumFormAsserts(l) + NumFormAsserts (r)
       case Arr(b, e) => ""
       case Ref(c) => ""
       case SUM(a) => getArgAsserts(a)
       case AVERAGE(a) => getArgAsserts(a) + "if(" + getArgsLength(a) + " == 0) \n\t __VERIFIER_error(); \n"
+      case numIF(b, f1, f2) => numVecAsserts(f1, f2)
     }
 
-  val formvalue : Formula => String =
+
+  def StrFormAsserts : StringFormula => String =
+    attr {
+      case strConst(s) => ""
+      case NumAsStr(f) => NumFormAsserts(f)
+    }
+
+
+  val NumFormValue : NumFormula => String =
     attr {
       case Num (i)    => i
-      case Boo (b)    => b
-      case S (s)    => s
+      case Boo ("true")    => "1"
+      case Boo ("false") => "0"
+     // case S (s)    => s
       case Cell(c, r) => c + r
-      case Div(l, r) => formvalue (l) + "/" + formvalue (r)
-      case Add (l, r) => formvalue (l) + "+" + formvalue (r)
-      case Mul (l, r) => formvalue (l) + "*" + formvalue (r)
-      case Sub (l, r) => formvalue (l) + "-" + formvalue (r)
-      case and (l, r) => formvalue(l) + "&" + formvalue (r)
-      case equal (l, r) => formvalue(l) + "==" + formvalue (r)
-      case great (l, r)  => formvalue(l) + ">" + formvalue (r)
-      case greatEqual (l, r)  => formvalue(l) + ">=" + formvalue (r)
-      case less (l, r)  => formvalue(l) + "<" + formvalue (r)
-      case lessEqual (l, r)  => formvalue(l) + "<=" + formvalue (r)
-      case pow (l, r)  => formvalue(l) + "^" + formvalue (r)
+      case Div(l, r) => NumFormValue (l) + "/" + NumFormValue (r)
+      case Add (l, r) => NumFormValue (l) + "+" + NumFormValue (r)
+      case Mul (l, r) => NumFormValue (l) + "*" + NumFormValue (r)
+      case Sub (l, r) => NumFormValue (l) + "-" + NumFormValue (r)
+      case and (l, r) => NumFormValue(l) + "&" + NumFormValue (r)
+      case equal (l, r) => NumFormValue(l) + "==" + NumFormValue (r)
+      case great (l, r)  => NumFormValue(l) + ">" + NumFormValue (r)
+      case greatEqual (l, r)  => NumFormValue(l) + ">=" + NumFormValue (r)
+      case less (l, r)  => NumFormValue(l) + "<" + NumFormValue (r)
+      case lessEqual (l, r)  => NumFormValue(l) + "<=" + NumFormValue (r)
+      case pow (l, r)  => NumFormValue(l) + "^" + NumFormValue (r)
       case Arr(b, e) => getArray(b, e)
-      case Ref(c) => formvalue(c)
+      case Ref(c) => NumFormValue(c)
       case SUM(a) => getSum(a)
       case AVERAGE(a) => getAverage(a)
+      case numIF(b, f1, f2) => "IF(" + b + ") { \n" + numVecVal(f1) + "; \n } else {" + numVecVal(f2) + "; \n}"
     }
 
-  val getCol : Formula => String =
+  def numIfVal(c: NumFormula, b: Vector[ExpParserSyntax.NumFormula], f: Vector[ExpParserSyntax.NumFormula], f1: Vector[ExpParserSyntax.NumFormula]) : String = {
+    var rtn = numVecAsserts(f, f1)
+    rtn = rtn + "if(" + numVecVal(b) + "!=0) { \n"
+    rtn = rtn + NumFormValue(c) + "=" + numVecVal(f) + "; \n} else {\n"
+    rtn = rtn + NumFormValue(c) + "=" + numVecVal(f1) + "; \n}"
+    return rtn;
+  }
+
+  def numVecAsserts(f: Vector[ExpParserSyntax.NumFormula], f1: Vector[ExpParserSyntax.NumFormula]) : String = {
+    var rtn = "";
+    for (i <- 0 until f.length) {
+      rtn = rtn + NumFormAsserts(f(i))
+    }
+    for (i <- 0 until f1.length) {
+      rtn = rtn + NumFormAsserts(f1(i))
+    }
+    return rtn
+  }
+
+  def numVecVal(f: Vector[ExpParserSyntax.NumFormula]) : String = {
+    var rtn = "";
+    for (i <- 0 until f.length) {
+      rtn = rtn + NumFormValue(f(i))
+    }
+    return rtn
+  }
+
+  val StrFormValue : StringFormula => String =
+    attr {
+      case strConst(v) => v
+      case NumAsStr(f) => NumFormValue(f)
+    }
+
+  val getCol : NumFormula => String =
     attr {
       case Ref(Cell(c, r)) => c
       case _ => ""
     }
 
-  val getRow : Formula => Int =
+  val getRow : NumFormula => Int =
     attr {
       case Ref(Cell(c, r)) => r.toInt
       case _ => 0
@@ -84,7 +142,7 @@ object Evaluator extends Attribution {
     return str1 + str2
   }
 
-  val argumentsValue : Arguments => List[Formula] =
+  val argumentsValue : NumArguments => List[NumFormula] =
     attr {
       case Args(Arr(b, e), r) => argumentsValue(r) ::: getArrayList(b, e)
       case Args(l, r) => argumentsValue(r) :+ l
@@ -92,16 +150,16 @@ object Evaluator extends Attribution {
       case Arg(r) => List(r)
     }
 
-  def getArgAsserts(v: Vector[Arguments]): String = {
+  def getArgAsserts(v: Vector[NumArguments]): String = {
     var rtn = ""
-    v.foreach((a: Arguments) => rtn = rtn + argAsserts(a))
+    v.foreach((a: NumArguments) => rtn = rtn + argAsserts(a))
     return rtn
   }
 
-  val argAsserts : Arguments => String =
+  val argAsserts : NumArguments => String =
     attr {
-      case Args(l, r) => argAsserts(r) + formAsserts(l)
-      case Arg(r) => formAsserts(r)
+      case Args(l, r) => argAsserts(r) + NumFormAsserts(l)
+      case Arg(r) => NumFormAsserts(r)
     }
 
 
@@ -122,7 +180,7 @@ object Evaluator extends Attribution {
     return i
   }
 
-  def getArray(b : Formula, e : Formula) : String = {
+  def getArray(b : NumFormula, e : NumFormula) : String = {
     var str = "["
 
     val bCol = getCol(b)
@@ -139,7 +197,7 @@ object Evaluator extends Attribution {
     return (str.substring(0, str.length - 2) + "]")
   }
 
-  def getArrayList (b : Formula, e : Formula) : List[Formula] = {
+  def getArrayList (b : NumFormula, e : NumFormula) : List[NumFormula] = {
     var l = List[Ref]()
 
     val bCol = getCol(b)
@@ -156,31 +214,31 @@ object Evaluator extends Attribution {
     return l
   }
 
-  def getSum (v: Vector[Arguments]) : String = {
-    var argsVec = List[Formula]()
+  def getSum (v: Vector[NumArguments]) : String = {
+    var argsVec = List[NumFormula]()
     for (i <- 0 until v.length) {
       argsVec = argsVec ::: argumentsValue(v(i))
     }
     var builder = ""
     for (j <- 0 until argsVec.length - 1) {
-      val str = formvalue(argsVec(j)) + " + "
+      val str = NumFormValue(argsVec(j)) + " + "
       builder += str
     }
-    builder += formvalue(argsVec.last)
+    builder += NumFormValue(argsVec.last)
     return builder
   }
 
-  def getAverage (v: Vector[Arguments]) : String = {
-    var argsVec = List[Formula]()
+  def getAverage (v: Vector[NumArguments]) : String = {
+    var argsVec = List[NumFormula]()
     for (i <- 0 until v.length) {
       argsVec = argsVec ::: argumentsValue(v(i))
     }
     var builder = "("
     for (j <- 0 until argsVec.length - 1) {
-      val str = formvalue(argsVec(j)) + " + "
+      val str = NumFormValue(argsVec(j)) + " + "
       builder += str
     }
-    builder += (formvalue(argsVec.last) + ") / ")
+    builder += (NumFormValue(argsVec.last) + ") / ")
     builder += (argsVec.length.toString)
     return builder
   }
