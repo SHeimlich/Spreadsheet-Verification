@@ -10,10 +10,19 @@ object Evaluator extends Attribution {
 
   import syntax.ExpParserSyntax._
 
+  var currentCell = "";
+
+  def setCurrentCell(c: String) : String = {
+    currentCell = c;
+    println("currentCell = " + currentCell)
+    return "";
+  }
+
+  //TODO: Find a way to pass the variable name "down"
   val expvalue : Exp => String =
     attr {
       case Assign(l, nf(numIF(fb, f1, f2))) => numIfVal(l, fb, f1, f2)
-      case Assign(l, r) => FormAsserts(r) + l + "=" + FormValue(r) + ";"
+      case Assign(l, r) => setCurrentCell(NumFormValue(l)) + FormAsserts(r) + NumFormValue(l) + "=" + FormValue(r) + ";"
     }
 
 
@@ -142,10 +151,12 @@ object Evaluator extends Attribution {
     return str1 + str2
   }
 
+  //TODO: Add a thing here for if statements
   val argumentsValue : NumArguments => List[NumFormula] =
     attr {
-      case Args(Arr(b, e), r) => argumentsValue(r) ::: getArrayList(b, e)
-      case Args(l, r) => argumentsValue(r) :+ l
+      case Args(Arr(b, e), r) => getArrayList(b, e) ::: argumentsValue(r)
+      //case Args(numIF(b, f1, f2), r) =>
+      case Args(l, r) => List(l) ::: argumentsValue(r)
       case Arg(Arr(b, e)) => getArrayList(b, e)
       case Arg(r) => List(r)
     }

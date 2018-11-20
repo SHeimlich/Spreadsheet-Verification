@@ -1,0 +1,67 @@
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/Sarah/AppData/Local/Temp/sbt-structure1.xml; session clear-all
+run
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/Sarah/AppData/Local/Temp/sbt-structure.xml; session clear-all
+run main 
+reload
+run rats
+run
+runMain rats input.exp
+runMain Rats input.exp
+run Rats input.exp
+run
+run Rats input.exp
+run Rats
+run rats.Main
+all {file:/C:/Users/Sarah/Documents/masters/rats/rats/}rats/products {file:/C:/Users/Sarah/Documents/masters/rats/rats/}rats/test:products
+run rats.Main
+all {file:/C:/Users/Sarah/Documents/masters/rats/rats/}rats/products {file:/C:/Users/Sarah/Documents/masters/rats/rats/}rats/test:products
+run
+val reader = new FileReader("file.exp");
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/Sarah/AppData/Local/Temp/sbt-structure.xml; session clear-all
+run
+compile:run
+run last compile:run
+last compile:run
+run
+reload
+run
+last compile:run
+run
+run input.exp
+run
+run input.exp
+all {file:/C:/Users/Sarah/Documents/masters/rats/rats/}rats/products {file:/C:/Users/Sarah/Documents/masters/rats/rats/}rats/test:products
+run input.exp
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/Sarah/AppData/Local/Temp/sbt-structure.xml; session clear-all
+run input.exp
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/Sarah/AppData/Local/Temp/sbt-structure.xml; session clear-all
+run input.exp
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/Sarah/AppData/Local/Temp/sbt-structure.xml; session clear-all
+run input.exp
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/Sarah/AppData/Local/Temp/sbt-structure.xml; session clear-all
+run input.exp
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/Sarah/AppData/Local/Temp/sbt-structure.xml; session clear-all
+run input.exp
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/Sarah/AppData/Local/Temp/sbt-structure.xml; session clear-all
+run input.exp
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/Sarah/AppData/Local/Temp/sbt-structure.xml; session clear-all
+run input.exp
+run
+runMain
+run Main
+run input.exp
+run Main.scala
+reload
+run
+run input.exp
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/Sarah/AppData/Local/Temp/sbt-structure.xml; session clear-all
+build input.exp
+run input.exp
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/Sarah/AppData/Local/Temp/sbt-structure.xml; session clear-all
+run input.exp
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/Sarah/AppData/Local/Temp/sbt-structure.xml; session clear-all
+run input.exp
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/Sarah/AppData/Local/Temp/sbt-structure.xml; session clear-all
+run input.exp
+;reload; set _root_.org.jetbrains.sbt.StructureKeys.sbtStructureOptions in Global := "download resolveClassifiers" ;*/*:dumpStructureTo C:/Users/Sarah/AppData/Local/Temp/sbt-structure.xml; session clear-all
+run input.exp

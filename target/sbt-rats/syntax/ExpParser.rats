@@ -1,0 +1,364 @@
+module syntax.ExpParser;
+
+header {
+    import syntax.ExpParserSyntax.*;
+
+    import sbtrats.Action;
+    import xtc.tree.Location;
+}
+
+body {
+    
+/**
+ * Drop the current path off string when it occurs at the beginning.
+ */
+public String dropCurrentPath (String string) {
+    int index = 0;
+    int stringlen = string.length ();
+    String prefix = System.getProperty ("user.dir");
+    int prefixlen = prefix.length ();
+    while ((index < stringlen) && (index < prefixlen) && (string.charAt (index) == prefix.charAt (index))) {
+        index++;
+    }
+    if ((index != 0) && (string.charAt (index) == java.io.File.separatorChar)) {
+        index++;
+    }
+    return string.substring (index);
+}
+
+/**
+ * Format a Rats! parser error message according to Scala compiler
+ * conventions for better compatibility with error processors.
+ */
+public String formatParseError (ParseError error, Boolean showCoord) throws IOException {
+    StringBuilder buf = new StringBuilder ();
+
+    if (error.index == -1) {
+        buf.append (error.msg);
+    } else {
+        Location loc = location (error.index);
+        if (showCoord) {
+            String filename = loc.file;
+            buf.append (filename);
+            buf.append (':');
+            buf.append (loc.line);
+            buf.append (": ");
+        }
+
+        buf.append (error.msg);
+        buf.append ("\n");
+
+        String line = lineAt (error.index);
+        buf.append (line);
+        buf.append ('\n');
+        for (int i = 1; i < loc.column; i++) buf.append (' ');
+        buf.append ("^");
+    }
+
+    return buf.toString ();
+}
+                
+    static {
+        add (KEYWORDS, new String[] { "false", "true" });
+    }
+}
+
+option verbose, setOfString (KEYWORDS), withLocation;
+
+String Symbol =
+    SymbolCharacters Spacing;
+
+transient String SymbolCharacters =
+    "AVERAGE(" / "SUM(" / "IF(" / "<=" / ">=" / "\'" / "[." / "*" / "]" / "=" /
+    "<" / "&" / ")" / "-" / "," / ";" / "+" / "(" / ":" / "^" / "/" / ">";
+
+public Program Program =
+    v1:(Exp)* {
+        yyValue = new Program (v1);
+    }
+    ;
+
+public Exp Exp =
+    v1:Assign 
+    ;
+
+public Exp Assign =
+    v1:Cell  void:"=":Symbol v2:Formula void:",":Symbol {
+        yyValue = new Assign (v1, v2);
+    }
+    ;
+
+public Formula Formula =
+    v1:NumFormula {
+        yyValue = new nf (v1);
+    }
+    / v1:StringFormula {
+        yyValue = new sf (v1);
+    }
+    ;
+
+public NumFormula NumFormula =
+    v1:NumFormulaLevel3 
+    ;
+
+public StringFormula StringFormula =
+    v1:Str {
+        yyValue = new strConst (v1);
+    }
+    / v1:NumFormula {
+        yyValue = new NumAsStr (v1);
+    }
+    ;
+
+public NumArguments NumArguments =
+    v1:NumFormula void:";":Symbol v2:NumArguments {
+        yyValue = new Args (v1, v2);
+    }
+    / v1:NumFormula {
+        yyValue = new Arg (v1);
+    }
+    ;
+
+public NumFormula NumConstant =
+    v1:Integer {
+        yyValue = new Num (v1);
+    }
+    / v1:Bool {
+        yyValue = new Boo (v1);
+    }
+    ;
+
+public NumFormula Array =
+    v1:CellRef void:":":Symbol v2:CellRef {
+        yyValue = new Arr (v1, v2);
+    }
+    ;
+
+public NumFormula CellRef =
+    void:"[.":Symbol v1:Cell void:"]":Symbol {
+        yyValue = new Ref (v1);
+    }
+    ;
+
+public NumFormula Cell =
+    v1:col v2:row {
+        yyValue = new Cell (v1, v2);
+    }
+    ;
+
+public String col =
+    ([A-Z])+
+    ;
+
+public String row =
+    [1-9] ([0-9])*
+    ;
+
+public String Integer =
+    Digits Spacing
+    ;
+
+public String Digits =
+    (Digit)+
+    ;
+
+public String Str =
+    "\'" (middleOfString)+
+    ;
+
+public String middleOfString =
+    "\'"
+    / _ middleOfString
+    ;
+
+public String Digit =
+    [0-9]
+    ;
+
+public String Letters =
+    (Letter)+
+    ;
+
+public String Letter =
+    [A-Z]
+    ;
+
+public String Bool =
+    "false"
+    / "true"
+    ;
+
+public NumFormula NumFormulaLevel2 =
+    v1:NumFormulaLevel1 v2:(NumFormulaLevel2Tail)* {
+        yyValue = ParserSupport.apply(v2, v1);
+    }
+    ;
+
+constant Action<NumFormula> NumFormulaLevel2Tail =
+    void:"+":Symbol v1:NumFormulaLevel1 {
+        yyValue = new Action<NumFormula>() {
+            public NumFormula run (NumFormula left) {
+                Add node = new Add (left, v1);
+                copyLocation(node, left);
+                return node;
+            };
+        };
+    }
+    / void:"-":Symbol v1:NumFormulaLevel1 {
+        yyValue = new Action<NumFormula>() {
+            public NumFormula run (NumFormula left) {
+                Sub node = new Sub (left, v1);
+                copyLocation(node, left);
+                return node;
+            };
+        };
+    }
+    ;
+
+public NumFormula NumFormulaLevel1 =
+    v1:NumFormulaLevel0 v2:(NumFormulaLevel1Tail)* {
+        yyValue = ParserSupport.apply(v2, v1);
+    }
+    ;
+
+constant Action<NumFormula> NumFormulaLevel1Tail =
+    void:"*":Symbol v1:NumFormulaLevel0 {
+        yyValue = new Action<NumFormula>() {
+            public NumFormula run (NumFormula left) {
+                Mul node = new Mul (left, v1);
+                copyLocation(node, left);
+                return node;
+            };
+        };
+    }
+    / void:"/":Symbol v1:NumFormulaLevel0 {
+        yyValue = new Action<NumFormula>() {
+            public NumFormula run (NumFormula left) {
+                Div node = new Div (left, v1);
+                copyLocation(node, left);
+                return node;
+            };
+        };
+    }
+    ;
+
+public NumFormula NumFormulaLevel3 =
+    v1:NumFormulaLevel2 v2:(NumFormulaLevel3Tail)* {
+        yyValue = ParserSupport.apply(v2, v1);
+    }
+    ;
+
+constant Action<NumFormula> NumFormulaLevel3Tail =
+    void:"^":Symbol v1:NumFormulaLevel2 {
+        yyValue = new Action<NumFormula>() {
+            public NumFormula run (NumFormula left) {
+                pow node = new pow (left, v1);
+                copyLocation(node, left);
+                return node;
+            };
+        };
+    }
+    / void:"&":Symbol v1:NumFormulaLevel2 {
+        yyValue = new Action<NumFormula>() {
+            public NumFormula run (NumFormula left) {
+                and node = new and (left, v1);
+                copyLocation(node, left);
+                return node;
+            };
+        };
+    }
+    / void:"<":Symbol v1:NumFormulaLevel2 {
+        yyValue = new Action<NumFormula>() {
+            public NumFormula run (NumFormula left) {
+                less node = new less (left, v1);
+                copyLocation(node, left);
+                return node;
+            };
+        };
+    }
+    / void:">":Symbol v1:NumFormulaLevel2 {
+        yyValue = new Action<NumFormula>() {
+            public NumFormula run (NumFormula left) {
+                great node = new great (left, v1);
+                copyLocation(node, left);
+                return node;
+            };
+        };
+    }
+    / void:"=":Symbol v1:NumFormulaLevel2 {
+        yyValue = new Action<NumFormula>() {
+            public NumFormula run (NumFormula left) {
+                equal node = new equal (left, v1);
+                copyLocation(node, left);
+                return node;
+            };
+        };
+    }
+    / void:"<=":Symbol v1:NumFormulaLevel2 {
+        yyValue = new Action<NumFormula>() {
+            public NumFormula run (NumFormula left) {
+                lessEqual node = new lessEqual (left, v1);
+                copyLocation(node, left);
+                return node;
+            };
+        };
+    }
+    / void:">=":Symbol v1:NumFormulaLevel2 {
+        yyValue = new Action<NumFormula>() {
+            public NumFormula run (NumFormula left) {
+                greatEqual node = new greatEqual (left, v1);
+                copyLocation(node, left);
+                return node;
+            };
+        };
+    }
+    ;
+
+public NumFormula NumFormulaLevel0 =
+    (void:"IF(":Symbol)+ v1:(NumFormula)+ (void:";":Symbol)+ v2:(NumFormula)+ (void:";":Symbol)+ v3:(NumFormula)+ void:")":Symbol {
+        yyValue = new numIF (v1, v2, v3);
+    }
+    / (void:"SUM(":Symbol)+ v1:(NumArguments)+ void:")":Symbol {
+        yyValue = new SUM (v1);
+    }
+    / (void:"AVERAGE(":Symbol)+ v1:(NumArguments)+ void:")":Symbol {
+        yyValue = new AVERAGE (v1);
+    }
+    / v1:Array 
+    / v1:CellRef 
+    / v1:NumConstant 
+    / void:"(":Symbol v1:NumFormula void:")":Symbol 
+    ;
+
+// Default spacing specification
+public transient void Spacing   = (Space / Comment)*;
+
+
+// Default layout specification
+public transient void Space     = ' ' / '\t' / '\f' / EOL;
+public transient void EOL       = '\r' '\n' / '\r' / '\n';
+
+
+// Default comment specification
+public transient void Comment   = SLComment / MLComment;
+public transient void SLComment = "//" (!EOL _)* (EOL / EOF);
+public transient void MLComment = "/*" (MLComment / !"*/" _)* "*/";
+
+
+// Default word specification
+public String Identifier =
+    Word &{
+        ! contains (KEYWORDS, yyValue)
+    };
+
+public String Word =
+    WordCharacters Spacing;
+
+public transient String WordCharacters =
+    h:_ &{
+        Character.isJavaIdentifierStart (h)
+    } (t:_ &{
+        Character.isJavaIdentifierPart (t)
+    })*;
+
+public transient void EOF      = !_;
