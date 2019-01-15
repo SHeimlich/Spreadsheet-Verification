@@ -1,9 +1,9 @@
 import org.bitbucket.inkytonik.kiama.util.{CompilerBase, Config}
-import syntax.ExpParserSyntax.{Exp, Program}
+import syntax.ExpParserSyntax.{Exp}
 import Evaluator.expvalue
 
 
-object Main extends CompilerBase[Exp,Config] {
+object ruMain extends CompilerBase[Exp,Config] {
 
   import java.io.Reader
   import org.bitbucket.inkytonik.kiama.output.PrettyPrinterTypes.Document
@@ -30,24 +30,11 @@ object Main extends CompilerBase[Exp,Config] {
     output.emitln ("e = " + e)
     output.emitln ("e tree:")
     output.emitln (layout (any (e)))
-    output.emitln ("e tree pretty printed:")
-    output.emitln (format (e).layout)
-    output.emitln ("value (e) = " + expvalue (e))
-  }
-
-  def process (source : Source, p : Program, config : Config) {
-    val output = config.output()
-    output.emitln ("e = " + p)
-    output.emitln ("e tree:")
-    output.emitln (layout (any (p)))
-    output.emitln ("e tree pretty printed:")
-    output.emitln (format (p).layout)
+    output.emitln ("value (e) = \n" + expvalue (e))
+    output.emitln("hi")
   }
 
   override def format (ast : Exp) : Document =
-    ExpParserPrettyPrinter.format (ast, 5)
-
-  def format (ast : Program) : Document =
     ExpParserPrettyPrinter.format (ast, 5)
 
 }

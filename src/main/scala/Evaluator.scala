@@ -21,6 +21,12 @@ object Evaluator extends Attribution {
   //TODO: Find a way to pass the variable name "down"
   val expvalue : Exp => String =
     attr {
+      case stmts(l,r) => assignValue(l) + expvalue(r)
+      case stmt(l) => assignValue(l)
+    }
+
+  val assignValue : Exp => String =
+    attr {
       case Assign(l, nf(numIF(fb, f1, f2))) => numIfVal(l, fb, f1, f2)
       case Assign(l, r) => setCurrentCell(NumFormValue(l)) + FormAsserts(r) + NumFormValue(l) + "=" + FormValue(r) + ";"
     }
@@ -63,7 +69,6 @@ object Evaluator extends Attribution {
       case lessEqual (l, r)  => NumFormAsserts(l) + NumFormAsserts (r)
       case pow (l, r)  => NumFormAsserts(l) + NumFormAsserts (r)
       case Arr(b, e) => ""
-      case Ref(c) => ""
       case SUM(a) => getArgAsserts(a)
       case AVERAGE(a) => getArgAsserts(a) + "if(" + getArgsLength(a) + " == 0) \n\t __VERIFIER_error(); \n"
       case numIF(b, f1, f2) => numVecAsserts(f1, f2)

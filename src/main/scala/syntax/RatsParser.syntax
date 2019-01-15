@@ -6,11 +6,9 @@ header {
 
 option verbose;
 
-Program =
-    Exp*.
-
 Exp {paren} =
-    Assign.
+    Assign Exp {stmts}
+    | Assign {stmt}.
 
 Assign : Exp =
   Cell sp "=" Formula ",".

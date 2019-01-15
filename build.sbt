@@ -8,7 +8,7 @@ organization := "mq"
 
 // Scala compiler settings
 
-scalaVersion := "2.12.6"
+scalaVersion := "2.12.8"
 
 scalacOptions ++= Seq ("-deprecation", "-feature", "-unchecked")
 
@@ -21,6 +21,10 @@ shellPrompt in ThisBuild := {
         Project.extract(state).currentRef.project + " " + version.value +
             " " + scalaVersion.value + "> "
 }
+
+resolvers += Resolver.url ("scalasbt",
+  new URL ("http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases")
+) (Resolver.ivyStylePatterns)
 
 // Fork the runs and connect sbt's input and output to the forked process so
 // that we are immune to version clashes with the JLine library used by sbt
@@ -37,6 +41,7 @@ libraryDependencies ++=
     Seq (
         "org.bitbucket.inkytonik.kiama" %% "kiama" % "2.2.0",
         "org.bitbucket.inkytonik.kiama" %% "kiama-extras" % "2.2.0",
+   //     "org.bitbucket.inkytonik.sbt-rats" %% "sbt-rats" % "2.5.0",
 	      "org.scala-graph" %% "graph-constrained" % "1.12.3",
         "org.jopendocument" % "jOpenDocument" % "1.3"
     )
@@ -49,7 +54,7 @@ resolvers ++= Seq (
 
 // Rats! setup
 
-sbtRatsSettings
+//sbtRatsSettings
 
 ratsScalaRepetitionType := Some (VectorType)
 
