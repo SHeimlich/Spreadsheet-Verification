@@ -4,18 +4,20 @@ header {
     import syntax.ExpParserSyntax.*;
 }
 
-option verbose;
-
 Exp {paren} =
     Assign Exp {stmts}
-    | Assign {stmt}.
+    | Assign {stmt}
+    | assignIf Exp {ifStmt}.
 
 Assign : Exp =
-  Cell sp "=" Formula ",".
+  Cell sp " = " Formula ",".
 
 Formula =
      NumFormula  {nf}
      |     StringFormula {sf}.
+
+assignIf =
+    ifRef + "=IF(" + NumFormula + ";" + NumFormula + ";" + NumFormula + ")" {ifAssign}.
 
 NumFormula =
       "IF(" + NumFormula + ";" + NumFormula + ";" + NumFormula + ")" {numIF}
@@ -64,6 +66,9 @@ col : String =
 
 row : String =
   [1-9][0-9]*.
+
+ifRef : String =
+  row + "if".
 
 Integer : String =
   Digits Spacing.

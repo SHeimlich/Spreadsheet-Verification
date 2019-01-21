@@ -3,7 +3,7 @@
 package syntax
 
 import syntax.ExpParserSyntax._
-import org.bitbucket.inkytonik.kiama.output.{LeftAssoc, NonAssoc, PrettyExpression, PrettyPrinter => PP, ParenPrettyPrinter => PPP, RightAssoc}
+import org.bitbucket.inkytonik.kiama.output.{PrettyPrinter => PP, ParenPrettyPrinter => PPP}
 import org.bitbucket.inkytonik.kiama.output.PrettyPrinterTypes.{Document, Width}
 
 trait ExpParserPrettyPrinter extends PP with PPP {
@@ -16,15 +16,15 @@ trait ExpParserPrettyPrinter extends PP with PPP {
         pretty (group (toDoc (astNode)), w)
     
     def toDoc (astNode : ASTNode) : Doc =
-        astNode match {
-            case v @ Program (v1) =>
-                ssep (v1.map (toDoc), emptyDoc) 
+        astNode match {  
             case v : Exp =>
                 toParenDoc (v)  
             case v @ nf (v1) =>
                 toDoc (v1) 
             case v @ sf (v1) =>
                 toDoc (v1) 
+            case v @ ifAssign (v1, v2, v3, v4) =>
+                ssep (v1.map (text), emptyDoc) <> emptyDoc <> ssep (v2.map (toDoc), emptyDoc) <> emptyDoc <> ssep (v3.map (toDoc), emptyDoc) <> emptyDoc <> ssep (v4.map (toDoc), emptyDoc) <> text (")") <> space 
             case v @ numIF (v1, v2, v3) =>
                 emptyDoc <> ssep (v1.map (toDoc), emptyDoc) <> emptyDoc <> ssep (v2.map (toDoc), emptyDoc) <> emptyDoc <> ssep (v3.map (toDoc), emptyDoc) <> text (")") <> space 
             case v @ SUM (v1) =>
@@ -70,13 +70,19 @@ trait ExpParserPrettyPrinter extends PP with PPP {
             case v @ Ref (v1) =>
                 text ("[.") <> space <> toDoc (v1) <> text ("]") <> space 
             case v @ Cell (v1, v2) =>
-                value (v1) <> value (v2)          
+                value (v1) <> value (v2)           
         }
     
-    override def toParenDoc (astNode : PrettyExpression) : Doc =
+    override def toParenDoc (astNode : org.bitbucket.inkytonik.kiama.output.PrettyExpression) : Doc =
         astNode match {
+            case v @ stmts (v1, v2) =>
+                toDoc (v1) <> recursiveToDoc (v, v2, org.bitbucket.inkytonik.kiama.output.RightAssoc) 
+            case v @ stmt (v1) =>
+                toDoc (v1) 
+            case v @ ifStmt (v1, v2) =>
+                toDoc (v1) <> recursiveToDoc (v, v2, org.bitbucket.inkytonik.kiama.output.RightAssoc) 
             case v @ Assign (v1, v2) =>
-                toDoc (v1) <> space <> text ("=") <> space <> toDoc (v2) <> text (",") <> space
+                toDoc (v1) <> space <> text (" = ") <> space <> toDoc (v2) <> text (",") <> space
             case _ =>
                 super.toParenDoc (astNode)
         }

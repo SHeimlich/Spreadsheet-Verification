@@ -21,9 +21,6 @@ class Parsing (s:Sheet){
   var rows = end.x - start.x;
   var cols = end.y - start.y;
 
-  println("Start: " + start + " end: " + end);
-  println("Rows: " + rows + " Cols: " + cols);
-
   var reached = Array.ofDim[Boolean](rows + 1, cols + 1);
   for( r <- 1 to rows) {
     for( c <- 1 to cols) {
@@ -31,21 +28,40 @@ class Parsing (s:Sheet){
     }
   }
 
-  def parseCell(row: Int, col: Int): String = {
+  def buildGraph(s:Sheet): Unit = {
+    var r = start.y
+    while (r <= end.y) {
+      var c = start.x
+      while (c <= end.x) {
+        parseCell(c, r)
+        c += 1;
+      }
+      r += 1;
+    }
+  }
+
+  def parseCell(row: Int, col: Int): MyCell = {
     var sBuild = "";
     if(row - start.x >= reached.length | col - start.y >= reached(row - start.x).length) {
-      return ""//getString(sheet.getCellAt(getLocationName(row, col)), getLocationName(row, col));
+      return null;
     }
 
     if (!reached(row - start.x)(col - start.y)) {
-
+      reached(row - start.x)(col - start.y) = true;
       val cell = sheet.getCellAt(getLocationName(row, col));
-      println(cell)
       val formula = getParsedFormula(cell);
 
-      if (formula != null) {
+      if (formula == null) { // Simple case, no formula
+        if(cell.getValue == "") {
+          return null // The cell is empty.
+        }
         val newCell = getMyCell(cell, getColNum(col), getRowChar(row));
+        val edge = LDiEdge(newCell, constCell)(trueCondition);
+        g = g + edge;
+        return newCell;
 
+      } else { // There is a forumla, so we need to check for dependencies.
+        val newCell = getMyCell(cell, getColNum(col), getRowChar(row));
 
         // Deal with Arrays
         val cellRegex = "[A-Z]+[1-9][0-9]*";
@@ -53,6 +69,7 @@ class Parsing (s:Sheet){
         val arrayMatcher = arrayPattern.matcher(formula);
         if(arrayMatcher.find()) {
           println("There is an array here!");
+
         }
 
         // Deal with Dependencies
@@ -62,12 +79,9 @@ class Parsing (s:Sheet){
           val s = matcher.group(0);
           val depRow = s.charAt(0) - 'A';
           val depCol = Integer.parseInt(s.substring(1, s.length())) - 1;
-          //          sBuild = sBuild.concat(parseCell(depRow, depCol));
-
-          val childCell = getMyCell(sheet.getCellAt(getLocationName(depRow, depCol)), getColNum(depCol), getRowChar(depRow))
+          val childCell = parseCell(depRow, depCol);
           val edge = LDiEdge(childCell, newCell)(trueCondition);
           g = g + edge;
-
         }
         val hasCell = g find (g having (node = _ equals newCell))
         if(hasCell == None) {
@@ -75,18 +89,9 @@ class Parsing (s:Sheet){
           g = g + edge;
         }
 
-      } else {
-        val newCell = getMyCell(cell, getColNum(col), getRowChar(row));
-        val edge = LDiEdge(newCell, constCell)(trueCondition);
-        g = g + edge;
-      }
-      reached(row - start.x)(col - start.y) = true;
-
-      return sBuild //+ getString(cell, getLocationName(row, col));
-    }
-    reached(row - start.x)(col - start.y) = true;
-
-    return sBuild + "";
+      } // End if Formula
+    } // End If reached
+    return null;
   }
 
   def getParsedFormula(cell: MutableCell[SpreadSheet]) : String = {

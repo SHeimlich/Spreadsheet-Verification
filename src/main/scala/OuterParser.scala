@@ -4,6 +4,7 @@ import org.jopendocument.dom.spreadsheet.SpreadSheet
 
 object OuterParser {
 
+  def parse() = {
     val file = new File("simpleAddition.ods")
     try {
       val writer = new PrintWriter(new File("file.exp"))
@@ -11,31 +12,19 @@ object OuterParser {
       val start = sheet.getUsedRange.getStartPoint
       val end = sheet.getUsedRange.getEndPoint
       val p = new Parsing(sheet)
-      var r = start.y
-      while (r <= end.y) {
-        var c = start.x
-        while (c <= end.x) {
-          val line = p.parseCell(c, r)
-          c += 1;
-        }
-        r += 1;
-      }
+      p.buildGraph(sheet);
 
 
       val g = p getGraph;
-      println(g.head)
-      println(g.topologicalSort().toString)
       println("cycles: " + g.findCycle)
-      var str = g.componentTraverser().topologicalSortByComponent.toString()
-      str = str.substring(27, str.length - 3)
-      println("str = " + str)
+      var str = g.topologicalSort().toString()
+      str = str.substring(23, str.length - 2) + ","
       writer.write(str)
       writer.close()
-      System.out.println("Succesfully output to File")
     }
     catch {
       case e: IOException =>
         e.printStackTrace()
     }
-
+  }
 }

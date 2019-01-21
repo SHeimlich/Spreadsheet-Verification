@@ -27,8 +27,6 @@ object SVector {
 
 object ParserSupport {
 
-    import scala.language.higherKinds
-
     def apply[T] (actions : Seq[Action[T]], seed : T) : T =
         actions.foldLeft (seed) {
             case (result, action) =>

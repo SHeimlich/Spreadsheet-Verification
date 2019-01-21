@@ -6,12 +6,19 @@ import Evaluator.expvalue
 object ruMain extends CompilerBase[Exp,Config] {
 
   import java.io.Reader
+  import Optimiser.optimise
   import org.bitbucket.inkytonik.kiama.output.PrettyPrinterTypes.Document
   import org.bitbucket.inkytonik.kiama.util.Source
   import org.bitbucket.inkytonik.kiama.util.Messaging.Messages
   import syntax.ExpParser
   import syntax.ExpParserPrettyPrinter
   import syntax.ExpParserPrettyPrinter.{any, layout}
+
+  override def main(args: Array[String]): Unit = {
+    args.foreach(println)
+    OuterParser.parse()
+    super.main( Array("file.exp"))
+  }
 
   def createConfig(args : Seq[String]) : Config =
     new Config(args)
@@ -30,8 +37,18 @@ object ruMain extends CompilerBase[Exp,Config] {
     output.emitln ("e = " + e)
     output.emitln ("e tree:")
     output.emitln (layout (any (e)))
+    output.emitln("HERE")
+    //output.emitln(test(any(e)))
     output.emitln ("value (e) = \n" + expvalue (e))
-    output.emitln("hi")
+    val o = optimise (e)
+    output.emitln ("e optimised = " + o)
+    output.emitln ("value (e optimised) = " + expvalue (o))
+
+  }
+
+  def test(a: String) : Int =
+  {
+    return 0
   }
 
   override def format (ast : Exp) : Document =

@@ -59,31 +59,58 @@ public String formatParseError (ParseError error, Boolean showCoord) throws IOEx
 }
                 
     static {
-        add (KEYWORDS, new String[] { "false", "true" });
+        add (KEYWORDS, new String[] { "false", "if", "true" });
     }
 }
 
-option verbose, setOfString (KEYWORDS), withLocation;
+option setOfString (KEYWORDS), withLocation;
 
-String Symbol =
-    SymbolCharacters Spacing;
 
-transient String SymbolCharacters =
-    "AVERAGE(" / "SUM(" / "IF(" / "<=" / ">=" / "\'" / "[." / "*" / "]" / "=" /
-    "<" / "&" / ")" / "-" / "," / ";" / "+" / "(" / ":" / "^" / "/" / ">";
+String Symbol1 =
+    Symbol1Alts Spacing;
 
-public Program Program =
-    v1:(Exp)* {
-        yyValue = new Program (v1);
+transient String Symbol1Alts =
+    "*" / "]" / "=" / "<" / "&" / ")" / "-" / "," / ";" / "'" / "+" / "(" /
+    ":" / "^" / "/" / ">";
+
+String Symbol2 =
+    Symbol2Alts Spacing;
+
+transient String Symbol2Alts =
+    "<=" / ">=" / "[.";
+
+String Symbol3 =
+    Symbol3Alts Spacing;
+
+transient String Symbol3Alts =
+    " = " / "IF(";
+
+String Symbol8 =
+    Symbol8Alts Spacing;
+
+transient String Symbol8Alts =
+    "AVERAGE(";
+
+String Symbol4 =
+    Symbol4Alts Spacing;
+
+transient String Symbol4Alts =
+    "SUM(" / "=IF(";
+
+public Exp Exp =
+    v1:Assign v2:Exp {
+        yyValue = new stmts (v1, v2);
+    }
+    / v1:Assign {
+        yyValue = new stmt (v1);
+    }
+    / v1:assignIf v2:Exp {
+        yyValue = new ifStmt (v1, v2);
     }
     ;
 
-public Exp Exp =
-    v1:Assign 
-    ;
-
 public Exp Assign =
-    v1:Cell  void:"=":Symbol v2:Formula void:",":Symbol {
+    v1:Cell  void:" = ":Symbol3 v2:Formula void:",":Symbol1 {
         yyValue = new Assign (v1, v2);
     }
     ;
@@ -94,6 +121,12 @@ public Formula Formula =
     }
     / v1:StringFormula {
         yyValue = new sf (v1);
+    }
+    ;
+
+public assignIf assignIf =
+    v1:(ifRef)+ (void:"=IF(":Symbol4)+ v2:(NumFormula)+ (void:";":Symbol1)+ v3:(NumFormula)+ (void:";":Symbol1)+ v4:(NumFormula)+ void:")":Symbol1 {
+        yyValue = new ifAssign (v1, v2, v3, v4);
     }
     ;
 
@@ -111,7 +144,7 @@ public StringFormula StringFormula =
     ;
 
 public NumArguments NumArguments =
-    v1:NumFormula void:";":Symbol v2:NumArguments {
+    v1:NumFormula void:";":Symbol1 v2:NumArguments {
         yyValue = new Args (v1, v2);
     }
     / v1:NumFormula {
@@ -129,13 +162,13 @@ public NumFormula NumConstant =
     ;
 
 public NumFormula Array =
-    v1:CellRef void:":":Symbol v2:CellRef {
+    v1:CellRef void:":":Symbol1 v2:CellRef {
         yyValue = new Arr (v1, v2);
     }
     ;
 
 public NumFormula CellRef =
-    void:"[.":Symbol v1:Cell void:"]":Symbol {
+    void:"[.":Symbol2 v1:Cell void:"]":Symbol1 {
         yyValue = new Ref (v1);
     }
     ;
@@ -154,6 +187,10 @@ public String row =
     [1-9] ([0-9])*
     ;
 
+public String ifRef =
+    (row)+ "if"
+    ;
+
 public String Integer =
     Digits Spacing
     ;
@@ -163,11 +200,11 @@ public String Digits =
     ;
 
 public String Str =
-    "\'" (middleOfString)+
+    "'" (middleOfString)+
     ;
 
 public String middleOfString =
-    "\'"
+    "'"
     / _ middleOfString
     ;
 
@@ -195,7 +232,7 @@ public NumFormula NumFormulaLevel2 =
     ;
 
 constant Action<NumFormula> NumFormulaLevel2Tail =
-    void:"+":Symbol v1:NumFormulaLevel1 {
+    void:"+":Symbol1 v1:NumFormulaLevel1 {
         yyValue = new Action<NumFormula>() {
             public NumFormula run (NumFormula left) {
                 Add node = new Add (left, v1);
@@ -204,7 +241,7 @@ constant Action<NumFormula> NumFormulaLevel2Tail =
             };
         };
     }
-    / void:"-":Symbol v1:NumFormulaLevel1 {
+    / void:"-":Symbol1 v1:NumFormulaLevel1 {
         yyValue = new Action<NumFormula>() {
             public NumFormula run (NumFormula left) {
                 Sub node = new Sub (left, v1);
@@ -222,7 +259,7 @@ public NumFormula NumFormulaLevel1 =
     ;
 
 constant Action<NumFormula> NumFormulaLevel1Tail =
-    void:"*":Symbol v1:NumFormulaLevel0 {
+    void:"*":Symbol1 v1:NumFormulaLevel0 {
         yyValue = new Action<NumFormula>() {
             public NumFormula run (NumFormula left) {
                 Mul node = new Mul (left, v1);
@@ -231,7 +268,7 @@ constant Action<NumFormula> NumFormulaLevel1Tail =
             };
         };
     }
-    / void:"/":Symbol v1:NumFormulaLevel0 {
+    / void:"/":Symbol1 v1:NumFormulaLevel0 {
         yyValue = new Action<NumFormula>() {
             public NumFormula run (NumFormula left) {
                 Div node = new Div (left, v1);
@@ -249,7 +286,7 @@ public NumFormula NumFormulaLevel3 =
     ;
 
 constant Action<NumFormula> NumFormulaLevel3Tail =
-    void:"^":Symbol v1:NumFormulaLevel2 {
+    void:"^":Symbol1 v1:NumFormulaLevel2 {
         yyValue = new Action<NumFormula>() {
             public NumFormula run (NumFormula left) {
                 pow node = new pow (left, v1);
@@ -258,7 +295,7 @@ constant Action<NumFormula> NumFormulaLevel3Tail =
             };
         };
     }
-    / void:"&":Symbol v1:NumFormulaLevel2 {
+    / void:"&":Symbol1 v1:NumFormulaLevel2 {
         yyValue = new Action<NumFormula>() {
             public NumFormula run (NumFormula left) {
                 and node = new and (left, v1);
@@ -267,7 +304,7 @@ constant Action<NumFormula> NumFormulaLevel3Tail =
             };
         };
     }
-    / void:"<":Symbol v1:NumFormulaLevel2 {
+    / void:"<":Symbol1 v1:NumFormulaLevel2 {
         yyValue = new Action<NumFormula>() {
             public NumFormula run (NumFormula left) {
                 less node = new less (left, v1);
@@ -276,7 +313,7 @@ constant Action<NumFormula> NumFormulaLevel3Tail =
             };
         };
     }
-    / void:">":Symbol v1:NumFormulaLevel2 {
+    / void:">":Symbol1 v1:NumFormulaLevel2 {
         yyValue = new Action<NumFormula>() {
             public NumFormula run (NumFormula left) {
                 great node = new great (left, v1);
@@ -285,7 +322,7 @@ constant Action<NumFormula> NumFormulaLevel3Tail =
             };
         };
     }
-    / void:"=":Symbol v1:NumFormulaLevel2 {
+    / void:"=":Symbol1 v1:NumFormulaLevel2 {
         yyValue = new Action<NumFormula>() {
             public NumFormula run (NumFormula left) {
                 equal node = new equal (left, v1);
@@ -294,7 +331,7 @@ constant Action<NumFormula> NumFormulaLevel3Tail =
             };
         };
     }
-    / void:"<=":Symbol v1:NumFormulaLevel2 {
+    / void:"<=":Symbol2 v1:NumFormulaLevel2 {
         yyValue = new Action<NumFormula>() {
             public NumFormula run (NumFormula left) {
                 lessEqual node = new lessEqual (left, v1);
@@ -303,7 +340,7 @@ constant Action<NumFormula> NumFormulaLevel3Tail =
             };
         };
     }
-    / void:">=":Symbol v1:NumFormulaLevel2 {
+    / void:">=":Symbol2 v1:NumFormulaLevel2 {
         yyValue = new Action<NumFormula>() {
             public NumFormula run (NumFormula left) {
                 greatEqual node = new greatEqual (left, v1);
@@ -315,19 +352,19 @@ constant Action<NumFormula> NumFormulaLevel3Tail =
     ;
 
 public NumFormula NumFormulaLevel0 =
-    (void:"IF(":Symbol)+ v1:(NumFormula)+ (void:";":Symbol)+ v2:(NumFormula)+ (void:";":Symbol)+ v3:(NumFormula)+ void:")":Symbol {
+    (void:"IF(":Symbol3)+ v1:(NumFormula)+ (void:";":Symbol1)+ v2:(NumFormula)+ (void:";":Symbol1)+ v3:(NumFormula)+ void:")":Symbol1 {
         yyValue = new numIF (v1, v2, v3);
     }
-    / (void:"SUM(":Symbol)+ v1:(NumArguments)+ void:")":Symbol {
+    / (void:"SUM(":Symbol4)+ v1:(NumArguments)+ void:")":Symbol1 {
         yyValue = new SUM (v1);
     }
-    / (void:"AVERAGE(":Symbol)+ v1:(NumArguments)+ void:")":Symbol {
+    / (void:"AVERAGE(":Symbol8)+ v1:(NumArguments)+ void:")":Symbol1 {
         yyValue = new AVERAGE (v1);
     }
     / v1:Array 
     / v1:CellRef 
     / v1:NumConstant 
-    / void:"(":Symbol v1:NumFormula void:")":Symbol 
+    / void:"(":Symbol1 v1:NumFormula void:")":Symbol1 
     ;
 
 // Default spacing specification
