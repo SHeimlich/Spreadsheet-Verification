@@ -31,7 +31,7 @@ object ExpParserSyntax {
     case class sf (stringFormula : StringFormula) extends Formula  
      
     sealed abstract class assignIf extends ASTNode
-    case class ifAssign (ifRefs : Vector[String], numFormulas1 : Vector[NumFormula], numFormulas2 : Vector[NumFormula], numFormulas3 : Vector[NumFormula]) extends assignIf  {
+    case class ifAssign (ifRefs : Vector[ifRef], numFormulas1 : Vector[NumFormula], numFormulas2 : Vector[NumFormula], numFormulas3 : Vector[NumFormula]) extends assignIf  {
         require (ifRefs.length > 0, "ifRefs field can't be empty")
         require (numFormulas1.length > 0, "numFormulas1 field can't be empty")
         require (numFormulas2.length > 0, "numFormulas2 field can't be empty")
@@ -61,6 +61,7 @@ object ExpParserSyntax {
     case class equal (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
     case class lessEqual (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
     case class greatEqual (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
+    case class numIfRef (ifRef : ifRef) extends NumFormula  
      
     sealed abstract class StringFormula extends ASTNode
     case class strConst (str : String) extends StringFormula  
@@ -78,5 +79,7 @@ object ExpParserSyntax {
     case class Ref (cell : NumFormula) extends NumFormula  
      
     case class Cell (col : String, row : String) extends NumFormula  
-               
+       
+    case class ifRef (rows : Vector[String]) extends ASTNode
+            
 }

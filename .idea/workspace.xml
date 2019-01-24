@@ -2,87 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f5f5a10-111a-4173-8334-b69450fcbac7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/scala/Optimiser.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/hydra.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_library_2_12_6_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_scala_reflect_2_12_6_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/spreadsheet-verification-build.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/spreadsheet-verification.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/spreadsheet-verification_7586-build.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/spreadsheet-verification_7586.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file.exp" beforeDir="false" afterPath="$PROJECT_DIR$/file.exp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input.exp" beforeDir="false" afterPath="$PROJECT_DIR$/input.exp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project/target/config-classes/$6c9586cedd441a695fa2$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project/target/config-classes/$6c9586cedd441a695fa2.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project/target/config-classes/$6c9586cedd441a695fa2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$0e71d4a9ffc7c9bd3e58$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$0e71d4a9ffc7c9bd3e58.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$0e71d4a9ffc7c9bd3e58.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$14838a6506ac41e7592a$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$14838a6506ac41e7592a.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$14838a6506ac41e7592a.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$18b1e81e505f928781f4$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$18b1e81e505f928781f4.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$18b1e81e505f928781f4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$1f890dbe08426b4de910$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$1f890dbe08426b4de910.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$1f890dbe08426b4de910.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$2bbcfa75c7536469af94$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$2bbcfa75c7536469af94.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$2bbcfa75c7536469af94.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$2bf7b50ddb269428a485$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$2bf7b50ddb269428a485.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$2bf7b50ddb269428a485.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$43c98e09717cbe6deae5$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$43c98e09717cbe6deae5.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$43c98e09717cbe6deae5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$5a1d2dd48db90457c28b$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$5a1d2dd48db90457c28b.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$5a1d2dd48db90457c28b.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$616463ea831ba8ca2ac6$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$616463ea831ba8ca2ac6.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$616463ea831ba8ca2ac6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$778806b43641b850b603$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$778806b43641b850b603.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$778806b43641b850b603.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$8955fb2ffe2473a93122$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$8955fb2ffe2473a93122.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$8955fb2ffe2473a93122.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$94280725a0553737b096$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$94280725a0553737b096.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$94280725a0553737b096.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$a1e3bbe6612118c9502e$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$a1e3bbe6612118c9502e.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$a1e3bbe6612118c9502e.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$bf7d5e16e9307297fa2d$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$bf7d5e16e9307297fa2d.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$bf7d5e16e9307297fa2d.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$c885e8ee1663bfcac69c$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$c885e8ee1663bfcac69c.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$c885e8ee1663bfcac69c.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$d6a81c029db19038d186$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$d6a81c029db19038d186.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$d6a81c029db19038d186.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$e2651d7bb503b0226cc8$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$e2651d7bb503b0226cc8.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$e2651d7bb503b0226cc8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$e8b46d1666600a8f2c27$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$e8b46d1666600a8f2c27.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$e8b46d1666600a8f2c27.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$f0ce9cdace7a9b7c43fd$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$f0ce9cdace7a9b7c43fd.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$f0ce9cdace7a9b7c43fd.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$f142f84cf1900fd3141a$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$f142f84cf1900fd3141a.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$f142f84cf1900fd3141a.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/spreadsheet-verification-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/spreadsheet-verification-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/spreadsheet-verification-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/default/spreadsheet-verification-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-spreadsheet-verification-build-compile-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-spreadsheet-verification-build-compile-internal.xml" afterDir="false" />
@@ -96,46 +17,14 @@
       <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-spreadsheet-verification-build-scala-tool.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-spreadsheet-verification-build-scala-tool.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-spreadsheet-verification-build-test-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-spreadsheet-verification-build-test-internal.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-spreadsheet-verification-build-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-spreadsheet-verification-build-test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/ivyConfiguration/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/ivyConfiguration/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/copyResources/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/copyResources/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/dependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/dependencyClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/externalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/externalDependencyClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/managedClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/managedClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/dependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/dependencyClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/externalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/externalDependencyClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/fullClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/runtime/managedClasspath/$global/streams/export" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simpleAddition.ods" beforeDir="false" afterPath="$PROJECT_DIR$/simpleAddition.ods" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Evaluator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Evaluator.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Main.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/OuterParser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/OuterParser.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Parsing.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Parsing.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/Optimiser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Optimiser.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/syntax/RatsParser.syntax" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/syntax/RatsParser.syntax" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/.history" beforeDir="false" afterPath="$PROJECT_DIR$/target/.history" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/sbt-rats/syntax/ExpParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/sbt-rats/syntax/ExpParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/sbt-rats/syntax/ExpParser.rats" beforeDir="false" afterPath="$PROJECT_DIR$/target/sbt-rats/syntax/ExpParser.rats" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Condition$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Condition$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Condition.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Condition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Evaluator$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Evaluator$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Evaluator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Evaluator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Main$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/MyCell$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/MyCell$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/MyCell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/MyCell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/OuterParser$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/OuterParser$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/OuterParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/OuterParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Parsing.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/Parsing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/Rats.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/sbtrats/Action.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/sbtrats/Action.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/sbtrats/ParserSupport$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/sbtrats/ParserSupport$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/sbtrats/ParserSupport.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/sbtrats/ParserSupport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/sbtrats/SList$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/sbtrats/SList$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/sbtrats/SList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/sbtrats/SList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/sbtrats/SVector$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/sbtrats/SVector$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/sbtrats/SVector.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/sbtrats/SVector.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$11.class" afterDir="false" />
@@ -147,103 +36,42 @@
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$7.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$Chunk1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$Chunk1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$Chunk2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$Chunk2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$ExpParserColumn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser$ExpParserColumn.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserPrettyPrinter$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserPrettyPrinter$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserPrettyPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserPrettyPrinter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$ASTNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$ASTNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$AVERAGE$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$AVERAGE$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$AVERAGE.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$AVERAGE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Add$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Add$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Add.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Add.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Arg$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Arg$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Arg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Arg.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Args$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Args$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Args.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Args.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Arr$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Arr$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Arr.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Arr.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Assign$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Assign$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Assign.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Assign.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Boo$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Boo$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Boo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Boo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Cell$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Cell$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Cell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Cell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Div$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Div$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Div.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Div.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Exp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Exp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Formula.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Formula.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Mul$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Mul$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Mul.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Mul.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Num$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Num$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Num.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Num.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$NumArguments.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$NumArguments.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$NumAsStr$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$NumAsStr$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$NumAsStr.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$NumAsStr.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$NumFormula.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$NumFormula.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Program$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Program.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Ref$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Ref$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Ref.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Ref.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$SUM$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$SUM$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$SUM.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$SUM.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$StringFormula.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$StringFormula.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Sub$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Sub$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Sub.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$Sub.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$and$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$and$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$and.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$and.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$equal$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$equal$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$equal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$equal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$great$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$great$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$great.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$great.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$greatEqual$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$greatEqual$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$greatEqual.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$greatEqual.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$less$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$less$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$less.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$less.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$lessEqual$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$lessEqual$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$lessEqual.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$lessEqual.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$nf$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$nf$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$nf.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$nf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$numIF$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$numIF$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$numIF.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$numIF.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$pow$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$pow$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$pow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$pow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$sf$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$sf$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$sf.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$sf.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$strConst$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$strConst$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$strConst.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax$strConst.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/syntax/ExpParserSyntax.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.12/src_managed/main/sbt-rats/sbtrats/ParserSupport.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/src_managed/main/sbt-rats/sbtrats/ParserSupport.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/src_managed/main/sbt-rats/syntax/ExpParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/src_managed/main/sbt-rats/syntax/ExpParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/src_managed/main/sbt-rats/syntax/ExpParserPrettyPrinter.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/src_managed/main/sbt-rats/syntax/ExpParserPrettyPrinter.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/src_managed/main/sbt-rats/syntax/ExpParserSyntax.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/src_managed/main/sbt-rats/syntax/ExpParserSyntax.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/input_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/input_dsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/$global/ivyConfiguration/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/ivyConfiguration/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/$global/sourceGenerators/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/sourceGenerators/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/$global/sourceGenerators/$global/streams/sbt-rats/in-cache" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/sourceGenerators/$global/streams/sbt-rats/in-cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/$global/sourceGenerators/$global/streams/sbt-rats/out-cache" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/sourceGenerators/$global/streams/sbt-rats/out-cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/update_cache_2.12/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/update_cache_2.12/inputs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/update_cache_2.12/output" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/$global/updateClassifiers/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/updateClassifiers/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/$global/updateSbtClassifiers/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/updateSbtClassifiers/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/$global/$global/discoveredMainClasses/data" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/$global/$global/discoveredMainClasses/data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/compile/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compile/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/copyResources/$global/streams/copy-resources" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/copyResources/$global/streams/copy-resources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/copyResources/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/copyResources/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/dependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/dependencyClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/externalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/externalDependencyClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/managedClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/managedClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/run/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/run/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/runtime/externalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/runtime/externalDependencyClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/runtime/managedClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/runtime/managedClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/test/externalDependencyClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/externalDependencyClasspath/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/test/managedClasspath/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/managedClasspath/$global/streams/export" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -267,8 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Main.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
+            <state relative-caret-position="578">
+              <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
               <folding>
                 <element signature="e#0#64#0" expanded="true" />
                 <element signature="e#181#202#0" expanded="true" />
@@ -277,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Optimiser.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+            <state relative-caret-position="45">
+              <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
               <folding>
                 <element signature="e#22#112#0" expanded="true" />
               </folding>
@@ -301,7 +129,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Parsing.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
+            <state relative-caret-position="1309">
               <caret line="81" column="52" selection-start-line="81" selection-start-column="52" selection-end-line="81" selection-end-column="52" />
             </state>
           </provider>
@@ -329,7 +157,7 @@
         <entry file="file://$PROJECT_DIR$/file.exp">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="57" selection-start-column="57" selection-end-column="57" />
+              <caret column="27" selection-start-column="27" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -337,17 +165,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Evaluator.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+            <state relative-caret-position="323">
+              <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/syntax/RatsParser.syntax">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
+            <state relative-caret-position="218">
+              <caret line="24" column="50" lean-forward="true" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -367,6 +195,8 @@
       <find>println</find>
       <find>if</find>
       <find>getSum</find>
+      <find>for</find>
+      <find>for(</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -384,14 +214,14 @@
         <option value="$PROJECT_DIR$/src/main/scala/Evaluator.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Parsing.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/OuterParser.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/Optimiser.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/Main.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/syntax/RatsParser.syntax" />
+        <option value="$PROJECT_DIR$/src/main/scala/Main.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/Optimiser.scala" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1910" />
+    <option name="x" value="-10" />
     <option name="width" value="1942" />
     <option name="height" value="2092" />
   </component>
@@ -400,7 +230,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -438,11 +268,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548044833985" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548047909702" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -504,12 +334,21 @@
       <option name="presentableId" value="Default" />
       <updated>1546996489631</updated>
     </task>
+    <task id="LOCAL-00001" summary="Fixed .ods file parsing, and prepped to lift the &quot;ifs&quot; by modifying Exp">
+      <created>1548045043111</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1548045043112</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1933" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.86709887" visible="true" weight="0.13013333" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.86709887" visible="true" weight="0.13226667" />
       <window_info id="Structure" order="1" sideWeight="0.13290113" side_tool="true" weight="0.12693334" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -571,6 +410,10 @@
       <window_info anchor="right" id="sbt" order="9" />
     </layout-to-restore>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed .ods file parsing, and prepped to lift the &quot;ifs&quot; by modifying Exp" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed .ods file parsing, and prepped to lift the &quot;ifs&quot; by modifying Exp" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/project/build.properties">
       <provider selected="true" editor-type-id="text-editor">
@@ -610,7 +453,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../.ivy2/cache/org.bitbucket.inkytonik.kiama/kiama-extras_2.12/srcs/kiama-extras_2.12-2.2.0-sources.jar!/org/bitbucket/inkytonik/kiama/util/Compiler.scala">
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.bitbucket.inkytonik.kiama/kiama-extras_2.12/srcs/kiama-extras_2.12-2.2.0-sources.jar!/org/bitbucket/inkytonik/kiama/util/Compiler.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
@@ -624,10 +467,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Main.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="43" column="53" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+            <element signature="e#181#202#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/input.exp">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="35" selection-start-column="35" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Parsing.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1309">
+          <caret line="81" column="52" selection-start-line="81" selection-start-column="52" selection-end-line="81" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -638,20 +499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/file.exp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="57" selection-start-column="57" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Parsing.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="81" column="52" selection-start-line="81" selection-start-column="52" selection-end-line="81" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/OuterParser.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -659,38 +506,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Optimiser.scala">
+    <entry file="file://$PROJECT_DIR$/file.exp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="35" lean-forward="true" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
-          <folding>
-            <element signature="e#22#112#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="27" selection-start-column="27" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Evaluator.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/Main.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-            <element signature="e#181#202#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/syntax/RatsParser.syntax">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
+        <state relative-caret-position="218">
+          <caret line="24" column="50" lean-forward="true" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/Optimiser.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
+          <folding>
+            <element signature="e#22#112#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

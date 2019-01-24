@@ -36,6 +36,7 @@ NumFormula =
     | NumFormula ">=" NumFormula       {greatEqual, left, 3}
     | Array
     | CellRef
+    | ifRef                             {numIfRef}
     | NumConstant
     | '(' NumFormula ')'.
 
@@ -67,7 +68,7 @@ col : String =
 row : String =
   [1-9][0-9]*.
 
-ifRef : String =
+ifRef =
   row + "if".
 
 Integer : String =

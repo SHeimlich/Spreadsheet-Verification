@@ -1,20 +1,13 @@
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:23:10: match may not be exhaustive.[0m
-[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following inputs: Assign(_, _), ifStmt(_, _)[0m
-[0m[[0m[33mwarn[0m] [0m[0m    attr {[0m
-[0m[[0m[33mwarn[0m] [0m[0m         ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:29:10: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Optimiser.scala:27:38: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
 [0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
-[0m[[0m[33mwarn[0m] [0m[0m    attr {[0m
-[0m[[0m[33mwarn[0m] [0m[0m         ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:55:10: match may not be exhaustive.[0m
-[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following inputs: Ref(AVERAGE(_)), Ref(Add(_, _)), Ref(Arr(_, _)), Ref(Boo(_)), Ref(Div(_, _)), Ref(Mul(_, _)), Ref(Num(_)), Ref(Ref(_)), Ref(SUM(_)), Ref(Sub(_, _)), Ref(and(_, _)), Ref(equal(_, _)), Ref(great(_, _)), Ref(greatEqual(_, _)), Ref(less(_, _)), Ref(lessEqual(_, _)), Ref(numIF(_, _, _)), Ref(pow(_, _))[0m
-[0m[[0m[33mwarn[0m] [0m[0m    attr {[0m
-[0m[[0m[33mwarn[0m] [0m[0m         ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:109:38: unreachable code[0m
-[0m[[0m[33mwarn[0m] [0m[0m      case Ref(Cell(c, r)) => c + "" + r;[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def stmtSimplifier (x: Exp): Exp = x match {[0m
 [0m[[0m[33mwarn[0m] [0m[0m                                     ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:87:10: match may not be exhaustive.[0m
-[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: Boo((x: String forSome x not in ("false", "true")))[0m
-[0m[[0m[33mwarn[0m] [0m[0m    attr {[0m
-[0m[[0m[33mwarn[0m] [0m[0m         ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m5 warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Optimiser.scala:40:42: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following inputs: AVERAGE(_), Arr(_, _), Boo(_), Cell(_, _), Div(_, _), Mul(_, _), Num(_), Ref(_), SUM(_), Sub(_, _), and(_, _), equal(_, _), great(_, _), greatEqual(_, _), less(_, _), lessEqual(_, _), numIfRef(_), pow(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def getIf (x: NumFormula) : assignIf = x match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Optimiser.scala:51:47: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following inputs: AVERAGE(_), Arr(_, _), Boo(_), Cell(_, _), Div(_, _), Mul(_, _), Ref(_), SUM(_), Sub(_, _), and(_, _), equal(_, _), great(_, _), greatEqual(_, _), less(_, _), lessEqual(_, _), numIfRef(_), pow(_, _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def removeIf (x: NumFormula) : NumFormula = x match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                              ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mthree warnings found[0m

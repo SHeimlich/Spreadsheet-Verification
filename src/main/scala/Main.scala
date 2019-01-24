@@ -41,8 +41,8 @@ object ruMain extends CompilerBase[Exp,Config] {
     //output.emitln(test(any(e)))
     output.emitln ("value (e) = \n" + expvalue (e))
     val o = optimise (e)
-    output.emitln ("e optimised = " + o)
-    output.emitln ("value (e optimised) = " + expvalue (o))
+    output.emitln ("e optimised = " + layout( any (o)))
+    //output.emitln ("value (e optimised) = " + expvalue (o))
 
   }
 

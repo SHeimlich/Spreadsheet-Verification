@@ -187,8 +187,10 @@ public String row =
     [1-9] ([0-9])*
     ;
 
-public String ifRef =
-    (row)+ "if"
+public ifRef ifRef =
+    v1:(row)+ void:"if":Word {
+        yyValue = new ifRef (v1);
+    }
     ;
 
 public String Integer =
@@ -363,6 +365,9 @@ public NumFormula NumFormulaLevel0 =
     }
     / v1:Array 
     / v1:CellRef 
+    / v1:ifRef {
+        yyValue = new numIfRef (v1);
+    }
     / v1:NumConstant 
     / void:"(":Symbol1 v1:NumFormula void:")":Symbol1 
     ;
