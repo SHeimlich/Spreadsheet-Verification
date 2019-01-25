@@ -30,29 +30,38 @@ object Optimiser {
 
   def AssignSimplifier (c: Cell, f: NumFormula) : Exp = {
     if(formulaHasIf(f)) {
-      return ifStmt(getIf(f), AssignSimplifier(c, removeIf(f)))
+      return ifStmt(getIf(c, f), AssignSimplifier(c, removeIf(f)))
     }
     else {
       return stmt(Assign(c, nf(f)))
     }
   }
 
-  def getIf (x: NumFormula) : assignIf = x match {
-    case numIF(a, b, c) => getAssignIf(a, b, c)
-    case Add(l, r) => {if(formulaHasIf(l)){ getIf(l); } else { getIf(r); }}
+  def getIf (cell: Cell, x: NumFormula) : assignIf = x match {
+    case numIF(a, b, c) => {
+      if(formulaHasIf(a(0))) return getIf(cell, a(0))
+      if(formulaHasIf(b(0))) return getIf(cell, b(0))
+      if(formulaHasIf(c(0))) return getIf(cell, c(0))
+      return getAssignIf(cell, a, b, c)
+    }
+    case Add(l, r) => {if(formulaHasIf(l)){ getIf(cell, l); } else { getIf(cell, r); }}
   }
 
-  def getAssignIf(a: Vector[NumFormula], b: Vector[NumFormula], c: Vector[NumFormula]) : assignIf = {
-    for(i <- 0 to b.length){
-
-    }
+  def getAssignIf(c: Cell, a: Vector[NumFormula], nfVec1: Vector[NumFormula], nfVec2: Vector[NumFormula]) : assignIf = {
     ifCount = ifCount + 1
     val str = "if" + ifCount
-    return ifAssign(Vector(ifRef(Vector(str))), a, b, c)
+    return ifAssign(Vector(ifRef(Vector(str))), a, nfVec1, nfVec2)
   }
 
   def removeIf (x: NumFormula) : NumFormula = x match {
-    case numIF(_, _, _) => numIfRef(ifRef(Vector("if" + ifCount)))
+    case numIF(a, b, c) => {
+
+      if(formulaHasIf(a(0))) return numIF(Vector(removeIf(a(0))), b, c)
+      if(formulaHasIf(b(0))) {println("delving deeper");  return numIF(a, Vector(removeIf(b(0))), c) }
+      if(formulaHasIf(c(0))) return numIF(a, b, Vector(removeIf(c(0))))
+      println("removing: " + a)
+      return numIfRef(ifRef(Vector("if" + ifCount)))
+    }
     case Add(l, r) => if(formulaHasIf(l)) {Add(removeIf(l), r); } else {Add(l, removeIf(r)); }
     case Num(x) => Num(x)
   }
