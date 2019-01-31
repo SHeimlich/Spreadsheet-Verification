@@ -16,8 +16,8 @@ object ruMain extends CompilerBase[Exp,Config] {
 
   override def main(args: Array[String]): Unit = {
     args.foreach(println)
-    OuterParser.parse()
-    super.main( Array("file.exp"))
+    OuterParser.parse("arrayTest.ods")
+    //super.main( Array("file.exp"))
   }
 
   def createConfig(args : Seq[String]) : Config =

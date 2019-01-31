@@ -42,7 +42,7 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->com.google.guava#guava;24.1-jre [compile->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->com.google.guava#guava;24.1-jre [compile->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->default]
-[debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-library;2.12.8 {compile=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], runtime=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], test=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], compile-internal=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], runtime-internal=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], test-internal=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], scala-tool=[default, master(*), compile, runtime(*), master(compile), runtime, optional, optional(default), compile(*), master]}
+[debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-library;2.12.8 {compile=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], runtime=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], test=[default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], compile-internal=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], runtime-internal=[default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], test-internal=[default, master(*), compile, runtime(*), master(compile), runtime, default(compile), compile(*), master], plugin=[master(*), compile, runtime(*), master(compile), runtime, compile(*), master], scala-tool=[default, master(*), compile, runtime(*), master(compile), runtime, optional, optional(default), compile(*), master]}
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.12.8
 [debug] 	found org.scala-lang#scala-library;2.12.8 in sbt-chain
 [debug] 	[2.12.8] org.scala-lang#scala-library;2.12.8
@@ -61,6 +61,21 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->default]
+[debug] sbt-chain: Checking cache for: dependency: org.scalactic#scalactic_2.12;3.0.5 {compile=[default, compile, runtime, default(compile), master], runtime=[default, compile, runtime, default(compile), master], test=[default, compile, runtime, default(compile), master, runtime(*), master(compile), compile(*)], compile-internal=[default, compile, runtime, default(compile), master], runtime-internal=[default, compile, runtime, default(compile), master], test-internal=[default, compile, runtime, default(compile), master, runtime(*), master(compile), compile(*)]}
+[debug] sbt-chain: module revision found in cache: org.scalactic#scalactic_2.12;3.0.5
+[debug] 	found org.scalactic#scalactic_2.12;3.0.5 in sbt-chain
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile->compile]
 [debug] sbt-chain: Checking cache for: dependency: junit#junit;4.8.2 {compile=[compile, runtime(*), master(compile), runtime, compile(*), master], runtime=[compile, runtime(*), master(compile), runtime, compile(*), master], test=[compile, runtime(*), master(compile), runtime, compile(*), master], compile-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], runtime-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], test-internal=[compile, runtime(*), master(compile), runtime, compile(*), master]}
 [debug] sbt-chain: module revision found in cache: junit#junit;4.8.2
@@ -136,9 +151,19 @@
 [debug] 		tried file:/C:/Users/sarah/.sbt/preloaded/jline/jline/2.15-SNAPSHOT/jline-2.15-SNAPSHOT.pom
 [debug] 	local-preloaded: no ivy file found for jline#jline;2.15-SNAPSHOT
 [debug] don't use cache for jline#jline;2.15-SNAPSHOT: changing=true
+[debug] CLIENT ERROR: Not Found url=http://repo.artima.com/releases/jline/jline/2.15-SNAPSHOT/maven-metadata.xml
+[debug] 	maven-metadata not available: http://repo.artima.com/releases/jline/jline/2.15-SNAPSHOT/maven-metadata.xml
+[debug] 		tried http://repo.artima.com/releases/jline/jline/2.15-SNAPSHOT/jline-2.15-SNAPSHOT.pom
+[debug] CLIENT ERROR: Not Found url=http://repo.artima.com/releases/jline/jline/2.15-SNAPSHOT/jline-2.15-SNAPSHOT.pom
+[debug] 	Artima Maven Repository: no ivy file found for jline#jline;2.15-SNAPSHOT
+[debug] don't use cache for jline#jline;2.15-SNAPSHOT: changing=true
 [debug] 		tried http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/jline/jline/2.15-SNAPSHOT/ivys/ivy.xml
 [debug] CLIENT ERROR: Not Found url=http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/jline/jline/2.15-SNAPSHOT/ivys/ivy.xml
 [debug] 	scalasbt: no ivy file found for jline#jline;2.15-SNAPSHOT
+[debug] don't use cache for jline#jline;2.15-SNAPSHOT: changing=true
+[debug] 		tried http://repo.artima.com/releases/jline/jline/2.15-SNAPSHOT/ivys/ivy.xml
+[debug] CLIENT ERROR: Not Found url=http://repo.artima.com/releases/jline/jline/2.15-SNAPSHOT/ivys/ivy.xml
+[debug] 	Artima Maven Repository: no ivy file found for jline#jline;2.15-SNAPSHOT
 [debug] don't use cache for jline#jline;2.15-SNAPSHOT: changing=true
 [debug] CLIENT ERROR:  url=https://oss.sonatype.org/content/repositories/releases/jline/jline/2.15-SNAPSHOT/maven-metadata.xml
 [debug] 	maven-metadata not available: https://oss.sonatype.org/content/repositories/releases/jline/jline/2.15-SNAPSHOT/maven-metadata.xml
@@ -191,7 +216,7 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.rogach#scallop_2.12;3.1.2 [compile->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.rogach#scallop_2.12;3.1.2 [compile->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [compile->compile]
-[debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.12.8 {compile=[compile, runtime(*), master(compile), runtime, compile(*), master], runtime=[compile, runtime(*), master(compile), runtime, compile(*), master], test=[compile, runtime(*), master(compile), runtime, compile(*), master], compile-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], runtime-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], test-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], scala-tool=[compile, runtime(*), master(compile), runtime, compile(*), master]}
+[debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.12.8 {compile=[compile, runtime(*), master(compile), runtime, compile(*), master], runtime=[compile, runtime(*), master(compile), runtime, compile(*), master], test=[compile, runtime(*), master(compile), runtime, compile(*), master], compile-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], runtime-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], test-internal=[compile, runtime(*), master(compile), runtime, compile(*), master], plugin=[compile, runtime(*), master(compile), runtime, compile(*), master], scala-tool=[compile, runtime(*), master(compile), runtime, compile(*), master]}
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.12.8
 [debug] 	found org.scala-lang#scala-reflect;2.12.8 in sbt-chain
 [debug] 	[2.12.8] org.scala-lang#scala-reflect;2.12.8
@@ -323,6 +348,18 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->default]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile->compile]
@@ -499,6 +536,18 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [runtime->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [runtime->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [runtime->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->default]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [runtime->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [runtime->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [runtime->compile]
@@ -679,6 +728,23 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->master(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->default]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile->compile]
@@ -855,6 +921,18 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [runtime->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [runtime->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [runtime->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->default]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [runtime->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [runtime->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [runtime->compile]
@@ -1019,6 +1097,7 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->runtime]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->master(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->compile]
@@ -1031,6 +1110,22 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->default]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->runtime(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->master(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->compile(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [test->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [test->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [test->compile]
@@ -1071,6 +1166,21 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->com.google.errorprone#error_prone_annotations;2.1.3 [test->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->com.google.errorprone#error_prone_annotations;2.1.3 [test->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->com.google.errorprone#error_prone_annotations;2.1.3 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->default]
+[debug] sbt-chain: Checking cache for: dependency: org.scalatest#scalatest_2.12;3.0.1 {test=[default, compile, runtime, default(compile), master], test-internal=[default, compile, runtime, default(compile), master]}
+[debug] sbt-chain: module revision found in cache: org.scalatest#scalatest_2.12;3.0.1
+[debug] 	found org.scalatest#scalatest_2.12;3.0.1 in sbt-chain
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->jline#jline;2.15-SNAPSHOT [test->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->jline#jline;2.15-SNAPSHOT [test->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->jline#jline;2.15-SNAPSHOT [test->compile]
@@ -1099,6 +1209,17 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.rogach#scallop_2.12;3.1.2 [test->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.rogach#scallop_2.12;3.1.2 [test->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.rogach#scallop_2.12;3.1.2 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->compile]
+[debug] sbt-chain: Checking cache for: dependency: org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 {test=[compile, runtime(*), master(compile), runtime, compile(*), master], test-internal=[compile, runtime(*), master(compile), runtime, compile(*), master]}
+[debug] sbt-chain: module revision found in cache: org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4
+[debug] 	found org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 in sbt-chain
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->runtime(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->master(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->compile(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [test->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [test->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [test->compile]
@@ -1119,6 +1240,17 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->xtc#rats;2.3.1 [test->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->xtc#rats;2.3.1 [test->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->xtc#rats;2.3.1 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->compile]
+[debug] sbt-chain: Checking cache for: dependency: org.scala-lang.modules#scala-xml_2.12;1.0.5 {test=[compile, runtime(*), master(compile), runtime, compile(*), master], test-internal=[compile, runtime(*), master(compile), runtime, compile(*), master]}
+[debug] sbt-chain: module revision found in cache: org.scala-lang.modules#scala-xml_2.12;1.0.5
+[debug] 	found org.scala-lang.modules#scala-xml_2.12;1.0.5 in sbt-chain
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->runtime(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->master(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->compile(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.jopendocument#jOpenDocument;1.3 [test->default]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.jopendocument#jOpenDocument;1.3 [test->runtime]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.jopendocument#jOpenDocument;1.3 [test->compile]
@@ -1214,6 +1346,18 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->default]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile->compile]
@@ -1392,6 +1536,18 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile-internal->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile-internal->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile-internal->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile-internal->default]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile-internal->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile-internal->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile-internal->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile-internal->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile-internal->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile-internal->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile-internal->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile-internal->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile-internal->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile-internal->compile]
@@ -1572,6 +1728,18 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->default]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile->compile]
@@ -1748,6 +1916,18 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [runtime->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [runtime->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [runtime->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->default]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [runtime->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [runtime->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [runtime->compile]
@@ -1925,6 +2105,18 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [runtime-internal->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [runtime-internal->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [runtime-internal->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime-internal->default]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime-internal->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime-internal->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime-internal->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime-internal->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime-internal->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime-internal->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime-internal->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [runtime-internal->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [runtime-internal->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [runtime-internal->compile]
@@ -2106,6 +2298,18 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->default]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [compile->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [compile->compile]
@@ -2282,6 +2486,18 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [runtime->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [runtime->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [runtime->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->default]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [runtime->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [runtime->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [runtime->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [runtime->compile]
@@ -2446,6 +2662,7 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->runtime]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->master(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->compile]
@@ -2458,6 +2675,22 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->default]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->runtime(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->master(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->compile(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [test->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [test->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [test->compile]
@@ -2498,6 +2731,18 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->com.google.errorprone#error_prone_annotations;2.1.3 [test->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->com.google.errorprone#error_prone_annotations;2.1.3 [test->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->com.google.errorprone#error_prone_annotations;2.1.3 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->default]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->jline#jline;2.15-SNAPSHOT [test->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->jline#jline;2.15-SNAPSHOT [test->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->jline#jline;2.15-SNAPSHOT [test->compile]
@@ -2526,6 +2771,14 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.rogach#scallop_2.12;3.1.2 [test->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.rogach#scallop_2.12;3.1.2 [test->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.rogach#scallop_2.12;3.1.2 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->runtime(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->master(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->compile(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [test->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [test->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [test->compile]
@@ -2546,6 +2799,14 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->xtc#rats;2.3.1 [test->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->xtc#rats;2.3.1 [test->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->xtc#rats;2.3.1 [test->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->runtime(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->master(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->compile(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.jopendocument#jOpenDocument;1.3 [test->default]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.jopendocument#jOpenDocument;1.3 [test->runtime]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.jopendocument#jOpenDocument;1.3 [test->compile]
@@ -2624,6 +2885,7 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test-internal->runtime]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test-internal->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test-internal->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test-internal->master(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test-internal->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test-internal->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test-internal->compile]
@@ -2636,6 +2898,22 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test-internal->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test-internal->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [test-internal->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test-internal->default]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test-internal->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test-internal->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test-internal->runtime(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test-internal->master(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test-internal->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test-internal->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test-internal->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test-internal->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test-internal->compile(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalactic#scalactic_2.12;3.0.5 [test-internal->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [test-internal->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [test-internal->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->junit#junit;4.8.2 [test-internal->compile]
@@ -2676,6 +2954,18 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->com.google.errorprone#error_prone_annotations;2.1.3 [test-internal->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->com.google.errorprone#error_prone_annotations;2.1.3 [test-internal->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->com.google.errorprone#error_prone_annotations;2.1.3 [test-internal->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test-internal->default]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test-internal->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test-internal->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test-internal->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test-internal->default(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test-internal->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test-internal->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scalatest#scalatest_2.12;3.0.1 [test-internal->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->jline#jline;2.15-SNAPSHOT [test-internal->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->jline#jline;2.15-SNAPSHOT [test-internal->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->jline#jline;2.15-SNAPSHOT [test-internal->compile]
@@ -2704,6 +2994,14 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.rogach#scallop_2.12;3.1.2 [test-internal->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.rogach#scallop_2.12;3.1.2 [test-internal->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.rogach#scallop_2.12;3.1.2 [test-internal->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test-internal->runtime(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test-internal->master(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test-internal->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test-internal->compile(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4 [test-internal->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [test-internal->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [test-internal->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [test-internal->compile]
@@ -2724,6 +3022,14 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->xtc#rats;2.3.1 [test-internal->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->xtc#rats;2.3.1 [test-internal->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->xtc#rats;2.3.1 [test-internal->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test-internal->runtime(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test-internal->master(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test-internal->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test-internal->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test-internal->compile(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.5 [test-internal->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.jopendocument#jOpenDocument;1.3 [test-internal->default]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.jopendocument#jOpenDocument;1.3 [test-internal->runtime]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.jopendocument#jOpenDocument;1.3 [test-internal->compile]
@@ -2770,6 +3076,45 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.bitbucket.inkytonik.dsinfo#dsinfo_2.12;0.4.0 [test-internal->master]
 [debug] resolving dependencies for configuration 'plugin'
 [debug] == resolving dependencies for mq#rats$sources;0.1.0 [plugin]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [plugin->master(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [plugin->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [plugin->runtime(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [plugin->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [plugin->master(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [plugin->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [plugin->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [plugin->compile(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [plugin->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.6 [plugin->compile]
+[debug] sbt-chain: Checking cache for: dependency: org.scala-lang.modules#scala-xml_2.12;1.0.6 {plugin=[compile, runtime(*), master(compile), runtime, compile(*), master], scala-tool=[compile, runtime(*), master(compile), runtime, compile(*), master]}
+[debug] sbt-chain: module revision found in cache: org.scala-lang.modules#scala-xml_2.12;1.0.6
+[debug] 	found org.scala-lang.modules#scala-xml_2.12;1.0.6 in sbt-chain
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.6 [plugin->runtime(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.6 [plugin->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.6 [plugin->master(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.6 [plugin->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.6 [plugin->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.6 [plugin->compile(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.6 [plugin->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-compiler;2.12.8 [plugin->compile]
+[debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-compiler;2.12.8 {plugin=[compile, runtime(*), master(compile), runtime, compile(*), master], scala-tool=[default, compile, runtime, optional, optional(default), master]}
+[debug] sbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.12.8
+[debug] 	found org.scala-lang#scala-compiler;2.12.8 in sbt-chain
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-compiler;2.12.8 [plugin->runtime(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-compiler;2.12.8 [plugin->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-compiler;2.12.8 [plugin->master(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-compiler;2.12.8 [plugin->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-compiler;2.12.8 [plugin->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-compiler;2.12.8 [plugin->compile(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-compiler;2.12.8 [plugin->master]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [plugin->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [plugin->runtime(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [plugin->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [plugin->master(compile)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [plugin->runtime]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [plugin->compile]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [plugin->compile(*)]
+[debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [plugin->master]
 [debug] resolving dependencies for configuration 'pom'
 [debug] == resolving dependencies for mq#rats$sources;0.1.0 [pom]
 [debug] resolving dependencies for configuration 'scala-tool'
@@ -2790,9 +3135,6 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [scala-tool->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-library;2.12.8 [scala-tool->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.6 [scala-tool->compile]
-[debug] sbt-chain: Checking cache for: dependency: org.scala-lang.modules#scala-xml_2.12;1.0.6 {scala-tool=[compile, runtime(*), master(compile), runtime, compile(*), master]}
-[debug] sbt-chain: module revision found in cache: org.scala-lang.modules#scala-xml_2.12;1.0.6
-[debug] 	found org.scala-lang.modules#scala-xml_2.12;1.0.6 in sbt-chain
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.6 [scala-tool->runtime(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.6 [scala-tool->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang.modules#scala-xml_2.12;1.0.6 [scala-tool->master(compile)]
@@ -2805,9 +3147,6 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->jline#jline;2.15-SNAPSHOT [scala-tool->compile(*)]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->jline#jline;2.15-SNAPSHOT [scala-tool->master]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-compiler;2.12.8 [scala-tool->default]
-[debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-compiler;2.12.8 {scala-tool=[default, compile, runtime, optional, optional(default), master]}
-[debug] sbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.12.8
-[debug] 	found org.scala-lang#scala-compiler;2.12.8 in sbt-chain
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-compiler;2.12.8 [scala-tool->runtime]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-compiler;2.12.8 [scala-tool->compile]
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-compiler;2.12.8 [scala-tool->master]
@@ -2827,27 +3166,31 @@
 [debug] == resolving dependencies mq#rats$sources;0.1.0->org.scala-lang#scala-reflect;2.12.8 [scala-tool->master]
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
+[debug] 	[NOT REQUIRED] org.scalactic#scalactic_2.12;3.0.5!scalactic_2.12.jar(src)
+[debug] 	[NOT REQUIRED] com.google.guava#guava;24.1-jre!guava.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.8!scala-library.jar(src)
+[debug] 	[NOT REQUIRED] com.google.j2objc#j2objc-annotations;1.1!j2objc-annotations.jar(src)
 [debug] 	[NOT REQUIRED] org.bitbucket.inkytonik.kiama#kiama-extras_2.12;2.2.0!kiama-extras_2.12.jar(src)
 [debug] 	[NOT REQUIRED] junit#junit;4.8.2!junit.jar(src)
-[debug] 	[NOT REQUIRED] com.google.j2objc#j2objc-annotations;1.1!j2objc-annotations.jar(src)
 [debug] 	[NOT REQUIRED] org.bitbucket.inkytonik.kiama#kiama_2.12;2.2.0!kiama_2.12.jar(src)
-[debug] 	[NOT REQUIRED] com.google.guava#guava;24.1-jre!guava.jar(src)
 [debug] 	[NOT REQUIRED] org.codehaus.mojo#animal-sniffer-annotations;1.14!animal-sniffer-annotations.jar(src)
-[debug] 	[NOT REQUIRED] com.google.errorprone#error_prone_annotations;2.1.3!error_prone_annotations.jar(src)
 [debug] 	[NOT REQUIRED] jline#jline;2.15-SNAPSHOT!jline.jar(src)
+[debug] 	[NOT REQUIRED] com.google.errorprone#error_prone_annotations;2.1.3!error_prone_annotations.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-graph#graph-constrained_2.12;1.12.3!graph-constrained_2.12.jar(src)
-[debug] 	[NOT REQUIRED] org.rogach#scallop_2.12;3.1.2!scallop_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-reflect;2.12.8!scala-reflect.jar(src)
 [debug] 	[NOT REQUIRED] xtc#rats;2.3.1!rats.jar(src)
 [debug] 	[NOT REQUIRED] org.jopendocument#jOpenDocument;1.3!jOpenDocument.jar(src)
 [debug] 	[NOT REQUIRED] org.bitbucket.inkytonik.dsprofile#dsprofile_2.12;0.4.0!dsprofile_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.scalatest#scalatest_2.12;3.0.1!scalatest_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.checkerframework#checker-compat-qual;2.0.0!checker-compat-qual.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-graph#graph-core_2.12;1.12.3!graph-core_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.bitbucket.inkytonik.dsinfo#dsinfo_2.12;0.4.0!dsinfo_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-parser-combinators_2.12;1.0.4!scala-parser-combinators_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-lang#scala-compiler;2.12.8!scala-compiler.jar(src)
-[debug] 	[NOT REQUIRED] org.scala-lang#scala-library;2.12.8!scala-library.jar(src)
-[debug] :: resolution report :: resolve 6073ms :: artifacts dl 10ms
+[debug] 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.12;1.0.5!scala-xml_2.12.jar(src)
+[debug] 	[NOT REQUIRED] org.rogach#scallop_2.12;3.1.2!scallop_2.12.jar(src)
+[debug] :: resolution report :: resolve 8559ms :: artifacts dl 20ms
 [debug] 	report for mq#rats$sources;0.1.0 compile produced in C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\resolution-cache\reports\mq-rats$sources-compile.xml
 [debug] 	report for mq#rats$sources;0.1.0 runtime produced in C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\resolution-cache\reports\mq-rats$sources-runtime.xml
 [debug] 	report for mq#rats$sources;0.1.0 test produced in C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\resolution-cache\reports\mq-rats$sources-test.xml
@@ -2859,4 +3202,4 @@
 [debug] 	report for mq#rats$sources;0.1.0 plugin produced in C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\resolution-cache\reports\mq-rats$sources-plugin.xml
 [debug] 	report for mq#rats$sources;0.1.0 pom produced in C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\resolution-cache\reports\mq-rats$sources-pom.xml
 [debug] 	report for mq#rats$sources;0.1.0 scala-tool produced in C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\resolution-cache\reports\mq-rats$sources-scala-tool.xml
-[debug] 	resolve done (6073ms resolve - 10ms download)
+[debug] 	resolve done (8559ms resolve - 20ms download)

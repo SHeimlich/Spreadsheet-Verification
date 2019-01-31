@@ -1,9 +1,8 @@
-case class MyCell(col: Char, row: Int, value: String, makeVar: Boolean) {
+case class MyCell(col: String, row: Int, value: String, makeVar: Boolean) {
 
   override def toString: String = col + row.toString + " = " + value;
 
   override def equals(obj: scala.Any): Boolean = {
-    //println("in equals! " + this.toString + " " + obj.toString)
     return this.toString == obj.toString;
   }
 

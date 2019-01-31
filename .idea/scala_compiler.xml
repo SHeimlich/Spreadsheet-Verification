@@ -6,6 +6,9 @@
       <option name="deprecationWarnings" value="true" />
       <option name="uncheckedWarnings" value="true" />
       <option name="featureWarnings" value="true" />
+      <plugins>
+        <plugin path="C:\Users\sarah\.ivy2\cache\com.artima.supersafe\supersafe_2.12.8\jars\supersafe_2.12.8-1.1.7.jar" />
+      </plugins>
     </profile>
   </component>
 </project>

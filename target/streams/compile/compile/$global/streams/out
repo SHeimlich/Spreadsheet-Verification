@@ -1,13 +1,2 @@
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Optimiser.scala:27:38: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
-[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def stmtSimplifier (x: Exp): Exp = x match {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                     ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Optimiser.scala:40:54: match may not be exhaustive.[0m
-[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following inputs: AVERAGE(_), Arr(_, _), Boo(_), Cell(_, _), Div(_, _), Mul(_, _), Num(_), Ref(_), SUM(_), Sub(_, _), and(_, _), equal(_, _), great(_, _), greatEqual(_, _), less(_, _), lessEqual(_, _), numIfRef(_), pow(_, _)[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def getIf (cell: Cell, x: NumFormula) : assignIf = x match {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                                     ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Optimiser.scala:56:47: match may not be exhaustive.[0m
-[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following inputs: AVERAGE(_), Arr(_, _), Boo(_), Cell(_, _), Div(_, _), Mul(_, _), Ref(_), SUM(_), Sub(_, _), and(_, _), equal(_, _), great(_, _), greatEqual(_, _), less(_, _), lessEqual(_, _), numIfRef(_), pow(_, _)[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def removeIf (x: NumFormula) : NumFormula = x match {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                              ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mthree warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0m[Artima SuperSafe] 1 error found in C:\Users\sarah\Spreadsheet-Verification\src\main\scala\Parsing.scala that is not reported by the Community Edition.  To get full information about the error, please install your license file in the .supersafe subdirectory of your home directory on this machine. If you don't have an activated license, you can get a 30 day free trial at: http://www.artima.com/shop/supersafe.[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
