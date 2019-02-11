@@ -1,3 +1,4 @@
+import java.awt.Point
 import java.util.regex.Pattern
 
 import scalax.collection.Graph
@@ -5,7 +6,7 @@ import scalax.collection.edge.LDiEdge
 import org.jopendocument.dom.spreadsheet.{MutableCell, Sheet, SpreadSheet}
 
 
-class Parsing (s:Sheet){
+class Parsing (){
 
   val constCell = MyCell("0", -1, "null", false)
   val randomCell = MyCell("0", -2, "null", false)
@@ -13,58 +14,64 @@ class Parsing (s:Sheet){
   var dummyEdge = LDiEdge(randomCell, constCell)(trueCondition)
   var g = Graph(dummyEdge)//(a1a2)
 
-  var sheet = s;
-
-  //def Parsing(s: Sheet): Unit = {
-  var start = sheet.getUsedRange.getStartPoint
-  var end = sheet.getUsedRange.getEndPoint
-  var rows = end.x - start.x;
-  var cols = end.y - start.y;
-
-  var reached = Array.ofDim[Boolean](rows + 1, cols + 1);
-  for( r <- 1 to rows) {
-    for( c <- 1 to cols) {
-      reached(r)(c) = false;
-    }
-  }
+  var start = new Point(0,0)
+  var end = new Point(0,0)
+  var rows = 0
+  var cols = 0
 
   def buildGraph(s:Sheet): Unit = {
+    start = s.getUsedRange.getStartPoint
+    end = s.getUsedRange.getEndPoint
+    rows = end.x - start.x;
+    cols = end.y - start.y;
+    //def Parsing(s: Sheet): Unit = {
+
+
+    var reached = Array.ofDim[Boolean](rows + 1, cols + 1);
+    for( r <- 1 to rows) {
+      for( c <- 1 to cols) {
+        reached(r)(c) = false;
+      }
+    }
     var r = start.y
     while (r <= end.y) {
       var c = start.x
       while (c <= end.x) {
-        parseCell(c, r)
+        val cell = s.getCellAt(getLocationName(c, r));
+        if(cell.getFormula != null || cell.getValue != "") {
+          parseCell(s, c, r, reached)
+        }
         c += 1;
       }
       r += 1;
     }
   }
 
-  def parseCell(row: Int, col: Int): MyCell = {
-    var sBuild = "";
-    if(row - start.x >= reached.length | col - start.y >= reached(row - start.x).length) {
-      return null;
+  def parseCell(sheet: Sheet, row: Int, col: Int, reached: Array[Array[Boolean]]): MyCell = {
+    val outsideRange = row - start.x >= reached.length | col - start.y >= reached(row - start.x).length
+    if(outsideRange) {
+      return new MyCell(getRowString(row), getColNum(col), "null", true);
     }
 
     if (!reached(row - start.x)(col - start.y)) {
+
       reached(row - start.x)(col - start.y) = true;
       val cell = sheet.getCellAt(getLocationName(row, col));
       val formula = getParsedFormula(cell);
 
       if (formula == null) { // Simple case, no formula
-        if(cell.getValue == "") {
-          return null // The cell is empty.
-        }
+
         val newCell = getMyCell(cell, getColNum(col), getRowString(row));
         val edge = LDiEdge(newCell, constCell)(trueCondition);
         g = g + edge;
         return newCell;
 
-      } else { // There is a forumla, so we need to check for dependencies.
+      }
+
+      else { // There is a forumla, so we need to check for dependencies.
         val newCell = getMyCell(cell, getColNum(col), getRowString(row));
 
         // TODO: Deal with Arrays
-        //TODO: Deal with two letter rows
         val cellRegex = "[A-Z]+[1-9][0-9]*";
         val arrayPattern = Pattern.compile("\\[\\." + cellRegex + ":\\." + cellRegex + "\\]");
         val arrayMatcher = arrayPattern.matcher(formula);
@@ -88,8 +95,10 @@ class Parsing (s:Sheet){
           val rStr = r.group(0)
           val depRow = getRowNum(rStr)
           val depCol = Integer.parseInt(s.substring(rStr.length, s.length())) - 1;
-          val childCell = parseCell(depRow, depCol);
+          val childCell = parseCell(sheet, depRow, depCol, reached);
           val edge = LDiEdge(childCell, newCell)(trueCondition);
+          println("childCell = " + childCell);
+          println("newCell = " + newCell)
           g = g + edge;
         }
         val hasCell = g find (g having (node = _ equals newCell))
@@ -129,15 +138,11 @@ class Parsing (s:Sheet){
     var rtn = ""
     var r : Double = row;
     while(r > 25) {
-      println("r = " + r)
       val c = (r % 26) + 'A'
-      println("c = " + c.toChar)
       rtn = c.toChar.toString.concat(rtn)
       r = r - 26 - (r % 26)
     }
-    println("r = " + r)
     val c = (r % 26) + 'A'
-    println("c = " + c.toChar)
     rtn = c.toChar.toString.concat(rtn)
     return rtn
   }

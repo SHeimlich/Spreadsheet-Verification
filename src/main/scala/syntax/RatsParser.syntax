@@ -6,7 +6,7 @@ header {
 
 Exp {paren} =
     Assign Exp {stmts}
-    | Assign {stmt}
+    | Assign
     | assignIf Exp {ifStmt}.
 
 Assign : Exp =

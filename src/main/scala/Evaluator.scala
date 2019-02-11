@@ -18,11 +18,10 @@ object Evaluator extends Attribution {
     return "";
   }
 
-  //TODO: Find a way to pass the variable name "down"
   val expvalue : Exp => String =
     attr {
       case stmts(l,r) => assignValue(l) + expvalue(r)
-      case stmt(l) => assignValue(l)
+   //   case stmt(l) => assignValue(l)
     }
 
   val assignValue : Exp => String =

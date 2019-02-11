@@ -6,7 +6,7 @@ import Evaluator.expvalue
 object ruMain extends CompilerBase[Exp,Config] {
 
   import java.io.Reader
-  import Optimiser.optimise
+  //import Optimiser.optimise
   import org.bitbucket.inkytonik.kiama.output.PrettyPrinterTypes.Document
   import org.bitbucket.inkytonik.kiama.util.Source
   import org.bitbucket.inkytonik.kiama.util.Messaging.Messages
@@ -15,13 +15,16 @@ object ruMain extends CompilerBase[Exp,Config] {
   import syntax.ExpParserPrettyPrinter.{any, layout}
 
   override def main(args: Array[String]): Unit = {
-    args.foreach(println)
-    OuterParser.parse("arrayTest.ods")
-    //super.main( Array("file.exp"))
+    val spreadSheetParser = new OuterParser()
+    spreadSheetParser.parse("multipleIfs.ods")
+    super.main( Array("file.exp"))
   }
 
-  def createConfig(args : Seq[String]) : Config =
-    new Config(args)
+  def createConfig(args : Seq[String]) : Config = {
+    val c = new Config(args)
+    args.foreach(println)
+    return c;
+  }
 
   override def makeast (source : Source, config : Config) : Either[Exp,Messages] = {
     val p = new ExpParser (source, positions)
@@ -37,10 +40,10 @@ object ruMain extends CompilerBase[Exp,Config] {
     output.emitln ("e = " + e)
     output.emitln ("e tree:")
     output.emitln (layout (any (e)))
-    output.emitln("HERE")
     //output.emitln(test(any(e)))
     output.emitln ("value (e) = \n" + expvalue (e))
-    val o = optimise (e)
+    val opt = new Optimiser();
+    val o = opt.optimise (e)
     output.emitln ("e optimised = " + layout( any (o)))
     //output.emitln ("value (e optimised) = " + expvalue (o))
 

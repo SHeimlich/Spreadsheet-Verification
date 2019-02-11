@@ -1,2 +1,10 @@
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\OuterParser.scala:18:17: postfix operator getGraph should be enabled[0m
+[0m[[0m[33mwarn[0m] [0m[0mby making the implicit value scala.language.postfixOps visible.[0m
+[0m[[0m[33mwarn[0m] [0m[0mThis can be achieved by adding the import clause 'import scala.language.postfixOps'[0m
+[0m[[0m[33mwarn[0m] [0m[0mor by setting the compiler option -language:postfixOps.[0m
+[0m[[0m[33mwarn[0m] [0m[0mSee the Scaladoc for value scala.language.postfixOps for a discussion[0m
+[0m[[0m[33mwarn[0m] [0m[0mwhy the feature should be explicitly enabled.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val g = p getGraph;[0m
+[0m[[0m[33mwarn[0m] [0m[0m                ^[0m
 [0m[[0m[33mwarn[0m] [0m[0m[Artima SuperSafe] 1 error found in C:\Users\sarah\Spreadsheet-Verification\src\main\scala\Parsing.scala that is not reported by the Community Edition.  To get full information about the error, please install your license file in the .supersafe subdirectory of your home directory on this machine. If you don't have an activated license, you can get a 30 day free trial at: http://www.artima.com/shop/supersafe.[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m

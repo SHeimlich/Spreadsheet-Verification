@@ -2,7 +2,7 @@ import java.io.{File, IOException, PrintWriter}
 
 import org.jopendocument.dom.spreadsheet.SpreadSheet
 
-object OuterParser {
+class OuterParser {
 
   def parse(fileName: String) : String = {
     val file = new File(fileName)
@@ -11,7 +11,7 @@ object OuterParser {
       val sheet = SpreadSheet.createFromFile(file).getSheet(0)
       val start = sheet.getUsedRange.getStartPoint
       val end = sheet.getUsedRange.getEndPoint
-      val p = new Parsing(sheet)
+      val p = new Parsing()
       p.buildGraph(sheet);
 
 

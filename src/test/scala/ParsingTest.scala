@@ -7,8 +7,7 @@ import org.jopendocument.dom.spreadsheet.{Sheet, SpreadSheet}
 class ParsingTest extends FunSuite {
 
   test("testGetRowNum") {
-    val sheet = SpreadSheet.createFromFile(new File("addTest.ods")).getSheet(0)
-    var p = new Parsing(sheet);
+    val p = new Parsing();
     assert(p.getRowNum("A") === 0)
     assert(p.getRowNum("B") === 1)
     assert(p.getRowNum("Z") === 25)
@@ -19,8 +18,7 @@ class ParsingTest extends FunSuite {
   }
 
   test("testGetRowString") {
-    val sheet = SpreadSheet.createFromFile(new File("addTest.ods")).getSheet(0)
-    var p = new Parsing(sheet);
+    val p = new Parsing();
     assert(p.getRowString(0) === "A")
     assert(p.getRowString(1) === "B")
     assert(p.getRowString(25) === "Z")
@@ -31,8 +29,7 @@ class ParsingTest extends FunSuite {
   }
 
   test("testGetLocationName") {
-    val sheet = SpreadSheet.createFromFile(new File("addTest.ods")).getSheet(0)
-    var p = new Parsing(sheet);
+    val p = new Parsing();
     assert(p.getLocationName(0, 0) === "A1")
     assert(p.getLocationName(1, 56) === "B57")
     assert(p.getLocationName(25,100) === "Z101")
