@@ -16,8 +16,8 @@ object ruMain extends CompilerBase[Exp,Config] {
 
   override def main(args: Array[String]): Unit = {
     val spreadSheetParser = new OuterParser()
-    spreadSheetParser.parse("addTest.ods")
-    super.main( Array("ifTest.exp"))
+    spreadSheetParser.parse("multipleIfs.ods")
+    super.main( Array("file.exp"))
   }
 
   def createConfig(args : Seq[String]) : Config = {
@@ -37,15 +37,15 @@ object ruMain extends CompilerBase[Exp,Config] {
 
   def process (source : Source, e : Exp, config : Config) {
     val output = config.output()
-    output.emitln ("e = " + e)
-    output.emitln ("e tree:")
+    //output.emitln ("e = " + e)
+    //output.emitln ("e tree:")
     output.emitln (layout (any (e)))
     //output.emitln(test(any(e)))
-    output.emitln ("value (e) = \n" + expvalue (e))
+    //output.emitln ("value (e) = \n" + expvalue (e))
     val opt = new Optimiser();
     val o = opt.optimise (e)
     output.emitln ("e optimised = " + layout( any (o)))
-    //output.emitln ("value (e optimised) = " + expvalue (o))
+    output.emitln ("value (e optimised) = " + expvalue (o))
 
   }
 

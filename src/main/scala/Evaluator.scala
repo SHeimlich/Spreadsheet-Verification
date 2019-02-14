@@ -21,8 +21,8 @@ object Evaluator extends Attribution {
   val expvalue : Exp => String =
     attr {
       case Assign(c, v) => assignValue(Assign(c, v))
-      case stmts(l,r) => assignValue(l) + expvalue(r)
-     // case ifStmt(r, i) => "IF STATEMENT"
+      case stmts(l,r) => expvalue(l) + expvalue(r)
+      case ifStmt(l, r) => ifValue(l) + expvalue(r)
     }
 
   val assignValue : Exp => String =
@@ -36,6 +36,18 @@ object Evaluator extends Attribution {
     var sum = 0;
     v.foreach((a: NumArguments) => sum = sum + argumentsValue(a).length)
     return sum
+  }
+
+  val ifValue : assignIf => String =
+    attr {
+      case ifAssign(r, nIf(b, f1, f2)) =>
+        "int " + getIfRef(r) + "=0; if(" + NumFormValue(b(0)) + ") { \n" +
+          getIfRef(r) + "=" + numVecVal(f1) + "; \n } else {" +
+          getIfRef(r) + "=" + numVecVal(f2) + "; \n}"
+  }
+
+  def getIfRef(r: Vector[ifRef]) : String = {
+    return r(0).rows(0)
   }
 
 
@@ -73,6 +85,7 @@ object Evaluator extends Attribution {
       case AVERAGE(a) => getArgAsserts(a) + "if(" + getArgsLength(a) + " == 0) \n\t __VERIFIER_error(); \n"
       case numIF(nIf(b, f1, f2)) => numVecAsserts(f1, f2)
       case Ref(Cell(r,c)) => ""
+      case numIfRef(r) => ""
     }
 
 
@@ -107,6 +120,7 @@ object Evaluator extends Attribution {
       case AVERAGE(a) => getAverage(a)
       case numIF(nIf(b, f1, f2)) => "IF(" + b + ") { \n" + numVecVal(f1) + "; \n } else {" + numVecVal(f2) + "; \n}"
       case Ref(Cell(c, r)) => c + "" + r;
+      case numIfRef(r) => r.rows(0)
     }
 
   def numIfVal(c: NumFormula, b: Vector[ExpParserSyntax.NumFormula], f: Vector[ExpParserSyntax.NumFormula], f1: Vector[ExpParserSyntax.NumFormula]) : String = {
