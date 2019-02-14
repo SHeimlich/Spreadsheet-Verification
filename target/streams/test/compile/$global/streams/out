@@ -1,10 +1,17 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\test\scala\ParsingTest.scala:11:25: no arguments allowed for nullary constructor Parsing: ()Parsing[0m
-[0m[[0m[31merror[0m] [0m[0m    var p = new Parsing(sheet);[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\test\scala\ParsingTest.scala:23:25: no arguments allowed for nullary constructor Parsing: ()Parsing[0m
-[0m[[0m[31merror[0m] [0m[0m    var p = new Parsing(sheet);[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\test\scala\ParsingTest.scala:35:25: no arguments allowed for nullary constructor Parsing: ()Parsing[0m
-[0m[[0m[31merror[0m] [0m[0m    var p = new Parsing(sheet);[0m
-[0m[[0m[31merror[0m] [0m[0m                        ^[0m
-[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\test\scala\ruMainTest.scala:92:13: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: Right(_)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val e = ast match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\test\scala\ruMainTest.scala:116:13: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: Right(_)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val e = ast match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\test\scala\ruMainTest.scala:145:13: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: Right(_)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val e = ast match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\test\scala\ruMainTest.scala:175:13: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: Right(_)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    val e = ast match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mfour warnings found[0m

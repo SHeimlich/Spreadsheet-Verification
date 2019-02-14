@@ -17,10 +17,10 @@ Formula =
      |     StringFormula {sf}.
 
 assignIf =
-    ifRef + "=IF(" + NumFormula + ";" + NumFormula + ";" + NumFormula + ")" {ifAssign}.
+    ifRef + "=" nIf {ifAssign}.
 
 NumFormula =
-      "IF(" + NumFormula + ";" + NumFormula + ";" + NumFormula + ")" {numIF}
+      nIf                           {numIF}
     | "SUM(" + NumArguments + ")"    {SUM}
     | "AVERAGE(" + NumArguments + ")"    {AVERAGE}
     | NumFormula "+" NumFormula             {Add, left, 2}
@@ -39,6 +39,9 @@ NumFormula =
     | ifRef                             {numIfRef}
     | NumConstant
     | '(' NumFormula ')'.
+
+nIf =
+    "IF(" + NumFormula + ";" + NumFormula + ";" + NumFormula + ")".
 
 StringFormula =
     Str {strConst}

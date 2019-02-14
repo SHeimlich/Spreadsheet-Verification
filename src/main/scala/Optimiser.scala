@@ -57,7 +57,7 @@ class Optimiser {
   }
 
   def getIf(cell: Cell, x: NumFormula) : assignIf = x match {
-    case numIF(a, b, c) => {
+    case numIF(nIf(a, b, c)) => {
       if(formulaHasIf(a(0))) return getIf(cell, a(0))
       if(formulaHasIf(b(0))) return getIf(cell, b(0))
       if(formulaHasIf(c(0))) return getIf(cell, c(0))
@@ -70,14 +70,14 @@ class Optimiser {
   def getAssignIf(c: Cell, a: Vector[NumFormula], nfVec1: Vector[NumFormula], nfVec2: Vector[NumFormula]) : assignIf = {
     ifCount = ifCount + 1
     val str = "if" + ifCount
-    return ifAssign(Vector(ifRef(Vector(str))), a, nfVec1, nfVec2)
+    return ifAssign(Vector(ifRef(Vector(str))), nIf(a, nfVec1, nfVec2))
   }
 
   def removeIf (x: NumFormula) : NumFormula = x match {
-    case numIF(a, b, c) => {
-      if(formulaHasIf(a(0))) return numIF(Vector(removeIf(a(0))), b, c)
-      if(formulaHasIf(b(0))) {return numIF(a, Vector(removeIf(b(0))), c) }
-      if(formulaHasIf(c(0))) return numIF(a, b, Vector(removeIf(c(0))))
+    case numIF(nIf(a, b, c)) => {
+      if(formulaHasIf(a(0))) return numIF(nIf(Vector(removeIf(a(0))), b, c))
+      if(formulaHasIf(b(0))) {return numIF(nIf(a, Vector(removeIf(b(0))), c)) }
+      if(formulaHasIf(c(0))) return numIF(nIf(a, b, Vector(removeIf(c(0)))))
       return numIfRef(ifRef(Vector("if" + ifCount)))
     }
     case SUM(a) => SUM(argsRemoveIf(a))
@@ -102,7 +102,7 @@ class Optimiser {
   }
 
   def formulaHasIf (x: NumFormula) : Boolean = x match {
-    case numIF(_,_,_) => true
+    case numIF(nIf(_,_,_)) => true
     case Add(l, r) => formulaHasIf(l) || formulaHasIf(r)
     case SUM(a) => argsHasIf(a)
     case _ => false

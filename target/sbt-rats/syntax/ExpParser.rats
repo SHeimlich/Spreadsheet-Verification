@@ -95,15 +95,13 @@ String Symbol4 =
     Symbol4Alts Spacing;
 
 transient String Symbol4Alts =
-    "SUM(" / "=IF(";
+    "SUM(";
 
 public Exp Exp =
     v1:Assign v2:Exp {
         yyValue = new stmts (v1, v2);
     }
-    / v1:Assign {
-        yyValue = new stmt (v1);
-    }
+    / v1:Assign 
     / v1:assignIf v2:Exp {
         yyValue = new ifStmt (v1, v2);
     }
@@ -125,13 +123,19 @@ public Formula Formula =
     ;
 
 public assignIf assignIf =
-    v1:(ifRef)+ (void:"=IF(":Symbol4)+ v2:(NumFormula)+ (void:";":Symbol1)+ v3:(NumFormula)+ (void:";":Symbol1)+ v4:(NumFormula)+ void:")":Symbol1 {
-        yyValue = new ifAssign (v1, v2, v3, v4);
+    v1:(ifRef)+ void:"=":Symbol1 v2:nIf {
+        yyValue = new ifAssign (v1, v2);
     }
     ;
 
 public NumFormula NumFormula =
     v1:NumFormulaLevel3 
+    ;
+
+public nIf nIf =
+    (void:"IF(":Symbol3)+ v1:(NumFormula)+ (void:";":Symbol1)+ v2:(NumFormula)+ (void:";":Symbol1)+ v3:(NumFormula)+ void:")":Symbol1 {
+        yyValue = new nIf (v1, v2, v3);
+    }
     ;
 
 public StringFormula StringFormula =
@@ -354,8 +358,8 @@ constant Action<NumFormula> NumFormulaLevel3Tail =
     ;
 
 public NumFormula NumFormulaLevel0 =
-    (void:"IF(":Symbol3)+ v1:(NumFormula)+ (void:";":Symbol1)+ v2:(NumFormula)+ (void:";":Symbol1)+ v3:(NumFormula)+ void:")":Symbol1 {
-        yyValue = new numIF (v1, v2, v3);
+    v1:nIf {
+        yyValue = new numIF (v1);
     }
     / (void:"SUM(":Symbol4)+ v1:(NumArguments)+ void:")":Symbol1 {
         yyValue = new SUM (v1);

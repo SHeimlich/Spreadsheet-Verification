@@ -12,10 +12,6 @@ object ExpParserSyntax {
         val priority = 0
         val fixity = org.bitbucket.inkytonik.kiama.output.Infix (org.bitbucket.inkytonik.kiama.output.NonAssoc)
     }
-    case class stmt (assign : Exp) extends Exp with org.bitbucket.inkytonik.kiama.output.PrettyNaryExpression {
-        val priority = 0
-        val fixity = org.bitbucket.inkytonik.kiama.output.Infix (org.bitbucket.inkytonik.kiama.output.NonAssoc)
-    }
     case class ifStmt (assignIf : assignIf, exp : Exp) extends Exp with org.bitbucket.inkytonik.kiama.output.PrettyNaryExpression {
         val priority = 0
         val fixity = org.bitbucket.inkytonik.kiama.output.Infix (org.bitbucket.inkytonik.kiama.output.NonAssoc)
@@ -31,19 +27,12 @@ object ExpParserSyntax {
     case class sf (stringFormula : StringFormula) extends Formula  
      
     sealed abstract class assignIf extends ASTNode
-    case class ifAssign (ifRefs : Vector[ifRef], numFormulas1 : Vector[NumFormula], numFormulas2 : Vector[NumFormula], numFormulas3 : Vector[NumFormula]) extends assignIf  {
+    case class ifAssign (ifRefs : Vector[ifRef], nIf : nIf) extends assignIf  {
         require (ifRefs.length > 0, "ifRefs field can't be empty")
-        require (numFormulas1.length > 0, "numFormulas1 field can't be empty")
-        require (numFormulas2.length > 0, "numFormulas2 field can't be empty")
-        require (numFormulas3.length > 0, "numFormulas3 field can't be empty")
     }
      
     sealed abstract class NumFormula extends ASTNode
-    case class numIF (numFormulas1 : Vector[NumFormula], numFormulas2 : Vector[NumFormula], numFormulas3 : Vector[NumFormula]) extends NumFormula  {
-        require (numFormulas1.length > 0, "numFormulas1 field can't be empty")
-        require (numFormulas2.length > 0, "numFormulas2 field can't be empty")
-        require (numFormulas3.length > 0, "numFormulas3 field can't be empty")
-    }
+    case class numIF (nIf : nIf) extends NumFormula  
     case class SUM (numArgumentss : Vector[NumArguments]) extends NumFormula  {
         require (numArgumentss.length > 0, "numArgumentss field can't be empty")
     }
@@ -62,6 +51,8 @@ object ExpParserSyntax {
     case class lessEqual (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
     case class greatEqual (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
     case class numIfRef (ifRef : ifRef) extends NumFormula  
+     
+    case class nIf (numFormulas1 : Vector[NumFormula], numFormulas2 : Vector[NumFormula], numFormulas3 : Vector[NumFormula]) extends ASTNode
      
     sealed abstract class StringFormula extends ASTNode
     case class strConst (str : String) extends StringFormula  

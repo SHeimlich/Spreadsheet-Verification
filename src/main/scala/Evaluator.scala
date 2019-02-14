@@ -20,13 +20,14 @@ object Evaluator extends Attribution {
 
   val expvalue : Exp => String =
     attr {
+      case Assign(c, v) => assignValue(Assign(c, v))
       case stmts(l,r) => assignValue(l) + expvalue(r)
-   //   case stmt(l) => assignValue(l)
+     // case ifStmt(r, i) => "IF STATEMENT"
     }
 
   val assignValue : Exp => String =
     attr {
-      case Assign(l, nf(numIF(fb, f1, f2))) => numIfVal(l, fb, f1, f2)
+      case Assign(l, nf(numIF(nIf(fb, f1, f2)))) => numIfVal(l, fb, f1, f2)
       case Assign(l, r) => setCurrentCell(NumFormValue(l)) + FormAsserts(r) + "int " + NumFormValue(l) + "=" + FormValue(r) + ";"
     }
 
@@ -70,7 +71,7 @@ object Evaluator extends Attribution {
       case Arr(b, e) => ""
       case SUM(a) => getArgAsserts(a)
       case AVERAGE(a) => getArgAsserts(a) + "if(" + getArgsLength(a) + " == 0) \n\t __VERIFIER_error(); \n"
-      case numIF(b, f1, f2) => numVecAsserts(f1, f2)
+      case numIF(nIf(b, f1, f2)) => numVecAsserts(f1, f2)
       case Ref(Cell(r,c)) => ""
     }
 
@@ -104,7 +105,7 @@ object Evaluator extends Attribution {
       case Ref(c) => NumFormValue(c)
       case SUM(a) => getSum(a)
       case AVERAGE(a) => getAverage(a)
-      case numIF(b, f1, f2) => "IF(" + b + ") { \n" + numVecVal(f1) + "; \n } else {" + numVecVal(f2) + "; \n}"
+      case numIF(nIf(b, f1, f2)) => "IF(" + b + ") { \n" + numVecVal(f1) + "; \n } else {" + numVecVal(f2) + "; \n}"
       case Ref(Cell(c, r)) => c + "" + r;
     }
 
