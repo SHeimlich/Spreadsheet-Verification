@@ -1,3 +1,5 @@
+import Evaluator.{NumFormAsserts, NumFormValue, getArgAsserts, getArgsLength, numVecAsserts}
+
 class Optimiser {
 
   import org.bitbucket.inkytonik.kiama.rewriting.Rewriter.{attempt, bottomup, rewrite, rule}
@@ -80,9 +82,25 @@ class Optimiser {
       if(formulaHasIf(c(0))) return numIF(nIf(a, b, Vector(removeIf(c(0)))))
       return numIfRef(ifRef(Vector("if" + ifCount)))
     }
+    case Num (i)    => Num(i)
+    case Boo (b)    => Boo(b)
+    case Cell(c, r) => Cell(c, r)
+    case Div(l, r) => if(formulaHasIf(l)) {Div(removeIf(l), r); } else {Div(l, removeIf(r)); }
+    case Add (l, r) => if(formulaHasIf(l)) {Add(removeIf(l), r); } else {Add(l, removeIf(r)); }
+    case Mul (l, r) => if(formulaHasIf(l)) {Mul(removeIf(l), r); } else {Mul(l, removeIf(r)); }
+    case Sub (l, r) => if(formulaHasIf(l)) {Sub(removeIf(l), r); } else {Sub(l, removeIf(r)); }
+    case and (l, r) => if(formulaHasIf(l)) {and(removeIf(l), r); } else {and(l, removeIf(r)); }
+    case equal (l, r) => if(formulaHasIf(l)) {equal(removeIf(l), r); } else {equal(l, removeIf(r)); }
+    case great (l, r)  => if(formulaHasIf(l)) {great(removeIf(l), r); } else {great(l, removeIf(r)); }
+    case greatEqual (l, r)  => if(formulaHasIf(l)) {greatEqual(removeIf(l), r); } else {greatEqual(l, removeIf(r)); }
+    case less (l, r)  => if(formulaHasIf(l)) {less(removeIf(l), r); } else {less(l, removeIf(r)); }
+    case lessEqual (l, r)  => if(formulaHasIf(l)) {lessEqual(removeIf(l), r); } else {lessEqual(l, removeIf(r)); }
+    case pow (l, r)  => if(formulaHasIf(l)) {pow(removeIf(l), r); } else {pow(l, removeIf(r)); }
+    case Arr(b, e) => Arr(b, e)
     case SUM(a) => SUM(argsRemoveIf(a))
-    case Add(l, r) => if(formulaHasIf(l)) {Add(removeIf(l), r); } else {Add(l, removeIf(r)); }
-    case Num(x) => Num(x)
+    case AVERAGE(a) => SUM(argsRemoveIf(a))
+    case Ref(Cell(r,c)) => Ref(Cell(r, c))
+    case numIfRef(r) => numIfRef(r)
   }
 
   def argsRemoveIf(a: Vector[NumArguments]): Vector[NumArguments] = {
@@ -103,9 +121,25 @@ class Optimiser {
 
   def formulaHasIf (x: NumFormula) : Boolean = x match {
     case numIF(nIf(_,_,_)) => true
-    case Add(l, r) => formulaHasIf(l) || formulaHasIf(r)
+    case Num (i)    => false
+    case Boo (b)    => false
+    case Cell(c, r) => false
+    case Div(l, r) => formulaHasIf(l) || formulaHasIf(r)
+    case Add (l, r) => formulaHasIf(l) || formulaHasIf(r)
+    case Mul (l, r) => formulaHasIf(l) || formulaHasIf(r)
+    case Sub (l, r) => formulaHasIf(l) || formulaHasIf(r)
+    case and (l, r) => formulaHasIf(l) || formulaHasIf(r)
+    case equal (l, r) => formulaHasIf(l) || formulaHasIf(r)
+    case great (l, r)  => formulaHasIf(l) || formulaHasIf(r)
+    case greatEqual (l, r)  => formulaHasIf(l) || formulaHasIf(r)
+    case less (l, r)  => formulaHasIf(l) || formulaHasIf(r)
+    case lessEqual (l, r)  => formulaHasIf(l) || formulaHasIf(r)
+    case pow (l, r)  => formulaHasIf(l) || formulaHasIf(r)
+    case Arr(b, e) => false
     case SUM(a) => argsHasIf(a)
-    case _ => false
+    case AVERAGE(a) => argsHasIf(a)
+    case Ref(Cell(r,c)) => false
+    case numIfRef(r) => false
   }
 
   def argsHasIf(a: Vector[NumArguments]): Boolean = {
