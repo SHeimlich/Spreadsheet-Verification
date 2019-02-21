@@ -22,7 +22,6 @@ object ruMain extends CompilerBase[Exp,Config] {
 
   def createConfig(args : Seq[String]) : Config = {
     val c = new Config(args)
-    args.foreach(println)
     return c;
   }
 

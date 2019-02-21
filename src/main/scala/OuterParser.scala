@@ -17,7 +17,6 @@ class OuterParser {
 
       val g = p getGraph;
       println("cycles: " + g.findCycle)
-      print(g);
       var str = g.topologicalSort().toString()
       str = str.substring(23, str.length - 2) + ","
       writer.write(str)

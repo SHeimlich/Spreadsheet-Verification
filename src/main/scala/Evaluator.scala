@@ -14,7 +14,7 @@ object Evaluator extends Attribution {
 
   def setCurrentCell(c: String) : String = {
     currentCell = c;
-    println("currentCell = " + currentCell)
+
     return "";
   }
 
@@ -28,7 +28,7 @@ object Evaluator extends Attribution {
   val assignValue : Exp => String =
     attr {
       case Assign(l, nf(numIF(nIf(fb, f1, f2)))) => numIfVal(l, fb, f1, f2)
-      case Assign(l, r) => setCurrentCell(NumFormValue(l)) + FormAsserts(r) + "int " + NumFormValue(l) + "=" + FormValue(r) + ";"
+      case Assign(l, r) => setCurrentCell(NumFormValue(l)) + FormAsserts(r) + "int " + NumFormValue(l) + "=" + FormValue(r) + ";\n"
     }
 
 
@@ -41,9 +41,9 @@ object Evaluator extends Attribution {
   val ifValue : assignIf => String =
     attr {
       case ifAssign(r, nIf(b, f1, f2)) =>
-        "int " + getIfRef(r) + "=0; if(" + NumFormValue(b(0)) + ") { \n" +
-          getIfRef(r) + "=" + numVecVal(f1) + "; \n } else {" +
-          getIfRef(r) + "=" + numVecVal(f2) + "; \n}"
+        "int " + getIfRef(r) + "=0;\nif(" + NumFormValue(b(0)) + ") { \n" +
+          "\t" + getIfRef(r) + "=" + numVecVal(f1) + "; \n} else { \n" +
+          "\t" + getIfRef(r) + "=" + numVecVal(f2) + "; \n}\n"
   }
 
   def getIfRef(r: Vector[ifRef]) : String = {

@@ -89,7 +89,6 @@ class Parsing (){
         val m = pattern.matcher(formula);
         while (m.find()) {
           val s = m.group(0);
-          println(s)
           val r = Pattern.compile("[A-Z]+").matcher(s);
           r.find()
           val rStr = r.group(0)
@@ -97,8 +96,6 @@ class Parsing (){
           val depCol = Integer.parseInt(s.substring(rStr.length, s.length())) - 1;
           val childCell = parseCell(sheet, depRow, depCol, reached);
           val edge = LDiEdge(childCell, newCell)(trueCondition);
-          println("childCell = " + childCell);
-          println("newCell = " + newCell)
           g = g + edge;
         }
         val hasCell = g find (g having (node = _ equals newCell))
