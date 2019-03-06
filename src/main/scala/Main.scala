@@ -1,6 +1,9 @@
+import java.io.{File, IOException, PrintWriter}
+
 import org.bitbucket.inkytonik.kiama.util.{CompilerBase, Config}
-import syntax.ExpParserSyntax.{Exp}
+import syntax.ExpParserSyntax.Exp
 import Evaluator.expvalue
+import org.jopendocument.dom.spreadsheet.SpreadSheet
 
 
 object ruMain extends CompilerBase[Exp,Config] {
@@ -16,7 +19,7 @@ object ruMain extends CompilerBase[Exp,Config] {
 
   override def main(args: Array[String]): Unit = {
     val spreadSheetParser = new OuterParser()
-    spreadSheetParser.parse("multipleIfs.ods")
+    spreadSheetParser.parse("simpleDivide.ods")
     super.main( Array("file.exp"))
   }
 
@@ -45,6 +48,22 @@ object ruMain extends CompilerBase[Exp,Config] {
     val o = opt.optimise (e)
     output.emitln ("e optimised = " + layout( any (o)))
     output.emitln ("value (e optimised) = " + expvalue (o))
+
+
+    val file = new File("file.c")
+    try {
+      val writer = new PrintWriter(file)
+      val str = "extern void __VERIFIER_error() __attribute__ ((__noreturn__));\n" +
+        "unsigned int __VERIFIER_nondet_uint();\n" +
+        "int main() {\n" + expvalue (o) + "\n}"
+      writer.write(str)
+      writer.close()
+    }
+    catch {
+      case e: IOException =>
+        e.printStackTrace()
+        return ""
+    }
 
   }
 

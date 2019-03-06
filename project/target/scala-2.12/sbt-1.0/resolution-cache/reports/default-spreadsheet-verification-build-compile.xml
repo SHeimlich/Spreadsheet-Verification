@@ -9,10 +9,10 @@
 		extra-sbtVersion="1.0"
 		conf="compile"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool"
-		date="20190213202830"/>
+		date="20190225105221"/>
 	<dependencies>
 		<module organisation="org.scala-lang" name="scala-reflect">
-			<revision name="2.12.7" status="release" pubdate="20180927183203" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.7/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="7">
+			<revision name="2.12.7" status="release" pubdate="20180927183203" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.7/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="9">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
 				<metadata-artifact status="no" details="" size="2670" time="0" location="C:\Users\sarah\.ivy2\cache\org.scala-lang\scala-reflect\ivy-2.12.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.7/scala-reflect-2.12.7.pom"/>
 				<caller organisation="org.rogach" name="scallop_2.12" conf="compile, runtime" rev="2.12.7" rev-constraint-default="2.12.7" rev-constraint-dynamic="2.12.7" callerrev="1.0.0"/>
@@ -26,7 +26,7 @@
 			</revision>
 		</module>
 		<module organisation="org.bitbucket.inkytonik.sbt-rats" name="sbt-rats">
-			<revision name="2.5.0" status="release" pubdate="20181001125109" resolver="sbt-chain" artresolver="sbt-chain" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="1">
+			<revision name="2.5.0" status="release" pubdate="20181001125109" resolver="sbt-chain" artresolver="sbt-chain" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="3">
 				<license name="BSD New" url="https://bitbucket.org/inkytonik/sbt-rats/src/master/LICENSE"/>
 				<metadata-artifact status="no" details="" size="1706" time="0" location="C:\Users\sarah\.ivy2\cache\scala_2.12\sbt_1.0\org.bitbucket.inkytonik.sbt-rats\sbt-rats\ivy-2.5.0.xml" searched="false" origin-is-local="false" origin-location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.bitbucket.inkytonik.sbt-rats/sbt-rats/scala_2.12/sbt_1.0/2.5.0/ivys/ivy.xml"/>
 				<caller organisation="default" name="spreadsheet-verification-build" conf="compile" rev="2.5.0" rev-constraint-default="2.5.0" rev-constraint-dynamic="2.5.0" callerrev="0.1.0-SNAPSHOT" extra-scalaVersion="2.12" extra-sbtVersion="1.0"/>
@@ -38,7 +38,7 @@
 			</revision>
 		</module>
 		<module organisation="xtc" name="rats">
-			<revision name="2.4.0" status="release" pubdate="20141111204253" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://cs.nyu.edu/rgrimm/xtc/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="12">
+			<revision name="2.4.0" status="release" pubdate="20141111204253" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://cs.nyu.edu/rgrimm/xtc/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="14">
 				<license name="GNU General Public License, Version 2.0" url="http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt"/>
 				<license name="GNU Lesser General Public License, Version 2.1" url="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt"/>
 				<metadata-artifact status="no" details="" size="3692" time="0" location="C:\Users\sarah\.ivy2\cache\xtc\rats\ivy-2.4.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/xtc/rats/2.4.0/rats-2.4.0.pom"/>
@@ -51,7 +51,7 @@
 			</revision>
 		</module>
 		<module organisation="junit" name="junit">
-			<revision name="4.8.2" status="release" pubdate="20101005195127" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://junit.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="13">
+			<revision name="4.8.2" status="release" pubdate="20101005195127" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://junit.org" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="15">
 				<license name="Common Public License Version 1.0" url="http://www.opensource.org/licenses/cpl1.0.txt"/>
 				<metadata-artifact status="no" details="" size="2576" time="0" location="C:\Users\sarah\.ivy2\cache\junit\junit\ivy-4.8.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/junit/junit/4.8.2/junit-4.8.2.pom"/>
 				<caller organisation="xtc" name="rats" conf="default, compile, runtime, master" rev="4.8.2" rev-constraint-default="4.8.2" rev-constraint-dynamic="4.8.2" callerrev="2.4.0"/>
@@ -63,7 +63,7 @@
 			</revision>
 		</module>
 		<module organisation="com.googlecode.kiama" name="kiama_2.12">
-			<revision name="1.8.0" status="release" pubdate="20161103232100" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://kiama.googlecode.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="2">
+			<revision name="1.8.0" status="release" pubdate="20161103232100" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://kiama.googlecode.com" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="4">
 				<license name="LGPL 3.0 license" url="http://www.opensource.org/licenses/lgpl-3.0.html"/>
 				<metadata-artifact status="no" details="" size="4142" time="0" location="C:\Users\sarah\.ivy2\cache\com.googlecode.kiama\kiama_2.12\ivy-1.8.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/googlecode/kiama/kiama_2.12/1.8.0/kiama_2.12-1.8.0.pom"/>
 				<caller organisation="org.bitbucket.inkytonik.sbt-rats" name="sbt-rats" conf="compile" rev="1.8.0" rev-constraint-default="1.8.0" rev-constraint-dynamic="1.8.0" callerrev="2.5.0"/>
@@ -75,7 +75,7 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-lang.modules" name="scala-parser-combinators_2.12">
-			<revision name="1.0.4" status="release" pubdate="20161029101045" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="11">
+			<revision name="1.0.4" status="release" pubdate="20161029101045" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="13">
 				<license name="BSD 3-clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
 				<metadata-artifact status="no" details="" size="2819" time="0" location="C:\Users\sarah\.ivy2\cache\org.scala-lang.modules\scala-parser-combinators_2.12\ivy-1.0.4.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.12/1.0.4/scala-parser-combinators_2.12-1.0.4.pom"/>
 				<caller organisation="com.googlecode.kiama" name="kiama_2.12" conf="default, compile, runtime, master" rev="1.0.4" rev-constraint-default="1.0.4" rev-constraint-dynamic="1.0.4" callerrev="1.8.0"/>
@@ -87,7 +87,7 @@
 			</revision>
 		</module>
 		<module organisation="jline" name="jline">
-			<revision name="2.12" status="release" pubdate="20140607072408" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="10">
+			<revision name="2.12" status="release" pubdate="20140607072408" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="12">
 				<license name="The BSD License" url="http://www.opensource.org/licenses/bsd-license.php"/>
 				<metadata-artifact status="no" details="" size="3940" time="0" location="C:\Users\sarah\.ivy2\cache\jline\jline\ivy-2.12.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/jline/jline/2.12/jline-2.12.pom"/>
 				<caller organisation="com.googlecode.kiama" name="kiama_2.12" conf="default, compile, runtime, master" rev="2.12" rev-constraint-default="2.12" rev-constraint-dynamic="2.12" callerrev="1.8.0"/>
@@ -99,7 +99,7 @@
 			</revision>
 		</module>
 		<module organisation="org.rogach" name="scallop_2.12">
-			<revision name="1.0.0" status="release" pubdate="20161103013401" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/scallop/scallop" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="9">
+			<revision name="1.0.0" status="release" pubdate="20161103013401" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/scallop/scallop" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="11">
 				<license name="MIT License" url="http://www.opensource.org/licenses/mit-license.php"/>
 				<metadata-artifact status="no" details="" size="2955" time="0" location="C:\Users\sarah\.ivy2\cache\org.rogach\scallop_2.12\ivy-1.0.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/rogach/scallop_2.12/1.0.0/scallop_2.12-1.0.0.pom"/>
 				<caller organisation="com.googlecode.kiama" name="kiama_2.12" conf="default, compile, runtime, master" rev="1.0.0" rev-constraint-default="1.0.0" rev-constraint-dynamic="1.0.0" callerrev="1.8.0"/>
@@ -111,7 +111,7 @@
 			</revision>
 		</module>
 		<module organisation="org.bitbucket.inkytonik.dsprofile" name="dsprofile_2.12">
-			<revision name="0.4.0" status="release" pubdate="20161103214829" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://bitbucket.org/inkytonik/dsprofile" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="8">
+			<revision name="0.4.0" status="release" pubdate="20161103214829" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://bitbucket.org/inkytonik/dsprofile" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="10">
 				<license name="LGPL 3.0 license" url="http://www.opensource.org/licenses/lgpl-3.0.html"/>
 				<metadata-artifact status="no" details="" size="2846" time="0" location="C:\Users\sarah\.ivy2\cache\org.bitbucket.inkytonik.dsprofile\dsprofile_2.12\ivy-0.4.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/bitbucket/inkytonik/dsprofile/dsprofile_2.12/0.4.0/dsprofile_2.12-0.4.0.pom"/>
 				<caller organisation="com.googlecode.kiama" name="kiama_2.12" conf="default, compile, runtime, master" rev="0.4.0" rev-constraint-default="0.4.0" rev-constraint-dynamic="0.4.0" callerrev="1.8.0"/>
@@ -123,7 +123,7 @@
 			</revision>
 		</module>
 		<module organisation="org.bitbucket.inkytonik.dsinfo" name="dsinfo_2.12">
-			<revision name="0.4.0" status="release" pubdate="20161103214537" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://bitbucket.org/inkytonik/dsinfo" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="6">
+			<revision name="0.4.0" status="release" pubdate="20161103214537" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://bitbucket.org/inkytonik/dsinfo" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="8">
 				<license name="LGPL 3.0 license" url="http://www.opensource.org/licenses/lgpl-3.0.html"/>
 				<metadata-artifact status="no" details="" size="2979" time="0" location="C:\Users\sarah\.ivy2\cache\org.bitbucket.inkytonik.dsinfo\dsinfo_2.12\ivy-0.4.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/bitbucket/inkytonik/dsinfo/dsinfo_2.12/0.4.0/dsinfo_2.12-0.4.0.pom"/>
 				<caller organisation="com.googlecode.kiama" name="kiama_2.12" conf="default, compile, runtime, master" rev="0.4.0" rev-constraint-default="0.4.0" rev-constraint-dynamic="0.4.0" callerrev="1.8.0"/>
@@ -135,7 +135,7 @@
 			</revision>
 		</module>
 		<module organisation="com.google.guava" name="guava">
-			<revision name="17.0" status="release" pubdate="20140423064746" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="5">
+			<revision name="17.0" status="release" pubdate="20140423064746" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="7">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="5670" time="0" location="C:\Users\sarah\.ivy2\cache\com.google.guava\guava\ivy-17.0.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/guava/guava/17.0/guava-17.0.pom"/>
 				<caller organisation="com.googlecode.kiama" name="kiama_2.12" conf="default, compile, runtime, master" rev="17.0" rev-constraint-default="17.0" rev-constraint-dynamic="17.0" callerrev="1.8.0"/>
@@ -147,7 +147,7 @@
 			</revision>
 		</module>
 		<module organisation="com.google.code.findbugs" name="jsr305">
-			<revision name="2.0.3" status="release" pubdate="20131231182623" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://code.google.com/p/jsr-305/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="4">
+			<revision name="2.0.3" status="release" pubdate="20131231182623" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://code.google.com/p/jsr-305/" downloaded="false" searched="false" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="6">
 				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
 				<metadata-artifact status="no" details="" size="2551" time="0" location="C:\Users\sarah\.ivy2\cache\com.google.code.findbugs\jsr305\ivy-2.0.3.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.3/jsr305-2.0.3.pom"/>
 				<caller organisation="com.googlecode.kiama" name="kiama_2.12" conf="default, compile, runtime, master" rev="2.0.3" rev-constraint-default="2.0.3" rev-constraint-dynamic="2.0.3" callerrev="1.8.0"/>
@@ -159,15 +159,39 @@
 			</revision>
 		</module>
 		<module organisation="org.scala-sbt" name="global-plugins">
-			<revision name="0.0" status="integration" pubdate="20190213202810" resolver="inter-project" artresolver="inter-project" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="0">
+			<revision name="0.0" status="integration" pubdate="20190225105212" resolver="inter-project" artresolver="inter-project" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="0">
 				<metadata-artifact status="failed" details="" size="0" time="0" searched="false"/>
 				<caller organisation="default" name="spreadsheet-verification-build" conf="compile" rev="0.0" rev-constraint-default="0.0" rev-constraint-dynamic="0.0" callerrev="0.1.0-SNAPSHOT" extra-scalaVersion="2.12" extra-sbtVersion="1.0"/>
 				<artifacts>
 				</artifacts>
 			</revision>
 		</module>
+		<module organisation="org.jetbrains" name="sbt-idea-shell">
+			<revision name="2018.3" status="release" pubdate="20181105210000" resolver="sbt-chain" artresolver="sbt-chain" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="2">
+				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="2423" time="0" location="C:\Users\sarah\.ivy2\cache\scala_2.12\sbt_1.0\org.jetbrains\sbt-idea-shell\ivy-2018.3.xml" searched="false" origin-is-local="false" origin-location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.jetbrains/sbt-idea-shell/scala_2.12/sbt_1.0/2018.3/ivys/ivy.xml"/>
+				<caller organisation="org.scala-sbt" name="global-plugins" conf="compile" rev="2018.3" rev-constraint-default="2018.3" rev-constraint-dynamic="2018.3" callerrev="0.0" extra-scalaVersion="2.12" extra-sbtVersion="1.0"/>
+				<artifacts>
+					<artifact name="sbt-idea-shell" type="jar" ext="jar" status="no" details="" size="10705" time="0" location="C:\Users\sarah\.ivy2\cache\scala_2.12\sbt_1.0\org.jetbrains\sbt-idea-shell\jars\sbt-idea-shell-2018.3.jar">
+						<origin-location is-local="false" location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.jetbrains/sbt-idea-shell/scala_2.12/sbt_1.0/2018.3/jars/sbt-idea-shell.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.jetbrains" name="sbt-structure-extractor">
+			<revision name="2018.2.1+4-88400d3f" status="integration" pubdate="20180919230826" resolver="sbt-chain" artresolver="sbt-chain" extra-scalaVersion="2.12" extra-sbtVersion="1.0" downloaded="false" searched="false" default="false" conf="compile, default(compile)" position="1">
+				<license name="Apache-2.0" url="http://www.apache.org/licenses/LICENSE-2.0.html"/>
+				<metadata-artifact status="no" details="" size="2069" time="0" location="C:\Users\sarah\.ivy2\cache\scala_2.12\sbt_1.0\org.jetbrains\sbt-structure-extractor\ivy-2018.2.1+4-88400d3f.xml" searched="false" origin-is-local="false" origin-location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.jetbrains/sbt-structure-extractor/scala_2.12/sbt_1.0/2018.2.1+4-88400d3f/ivys/ivy.xml"/>
+				<caller organisation="org.scala-sbt" name="global-plugins" conf="compile" rev="2018.2.1+4-88400d3f" rev-constraint-default="2018.2.1+4-88400d3f" rev-constraint-dynamic="2018.2.1+4-88400d3f" callerrev="0.0" extra-scalaVersion="2.12" extra-sbtVersion="1.0"/>
+				<artifacts>
+					<artifact name="sbt-structure-extractor" type="jar" ext="jar" status="no" details="" size="367489" time="0" location="C:\Users\sarah\.ivy2\cache\scala_2.12\sbt_1.0\org.jetbrains\sbt-structure-extractor\jars\sbt-structure-extractor-2018.2.1+4-88400d3f.jar">
+						<origin-location is-local="false" location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/org.jetbrains/sbt-structure-extractor/scala_2.12/sbt_1.0/2018.2.1+4-88400d3f/jars/sbt-structure-extractor.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
 		<module organisation="org.scala-lang" name="scala-library">
-			<revision name="2.12.7" status="release" pubdate="20180927183542" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.7/" downloaded="false" searched="false" default="false" conf="master(*), compile, runtime(*), master(compile), runtime, compile(*), master" position="3">
+			<revision name="2.12.7" status="release" pubdate="20180927183542" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.12.7/" downloaded="false" searched="false" default="false" conf="master(*), compile, runtime(*), master(compile), runtime, compile(*), master" position="5">
 				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
 				<metadata-artifact status="no" details="" size="2501" time="0" location="C:\Users\sarah\.ivy2\cache\org.scala-lang\scala-library\ivy-2.12.7.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.7/scala-library-2.12.7.pom"/>
 				<caller organisation="org.rogach" name="scallop_2.12" conf="compile, runtime" rev="2.12.7" rev-constraint-default="2.12.7" rev-constraint-dynamic="2.12.7" callerrev="1.0.0"/>

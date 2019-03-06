@@ -172,7 +172,6 @@ object Evaluator extends Attribution {
     return str1 + str2
   }
 
-  //TODO: Add a thing here for if statements
   val argumentsValue : NumArguments => List[NumFormula] =
     attr {
       case Args(Arr(b, e), r) => getArrayList(b, e) ::: argumentsValue(r)
