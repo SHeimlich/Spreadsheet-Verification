@@ -1,16 +1,7 @@
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:29:10: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
-[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
-[0m[[0m[33mwarn[0m] [0m[0m    attr {[0m
-[0m[[0m[33mwarn[0m] [0m[0m         ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:67:10: match may not be exhaustive.[0m
-[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following inputs: Ref(AVERAGE(_)), Ref(Add(_, _)), Ref(Arr(_, _)), Ref(Boo(_)), Ref(Div(_, _)), Ref(Mul(_, _)), Ref(Num(_)), Ref(Ref(_)), Ref(SUM(_)), Ref(Sub(_, _)), Ref(and(_, _)), Ref(equal(_, _)), Ref(great(_, _)), Ref(greatEqual(_, _)), Ref(less(_, _)), Ref(lessEqual(_, _)), Ref(numIF(_)), Ref(numIfRef(_)), Ref(pow(_, _))[0m
-[0m[[0m[33mwarn[0m] [0m[0m    attr {[0m
-[0m[[0m[33mwarn[0m] [0m[0m         ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:122:38: unreachable code[0m
-[0m[[0m[33mwarn[0m] [0m[0m      case Ref(Cell(c, r)) => c + "" + r;[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                     ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:100:10: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
-[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
-[0m[[0m[33mwarn[0m] [0m[0m    attr {[0m
-[0m[[0m[33mwarn[0m] [0m[0m         ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mfour warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Main.scala:65:16: a pure expression does nothing in statement position[0m
+[0m[[0m[33mwarn[0m] [0m[0m        return ""[0m
+[0m[[0m[33mwarn[0m] [0m[0m               ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Main.scala:65:9: enclosing method process has result type Unit: return value discarded[0m
+[0m[[0m[33mwarn[0m] [0m[0m        return ""[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
