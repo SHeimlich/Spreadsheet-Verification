@@ -1,0 +1,18 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mSuite Starting - ruMainTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - ruMainTest: runMain.simpleAddTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - ruMainTest: runMain.simpleAddTest (1 second, 848 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - ruMainTest: runMain.arrayTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - ruMainTest: runMain.arrayTest (17 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - ruMainTest: runMain.embeddedArgTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - ruMainTest: runMain.embeddedArgTest (30 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - ruMainTest: runMain.ifTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - ruMainTest: runMain.ifTest (9 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - ruMainTest: runMain.optimise[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - ruMainTest: runMain.optimise (215 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - ruMainTest: runMain.embeddedIfTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - ruMainTest: runMain.embeddedIfTest (26 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - ruMainTest: runMain.complexIfArgs[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - ruMainTest: runMain.complexIfArgs (50 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - ruMainTest: runMain.multipleIfs[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - ruMainTest: runMain.multipleIfs (67 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mSuite Completed - ruMainTest (2 seconds, 396 milliseconds)[0m[0m

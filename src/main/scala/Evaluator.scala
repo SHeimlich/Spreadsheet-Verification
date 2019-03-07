@@ -98,7 +98,7 @@ object Evaluator extends Attribution {
 
   val NumFormValue : NumFormula => String =
     attr {
-      case Num (i)    => i
+      case Num (i)    => "__VERIFIER_nondet_int()"
       case Boo ("true")    => "1"
       case Boo ("false") => "0"
      // case S (s)    => s

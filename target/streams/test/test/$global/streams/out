@@ -1,0 +1,14 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(MyCellTest, org.scalatest.tools.Framework$$anon$1@7ee687ea, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(OuterParserTest, org.scalatest.tools.Framework$$anon$1@7ee687ea, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(ruMainTest, org.scalatest.tools.Framework$$anon$1@7ee687ea, false, [SuiteSelector])[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(ParsingTest, org.scalatest.tools.Framework$$anon$1@7ee687ea, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 1 second, 894 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 19[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 4, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 19, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mAll tests passed.[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mPassed tests:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ParsingTest[0m
+[0m[[0m[0mdebug[0m] [0m[0m	OuterParserTest[0m
+[0m[[0m[0mdebug[0m] [0m[0m	ruMainTest[0m
+[0m[[0m[0mdebug[0m] [0m[0m	MyCellTest[0m

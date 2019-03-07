@@ -1,0 +1,14 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mSuite Starting - OuterParserTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - OuterParserTest: OuterParser.addTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - OuterParserTest: OuterParser.addTest (1 second, 918 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - OuterParserTest: OuterParser.emptyCellTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - OuterParserTest: OuterParser.emptyCellTest (137 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - OuterParserTest: OuterParser.ifTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - OuterParserTest: OuterParser.ifTest (53 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - OuterParserTest: OuterParser.simpleArgTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - OuterParserTest: OuterParser.simpleArgTest (194 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - OuterParserTest: OuterParser.embededArgTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - OuterParserTest: OuterParser.embededArgTest (193 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - OuterParserTest: OuterParser.nullCellTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - OuterParserTest: OuterParser.nullCellTest (51 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mSuite Completed - OuterParserTest (2 seconds, 630 milliseconds)[0m[0m

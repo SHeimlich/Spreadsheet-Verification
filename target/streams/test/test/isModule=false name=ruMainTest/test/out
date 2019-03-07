@@ -1,0 +1,9 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mruMainTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- runMain.simpleAddTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- runMain.arrayTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- runMain.embeddedArgTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- runMain.ifTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- runMain.optimise[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- runMain.embeddedIfTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- runMain.complexIfArgs[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- runMain.multipleIfs[0m[0m

@@ -1,0 +1,7 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mOuterParserTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- OuterParser.addTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- OuterParser.emptyCellTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- OuterParser.ifTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- OuterParser.simpleArgTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- OuterParser.embededArgTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- OuterParser.nullCellTest[0m[0m

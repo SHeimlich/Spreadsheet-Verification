@@ -1,0 +1,6 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mSuite Starting - MyCellTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - MyCellTest: MyCell.toString[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - MyCellTest: MyCell.toString (0 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - MyCellTest: MyCell.equals[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - MyCellTest: MyCell.equals (3 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mSuite Completed - MyCellTest (6 milliseconds)[0m[0m
