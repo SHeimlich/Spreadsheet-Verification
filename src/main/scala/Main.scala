@@ -19,7 +19,7 @@ object ruMain extends CompilerBase[Exp,Config] {
 
   override def main(args: Array[String]): Unit = {
     val spreadSheetParser = new OuterParser()
-    spreadSheetParser.parse("divideWithIf.ods")
+    spreadSheetParser.parse("complexIfDivZero.ods")
     super.main( Array("file.exp"))
   }
 
