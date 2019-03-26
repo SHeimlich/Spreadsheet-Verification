@@ -51,6 +51,7 @@ object ExpParserSyntax {
     case class lessEqual (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
     case class greatEqual (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
     case class numIfRef (ifRef : ifRef) extends NumFormula  
+    case class nullNum () extends NumFormula  
      
     case class nIf (numFormulas1 : Vector[NumFormula], numFormulas2 : Vector[NumFormula], numFormulas3 : Vector[NumFormula]) extends ASTNode
      
@@ -65,7 +66,7 @@ object ExpParserSyntax {
     case class Num (integer : String) extends NumFormula  
     case class Boo (bool : String) extends NumFormula  
      
-    case class Arr (cellRef1 : NumFormula, cellRef2 : NumFormula) extends NumFormula  
+    case class Arr (cell1 : NumFormula, cell2 : NumFormula) extends NumFormula  
      
     case class Ref (cell : NumFormula) extends NumFormula  
      

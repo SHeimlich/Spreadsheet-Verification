@@ -59,7 +59,7 @@ public String formatParseError (ParseError error, Boolean showCoord) throws IOEx
 }
                 
     static {
-        add (KEYWORDS, new String[] { "false", "if", "true" });
+        add (KEYWORDS, new String[] { "false", "if", "null", "true" });
     }
 }
 
@@ -71,13 +71,13 @@ String Symbol1 =
 
 transient String Symbol1Alts =
     "*" / "]" / "=" / "<" / "&" / ")" / "-" / "," / ";" / "'" / "+" / "(" /
-    ":" / "^" / "/" / ">";
+    "^" / "/" / ">";
 
 String Symbol2 =
     Symbol2Alts Spacing;
 
 transient String Symbol2Alts =
-    "<=" / ">=" / "[.";
+    "<=" / ">=" / "[." / ":.";
 
 String Symbol3 =
     Symbol3Alts Spacing;
@@ -166,7 +166,7 @@ public NumFormula NumConstant =
     ;
 
 public NumFormula Array =
-    v1:CellRef void:":":Symbol1 v2:CellRef {
+    void:"[.":Symbol2 v1:Cell void:":.":Symbol2 v2:Cell void:"]":Symbol1 {
         yyValue = new Arr (v1, v2);
     }
     ;
@@ -374,6 +374,9 @@ public NumFormula NumFormulaLevel0 =
     }
     / v1:NumConstant 
     / void:"(":Symbol1 v1:NumFormula void:")":Symbol1 
+    / void:"null":Word {
+        yyValue = new nullNum ();
+    }
     ;
 
 // Default spacing specification

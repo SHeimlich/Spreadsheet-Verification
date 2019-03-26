@@ -71,20 +71,8 @@ class Parsing (){
       else { // There is a forumla, so we need to check for dependencies.
         val newCell = getMyCell(cell, getColNum(col), getRowString(row));
 
-        // TODO: Deal with Arrays
-        val cellRegex = "[A-Z]+[1-9][0-9]*";
-        val arrayPattern = Pattern.compile("\\[\\." + cellRegex + ":\\." + cellRegex + "\\]");
-        val arrayMatcher = arrayPattern.matcher(formula);
-        while(arrayMatcher.find()) {
-          println("There is an array here!");
-          val s = arrayMatcher.group(0)
-
-         // val startRow = s.charAt(2) - 'A';
-         // val startCol = Integer.parseInt(s.substring(1, s.length())) - 1;
-
-        }
-
         // Deal with Dependencies
+        val cellRegex = "[A-Z]+[1-9][0-9]*";
         val pattern = Pattern.compile(cellRegex);
         val m = pattern.matcher(formula);
         while (m.find()) {
@@ -110,17 +98,28 @@ class Parsing (){
   }
 
   def getParsedFormula(cell: MutableCell[SpreadSheet]) : String = {
-    val formula = cell.getFormula;
+    var formula = cell.getFormula;
     if (formula == null) {
-      return null
+      return null //"null"
     }
-    return formula.substring(4)
+    formula = formula.substring(4)
+    val cellRegex = "[A-Z]+[1-9][0-9]*";
+    val arrayPattern = Pattern.compile("\\[\\." + cellRegex + ":\\." + cellRegex + "\\]");
+    val arrayMatcher = arrayPattern.matcher(formula);
+    while(arrayMatcher.find()) {
+      val s = arrayMatcher.group(0)
+      formula = formula.replace(s,convertArrayToRefs(s))
+    }
+    return formula
   }
 
   def getMyCell(cell: MutableCell[SpreadSheet], col: Int, row: String): MyCell = {
     val formula = getParsedFormula(cell)
     if (formula != null) {
       return MyCell(row, col, formula, false);
+    }
+    if (cell.getValue.toString == "") {
+      return MyCell(row, col, "null", false)
     }
     return MyCell(row, col, cell.getValue.toString, false);
   }
@@ -158,6 +157,37 @@ class Parsing (){
       }
     }
     return rtn
+  }
+
+  def convertArrayToRefs(str: String) : String = {
+    val r = Pattern.compile("[A-Z]+").matcher(str);
+    r.find()
+    val rStr = r.group(0)
+    val startRow = getRowNum(rStr)
+    val startC = str.substring(
+      rStr.length + 2,
+      str.indexOf(":")
+    )
+    val startCol = Integer.parseInt(startC) - 1;
+
+    r.find()
+    val rEnd = r.group(0)
+    val endRow = getRowNum(rEnd)
+    val endC = str.substring(
+      str.indexOf(":") + rEnd.length + 2,
+      str.length - 1
+    )
+    val endCol = Integer.parseInt(endC) - 1;
+
+    var arr = ""
+    var row = startRow
+    var col = startCol
+    for(row <- startRow to endRow) {
+      for(col <- startCol to endCol) {
+        arr = arr + "[." + ('A' + row).toChar + (col + 1) + "];"
+      }
+    }
+    return arr.stripSuffix(";")
   }
 
 }

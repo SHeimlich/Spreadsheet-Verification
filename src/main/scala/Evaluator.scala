@@ -86,6 +86,7 @@ object Evaluator extends Attribution {
       case numIF(nIf(b, f1, f2)) => numVecAsserts(f1, f2)
       case Ref(Cell(r,c)) => ""
       case numIfRef(r) => ""
+      case nullNum() => ""
     }
 
 
@@ -121,6 +122,7 @@ object Evaluator extends Attribution {
       case numIF(nIf(b, f1, f2)) => "IF(" + b + ") { \n" + numVecVal(f1) + "; \n } else {" + numVecVal(f2) + "; \n}"
       case Ref(Cell(c, r)) => c + "" + r;
       case numIfRef(r) => r.rows(0)
+      case nullNum() => "0"
     }
 
   def numIfVal(c: NumFormula, b: Vector[ExpParserSyntax.NumFormula], f: Vector[ExpParserSyntax.NumFormula], f1: Vector[ExpParserSyntax.NumFormula]) : String = {

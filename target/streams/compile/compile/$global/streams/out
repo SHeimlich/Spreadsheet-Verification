@@ -1,7 +1,7 @@
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Main.scala:65:16: a pure expression does nothing in statement position[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Main.scala:66:16: a pure expression does nothing in statement position[0m
 [0m[[0m[33mwarn[0m] [0m[0m        return ""[0m
 [0m[[0m[33mwarn[0m] [0m[0m               ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Main.scala:65:9: enclosing method process has result type Unit: return value discarded[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Main.scala:66:9: enclosing method process has result type Unit: return value discarded[0m
 [0m[[0m[33mwarn[0m] [0m[0m        return ""[0m
 [0m[[0m[33mwarn[0m] [0m[0m        ^[0m
 [0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m

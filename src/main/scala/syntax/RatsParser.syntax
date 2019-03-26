@@ -38,7 +38,8 @@ NumFormula =
     | CellRef
     | ifRef                             {numIfRef}
     | NumConstant
-    | '(' NumFormula ')'.
+    | '(' NumFormula ')'
+    | "null"        {nullNum}.
 
 nIf =
     "IF(" + NumFormula + ";" + NumFormula + ";" + NumFormula + ")".
@@ -57,7 +58,7 @@ NumConstant : NumFormula =
   | Bool        {Boo}.
 
 Array : NumFormula =
-    CellRef ":" CellRef         {Arr}.
+    "[." Cell ":." Cell "]"         {Arr}.
 
 CellRef : NumFormula =
   "[." Cell "]"      {Ref}.

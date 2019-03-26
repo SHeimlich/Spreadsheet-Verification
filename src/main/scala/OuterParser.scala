@@ -5,9 +5,9 @@ import org.jopendocument.dom.spreadsheet.SpreadSheet
 class OuterParser {
 
   def parse(fileName: String) : String = {
-    val file = new File(fileName)
+    val file = new File(fileName + ".ods")
     try {
-      val writer = new PrintWriter(new File("file.exp"))
+      val writer = new PrintWriter(new File(fileName + ".exp"))
       val sheet = SpreadSheet.createFromFile(file).getSheet(0)
       val start = sheet.getUsedRange.getStartPoint
       val end = sheet.getUsedRange.getEndPoint

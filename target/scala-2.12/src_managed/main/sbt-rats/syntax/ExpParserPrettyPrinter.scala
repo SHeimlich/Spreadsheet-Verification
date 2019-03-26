@@ -55,6 +55,8 @@ trait ExpParserPrettyPrinter extends PP with PPP {
                 toDoc (v1) <> text (">=") <> space <> toDoc (v2)   
             case v @ numIfRef (v1) =>
                 toDoc (v1)   
+            case v @ nullNum () =>
+                text ("null") <> space 
             case v @ nIf (v1, v2, v3) =>
                 emptyDoc <> ssep (v1.map (toDoc), emptyDoc) <> emptyDoc <> ssep (v2.map (toDoc), emptyDoc) <> emptyDoc <> ssep (v3.map (toDoc), emptyDoc) <> text (")") <> space 
             case v @ strConst (v1) =>
@@ -70,7 +72,7 @@ trait ExpParserPrettyPrinter extends PP with PPP {
             case v @ Boo (v1) =>
                 value (v1) 
             case v @ Arr (v1, v2) =>
-                toDoc (v1) <> text (":") <> space <> toDoc (v2) 
+                text ("[.") <> space <> toDoc (v1) <> text (":.") <> space <> toDoc (v2) <> text ("]") <> space 
             case v @ Ref (v1) =>
                 text ("[.") <> space <> toDoc (v1) <> text ("]") <> space 
             case v @ Cell (v1, v2) =>

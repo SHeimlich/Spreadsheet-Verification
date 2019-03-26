@@ -19,8 +19,9 @@ object ruMain extends CompilerBase[Exp,Config] {
 
   override def main(args: Array[String]): Unit = {
     val spreadSheetParser = new OuterParser()
-    spreadSheetParser.parse("complexIfDivZero.ods")
-    super.main( Array("file.exp"))
+    println("args(0) = " + args(0))
+    spreadSheetParser.parse(args(0))
+    super.main( Array(args(0) + ".exp"))
   }
 
   def createConfig(args : Seq[String]) : Config = {

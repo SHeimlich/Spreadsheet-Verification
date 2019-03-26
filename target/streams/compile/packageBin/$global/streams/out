@@ -108,6 +108,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\sbtrats\Action.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$NumFormula.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$NumFormula.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$nullNum.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$nullNum.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$Exp.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$Exp.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParser$ExpParserColumn.class[0m
@@ -160,6 +162,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$assignIf.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$ifStmt.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$ifStmt.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$nullNum$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$nullNum$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParser$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParser$1.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserPrettyPrinter$.class[0m

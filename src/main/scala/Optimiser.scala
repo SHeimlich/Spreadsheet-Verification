@@ -67,6 +67,7 @@ class Optimiser {
     }
     case Add(l, r) => {if(formulaHasIf(l)){ getIf(cell, l); } else { getIf(cell, r); }}
     case SUM(a) => getIfArgs(cell, a)
+    case Div(l, r) => {if(formulaHasIf(l)){ getIf(cell, l); } else { getIf(cell, r); }}
   }
 
   def getAssignIf(c: Cell, a: Vector[NumFormula], nfVec1: Vector[NumFormula], nfVec2: Vector[NumFormula]) : assignIf = {
@@ -101,6 +102,7 @@ class Optimiser {
     case AVERAGE(a) => SUM(argsRemoveIf(a))
     case Ref(Cell(r,c)) => Ref(Cell(r, c))
     case numIfRef(r) => numIfRef(r)
+    case nullNum() => nullNum()
   }
 
   def argsRemoveIf(a: Vector[NumArguments]): Vector[NumArguments] = {
@@ -140,6 +142,7 @@ class Optimiser {
     case AVERAGE(a) => argsHasIf(a)
     case Ref(Cell(r,c)) => false
     case numIfRef(r) => false
+    case nullNum() => false
   }
 
   def argsHasIf(a: Vector[NumArguments]): Boolean = {
