@@ -121,6 +121,10 @@ class Parsing (){
     if (cell.getValue.toString == "") {
       return MyCell(row, col, "null", false)
     }
+
+    if (cell.getValueType.toString == "STRING") {
+      return MyCell(row, col, "\'" + cell.getValue + "\'", false)
+    }
     return MyCell(row, col, cell.getValue.toString, false);
   }
 

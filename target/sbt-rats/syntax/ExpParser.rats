@@ -206,7 +206,7 @@ public String Digits =
     ;
 
 public String Str =
-    "'" (middleOfString)+
+    "'" middleOfString
     ;
 
 public String middleOfString =

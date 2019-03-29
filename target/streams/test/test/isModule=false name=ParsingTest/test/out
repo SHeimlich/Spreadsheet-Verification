@@ -1,8 +1,4 @@
-[0m[[0m[0minfo[0m] [0m[0m[32mSuite Starting - ParsingTest[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - ParsingTest: testGetRowNum[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - ParsingTest: testGetRowNum (791 milliseconds)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - ParsingTest: testGetRowString[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - ParsingTest: testGetRowString (11 milliseconds)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mTest Starting - ParsingTest: testGetLocationName[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mTest Succeeded - ParsingTest: testGetLocationName (2 milliseconds)[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32mSuite Completed - ParsingTest (890 milliseconds)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mParsingTest:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- testGetRowNum[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- testGetRowString[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- testGetLocationName[0m[0m

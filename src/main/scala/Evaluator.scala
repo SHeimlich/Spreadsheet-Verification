@@ -28,7 +28,8 @@ object Evaluator extends Attribution {
   val assignValue : Exp => String =
     attr {
       case Assign(l, nf(numIF(nIf(fb, f1, f2)))) => numIfVal(l, fb, f1, f2)
-      case Assign(l, r) => setCurrentCell(NumFormValue(l)) + FormAsserts(r) + "int " + NumFormValue(l) + "=" + FormValue(r) + ";\n"
+      case Assign(l, nf(r)) => setCurrentCell(NumFormValue(l)) + FormAsserts(nf(r)) + "int " + NumFormValue(l) + "=" + FormValue(nf(r)) + ";\n"
+      case Assign(l, sf(r)) => setCurrentCell(NumFormValue(l)) + FormAsserts(sf(r)) + "char " + NumFormValue(l) + "[] =" + FormValue(sf(r)) + ";\n"
     }
 
 
@@ -154,7 +155,7 @@ object Evaluator extends Attribution {
 
   val StrFormValue : StringFormula => String =
     attr {
-      case strConst(v) => v
+      case strConst(v) => "\"" + v.substring(1, v.length-1) + "\""
       case NumAsStr(f) => NumFormValue(f)
     }
 

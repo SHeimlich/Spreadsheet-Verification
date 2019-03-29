@@ -19,7 +19,6 @@ object ruMain extends CompilerBase[Exp,Config] {
 
   override def main(args: Array[String]): Unit = {
     val spreadSheetParser = new OuterParser()
-    println("args(0) = " + args(0))
     spreadSheetParser.parse(args(0))
     super.main( Array(args(0) + ".exp"))
   }

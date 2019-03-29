@@ -25,13 +25,39 @@ class ruMainTest extends FunSuite {
     val c = ruMain.createConfig(args);
     val ast = ruMain.makeast(FileSource(fileName, "UTF-8"), c)
 
-    val correctAst = Left(stmts(Assign(Cell("A","3"),nf(Num("3"))),
-      stmts(Assign(Cell("A","8"),nf(Num("8"))),
-        stmts(Assign(Cell("A","4"),nf(Num("4"))),stmts(Assign(Cell("A","1"),nf(Num("1"))),
-          stmts(Assign(Cell("A","7"),nf(Num("7"))),
-            stmts(Assign(Cell("A","5"),nf(Num("5"))),
-              stmts(Assign(Cell("A","6"),nf(Num("6"))),
-                Assign(Cell("A","2"),nf(Num("2")))))))))))
+    val correctAst = Left(stmts(
+      Assign(Cell("A", "3"), nf(Num("3"))),
+      stmts(
+        Assign(Cell("A", "8"), nf(Num("8"))),
+        stmts(
+          Assign(Cell("A", "4"), nf(Num("4"))),
+          stmts(
+            Assign(Cell("A", "1"), nf(Num("1"))),
+            stmts(
+              Assign(Cell("A", "7"), nf(Num("7"))),
+              stmts(
+                Assign(Cell("A", "5"), nf(Num("5"))),
+                stmts(
+                  Assign(Cell("A", "6"), nf(Num("6"))),
+                  stmts(
+                    Assign(Cell("A", "2"), nf(Num("2"))),
+                    Assign(
+                      Cell("B", "1"),
+                      nf(
+                        SUM(
+                          Vector(
+                            Args(
+                              Ref(Cell("A", "1")),
+                              Args(
+                                Ref(Cell("A", "2")),
+                                Args(
+                                  Ref(Cell("A", "3")),
+                                  Args(Ref(Cell("A", "4")),
+                                    Args(Ref(Cell("A", "5")),
+                                      Args(Ref(Cell("A", "6")),
+                                        Args(Ref(Cell("A", "7")),
+                                          Arg(Ref(Cell("A", "8"))
+                                          )))))))))))))))))))))
 
     assert(ast == correctAst)
   }

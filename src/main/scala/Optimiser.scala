@@ -29,6 +29,7 @@ class Optimiser {
 
   def stmtSimplifier (x: Exp): Exp = x match {
     case Assign(Cell(c, r), nf(f)) => AssignSimplifier(Cell(c, r), f)
+    case Assign(a, b) => Assign(a, b)
     //case stmt(a) => stmt(stmtSimplifier(a))
     case stmts(a, b) => stmts(stmtSimplifier(a), stmtSimplifier(b))
     case ifStmt(a, b) => ifStmt(a, stmtSimplifier(b))
