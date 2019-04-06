@@ -22,8 +22,8 @@ object Evaluator extends Attribution {
     }
 
   def getType(c: Formula, f: Formula) : String = f match {
-    case strConst(s) => "bool " + FormValue(c) + "Num = false; \nchar[] "
-    case _ => "bool " + FormValue(c) + "Num = true; \nint "
+    case strConst(s) => "int " + FormValue(c) + "Num = 0; \nchar[] "
+    case _ => "int " + FormValue(c) + "Num = 1; \nint "
   }
 
 
@@ -73,7 +73,7 @@ object Evaluator extends Attribution {
 
   def AssertNum(f: Formula) : String = {
     f match {
-      case Ref(c) => "if(!" + FormValue(c) + "Num) \n\t __VERIFIER_error(); \n";
+      case Ref(c) => "if(" + FormValue(c) + "Num == 0) \n\t __VERIFIER_error(); \n";
       case conCat(a) => "__VERIFIER_error(); \n"
       case strConst(r) => "__VERIFIER_error(); \n"
       case _ => ""
