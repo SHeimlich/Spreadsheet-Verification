@@ -11,9 +11,9 @@ class ruMainTest extends FunSuite {
     val c = ruMain.createConfig(args);
     val ast = ruMain.makeast(FileSource(fileName, "UTF-8"), c)
 
-    val correctAst = Left(stmts(Assign(Cell("C","2"),nf(Num("1"))),
-      stmts(Assign(Cell("C","1"),nf(Num("1"))),
-        Assign(Cell("A","1"),nf(Add(Ref(Cell("C","1")),Ref(Cell("C","2"))))))))
+    val correctAst = Left(stmts(Assign(Cell("C","2"),Num("1")),
+      stmts(Assign(Cell("C","1"),Num("1")),
+        Assign(Cell("A","1"),Add(Ref(Cell("C","1")),Ref(Cell("C","2")))))))
 
     assert(ast == correctAst)
   }
@@ -26,24 +26,23 @@ class ruMainTest extends FunSuite {
     val ast = ruMain.makeast(FileSource(fileName, "UTF-8"), c)
 
     val correctAst = Left(stmts(
-      Assign(Cell("A", "3"), nf(Num("3"))),
+      Assign(Cell("A", "3"), Num("3")),
       stmts(
-        Assign(Cell("A", "8"), nf(Num("8"))),
+        Assign(Cell("A", "8"), Num("8")),
         stmts(
-          Assign(Cell("A", "4"), nf(Num("4"))),
+          Assign(Cell("A", "4"), Num("4")),
           stmts(
-            Assign(Cell("A", "1"), nf(Num("1"))),
+            Assign(Cell("A", "1"), Num("1")),
             stmts(
-              Assign(Cell("A", "7"), nf(Num("7"))),
+              Assign(Cell("A", "7"), Num("7")),
               stmts(
-                Assign(Cell("A", "5"), nf(Num("5"))),
+                Assign(Cell("A", "5"), Num("5")),
                 stmts(
-                  Assign(Cell("A", "6"), nf(Num("6"))),
+                  Assign(Cell("A", "6"), Num("6")),
                   stmts(
-                    Assign(Cell("A", "2"), nf(Num("2"))),
+                    Assign(Cell("A", "2"), Num("2")),
                     Assign(
                       Cell("B", "1"),
-                      nf(
                         SUM(
                           Vector(
                             Args(
@@ -57,28 +56,28 @@ class ruMainTest extends FunSuite {
                                       Args(Ref(Cell("A", "6")),
                                         Args(Ref(Cell("A", "7")),
                                           Arg(Ref(Cell("A", "8"))
-                                          )))))))))))))))))))))
+                                          ))))))))))))))))))))
 
     assert(ast == correctAst)
   }
 
   test("runMain.embeddedArgTest") {
-    val fileName = "embeddedArgTest.exp"
+    val fileName = "embededArgTest.exp"
     val args = Seq(fileName)
 
     val c = ruMain.createConfig(args);
     val ast = ruMain.makeast(FileSource(fileName, "UTF-8"), c)
 
-    val correctAst = Left(stmts(Assign(Cell("A","3"),nf(Num("3"))),
-      stmts(Assign(Cell("A","8"),nf(Num("8"))),
-        stmts(Assign(Cell("A","4"),nf(Num("4"))),
-          stmts(Assign(Cell("A","1"),nf(Num("1"))),
-            stmts(Assign(Cell("A","7"),nf(Num("7"))),
-              stmts(Assign(Cell("A","5"),nf(Num("5"))),
-                stmts(Assign(Cell("A","9"),nf(Num("9"))),
-                  stmts(Assign(Cell("A","6"),nf(Num("6"))),
-                    stmts(Assign(Cell("A","2"),nf(Num("2"))),
-                      Assign(Cell("B","1"),nf(
+    val correctAst = Left(stmts(Assign(Cell("A","3"),Num("3")),
+      stmts(Assign(Cell("A","8"),Num("8")),
+        stmts(Assign(Cell("A","4"),Num("4")),
+          stmts(Assign(Cell("A","1"),Num("1")),
+            stmts(Assign(Cell("A","7"),Num("7")),
+              stmts(Assign(Cell("A","5"),Num("5")),
+                stmts(Assign(Cell("A","9"),Num("9")),
+                  stmts(Assign(Cell("A","6"),Num("6")),
+                    stmts(Assign(Cell("A","2"),Num("2")),
+                      Assign(Cell("B","1"),
                         SUM(Vector(Args(Ref(Cell("A","1")),
                           Args(numIF(
                             nIf(Vector(Ref(Cell("A","2"))), Vector(Ref(Cell("A","3"))), Vector(Ref(Cell("A","4"))))),
@@ -87,7 +86,7 @@ class ruMainTest extends FunSuite {
                                 Args(Ref(Cell("A","6")),
                                   Arg(numIF(
                                     nIf(Vector(Ref(Cell("A","7"))),Vector(Ref(Cell("A","8"))),Vector(Ref(Cell("A","9"))))
-                                  )))))))))))))))))))))))
+                                  ))))))))))))))))))))))
 
     assert(ast == correctAst)
   }
@@ -99,11 +98,11 @@ class ruMainTest extends FunSuite {
     val c = ruMain.createConfig(args);
     val ast = ruMain.makeast(FileSource(fileName, "UTF-8"), c)
 
-    val correctAst = Left(stmts(Assign(Cell("A","1"),nf(Num("5"))),
-      stmts(Assign(Cell("B","2"),nf(Num("45"))),
-        stmts(Assign(Cell("B","1"),nf(Num("6"))),
-          Assign(Cell("C","1"),nf(numIF(
-            nIf(Vector(Ref(Cell("A","1"))),Vector(Ref(Cell("B","1"))),Vector(Ref(Cell("B","2")))))))))))
+    val correctAst = Left(stmts(Assign(Cell("A","1"),Num("5")),
+      stmts(Assign(Cell("B","2"),Num("45")),
+        stmts(Assign(Cell("B","1"),Num("6")),
+          Assign(Cell("C","1"),numIF(
+            nIf(Vector(Ref(Cell("A","1"))),Vector(Ref(Cell("B","1"))),Vector(Ref(Cell("B","2"))))))))))
 
     assert(ast == correctAst)
   }
@@ -122,12 +121,12 @@ class ruMainTest extends FunSuite {
     val opt = new Optimiser()
     val o = opt.optimise(e)
 
-    val expectedO = stmts(Assign(Cell("A","1"),nf(Num("5"))),
-      stmts(Assign(Cell("B","2"),nf(Num("45"))),
-        stmts(Assign(Cell("B","1"),nf(Num("6"))),
+    val expectedO = stmts(Assign(Cell("A","1"),Num("5")),
+      stmts(Assign(Cell("B","2"),Num("45")),
+        stmts(Assign(Cell("B","1"),Num("6")),
           ifStmt(ifAssign(Vector(ifRef(Vector("if1"))),
             nIf(Vector(Ref(Cell("A","1"))),Vector(Ref(Cell("B","1"))),Vector(Ref(Cell("B","2"))))),
-            Assign(Cell("C","1"),nf(numIfRef(ifRef(Vector("if1")))))))))
+            Assign(Cell("C","1"),numIfRef(ifRef(Vector("if1"))))))))
 
     assert(o === expectedO)
   }
@@ -145,18 +144,18 @@ class ruMainTest extends FunSuite {
 
     val opt = new Optimiser()
     val o = opt.optimise(e)
-    val expectedO = stmts(Assign(Cell("B", "2"),nf(Boo("false"))),
-      stmts(Assign(Cell("E", "1"),nf(Num("4"))),
-        stmts(Assign(Cell("C", "1"), nf(Num("2"))),
-          stmts(Assign(Cell("D","1"), nf(Num("2"))),
-            stmts(Assign(Cell("B","1"), nf(Boo("true"))),
+    val expectedO = stmts(Assign(Cell("B", "2"),Boo("false")),
+      stmts(Assign(Cell("E", "1"),Num("4")),
+        stmts(Assign(Cell("C", "1"), Num("2")),
+          stmts(Assign(Cell("D","1"), Num("2")),
+            stmts(Assign(Cell("B","1"), Boo("true")),
               ifStmt(ifAssign(Vector(ifRef(Vector("if1"))),
                 nIf(Vector(Ref(Cell("C","1"))),Vector(Ref(Cell("D","1"))),Vector(Ref(Cell("E","1"))))),
                 ifStmt(ifAssign(Vector(ifRef(Vector("if2"))),
                   nIf(Vector(Ref(Cell("B","2"))),Vector(Ref(Cell("C","1"))),Vector(Ref(Cell("D","1"))))),
                   ifStmt(ifAssign(Vector(ifRef(Vector("if3"))),
                     nIf(Vector(Ref(Cell("B","1"))),Vector(numIfRef(ifRef(Vector("if1")))),Vector(numIfRef(ifRef(Vector("if2")))))),
-                    Assign(Cell("A","1"),nf(numIfRef(ifRef(Vector("if3")))))))))))))
+                    Assign(Cell("A","1"),numIfRef(ifRef(Vector("if3"))))))))))))
 
     assert(o === expectedO)
   }
@@ -174,19 +173,20 @@ class ruMainTest extends FunSuite {
 
     val opt = new Optimiser()
     val o = opt.optimise(e)
-    val expectedO = stmts(Assign(Cell("E","2"),nf(Num("6"))),
-      stmts(Assign(Cell("E","1"),nf(Num("3"))),
-        stmts(Assign(Cell("D","2"),nf(Num("5"))),
-          stmts(Assign(Cell("C","1"),nf(Num("1"))),
-            stmts(Assign(Cell("D","1"),nf(Num("2"))),
-              stmts(Assign(Cell("C","2"),nf(Num("4"))),
+    val expectedO = stmts(Assign(Cell("E","2"),Num("6")),
+      stmts(Assign(Cell("E","1"),Num("3")),
+        stmts(Assign(Cell("D","2"),Num("5")),
+          stmts(Assign(Cell("C","1"),Num("1")),
+            stmts(Assign(Cell("D","1"),Num("2")),
+              stmts(Assign(Cell("C","2"),Num("4")),
                 ifStmt(ifAssign(Vector(ifRef(Vector("if1"))),
                   nIf(Vector(Ref(Cell("C","1"))),Vector(Ref(Cell("D","1"))),Vector(Ref(Cell("E","1"))))),
                   ifStmt(ifAssign(Vector(ifRef(Vector("if2"))),
                     nIf(Vector(Ref(Cell("C","2"))),Vector(Ref(Cell("D","2"))),Vector(Ref(Cell("E","2"))))),
                     ifStmt(ifAssign(Vector(ifRef(Vector("if3"))),
                       nIf(Vector(Ref(Cell("D","1"))),Vector(Ref(Cell("E","1"))),Vector(numIfRef(ifRef(Vector("if2")))))),
-                      Assign(Cell("A","1"),nf(SUM(Vector(Args(numIfRef(ifRef(Vector("if1"))),Arg(numIfRef(ifRef(Vector("if3"))))))))))))))))))
+                      Assign(Cell("A","1"),SUM(Vector(Args(numIfRef(
+                        ifRef(Vector("if1"))),Arg(numIfRef(ifRef(Vector("if3")))))))))))))))))
 
     assert(o === expectedO)
   }
@@ -205,39 +205,39 @@ class ruMainTest extends FunSuite {
     val opt = new Optimiser()
     val o = opt.optimise(e)
     println(o)
-    val expectedO = stmts(Assign(Cell("C","2"),nf(Num("2"))),
-      stmts(Assign(Cell("B","2"),nf(Boo("true"))),
-        stmts(Assign(Cell("C","1"),nf(Num("1"))),
-          stmts(Assign(Cell("C","4"),nf(Num("4"))),
-            stmts(Assign(Cell("D","3"),nf(Num("7"))),
-              stmts(Assign(Cell("C","3"),nf(Num("3"))),
-                stmts(Assign(Cell("D","2"),nf(Num("6"))),
-                  stmts(Assign(Cell("D","1"),nf(Num("5"))),
-                    stmts(Assign(Cell("B","3"),nf(Boo("false"))),
-                      stmts(Assign(Cell("B","4"),nf(Boo("false"))),
-                        stmts(Assign(Cell("D","4"),nf(Num("8"))),
-                          stmts(Assign(Cell("B","1"),nf(Boo("true"))),
+    val expectedO = stmts(Assign(Cell("C","2"),Num("2")),
+      stmts(Assign(Cell("B","2"),Boo("true")),
+        stmts(Assign(Cell("C","1"),Num("1")),
+          stmts(Assign(Cell("C","4"),Num("4")),
+            stmts(Assign(Cell("D","3"),Num("7")),
+              stmts(Assign(Cell("C","3"),Num("3")),
+                stmts(Assign(Cell("D","2"),Num("6")),
+                  stmts(Assign(Cell("D","1"),Num("5")),
+                    stmts(Assign(Cell("B","3"),Boo("false")),
+                      stmts(Assign(Cell("B","4"),Boo("false")),
+                        stmts(Assign(Cell("D","4"),Num("8")),
+                          stmts(Assign(Cell("B","1"),Boo("true")),
                             stmts(ifStmt(ifAssign(Vector(ifRef(Vector("if7"))),
                               nIf(Vector(Ref(Cell("B","2"))),Vector(Ref(Cell("C","2"))),Vector(Ref(Cell("D","2"))))),
-                              Assign(Cell("A","2"),nf(numIfRef(ifRef(Vector("if7")))))),
+                              Assign(Cell("A","2"),numIfRef(ifRef(Vector("if7"))))),
                               stmts(ifStmt(ifAssign(Vector(ifRef(Vector("if6"))),
                                 nIf(Vector(Ref(Cell("B","1"))),Vector(Ref(Cell("C","1"))),Vector(Ref(Cell("D","1"))))),
-                                Assign(Cell("A","1"),nf(numIfRef(ifRef(Vector("if6")))))),
+                                Assign(Cell("A","1"),numIfRef(ifRef(Vector("if6"))))),
                                 stmts(ifStmt(ifAssign(Vector(ifRef(Vector("if5"))),
                                   nIf(Vector(Ref(Cell("B","3"))),Vector(Ref(Cell("A","2"))),Vector(Ref(Cell("A","1"))))),
-                                  Assign(Cell("A","3"),nf(numIfRef(ifRef(Vector("if5")))))),
+                                  Assign(Cell("A","3"),numIfRef(ifRef(Vector("if5"))))),
                                   stmts(ifStmt(ifAssign(Vector(ifRef(Vector("if1"))),
                                     nIf(Vector(Ref(Cell("A","3"))),Vector(Ref(Cell("A","2"))),Vector(Ref(Cell("A","1"))))),
                                     ifStmt(ifAssign(Vector(ifRef(Vector("if2"))),
                                       nIf(Vector(Ref(Cell("B","4"))),Vector(numIfRef(ifRef(Vector("if1")))),Vector(Ref(Cell("D","4"))))),
-                                      Assign(Cell("A","4"),nf(numIfRef(ifRef(Vector("if2"))))))),
+                                      Assign(Cell("A","4"),numIfRef(ifRef(Vector("if2")))))),
                                     ifStmt(ifAssign(Vector(ifRef(Vector("if3"))),
                                       nIf(Vector(Ref(Cell("B","4"))),Vector(Ref(Cell("C","3"))),Vector(Ref(Cell("C","4"))))),
                                       ifStmt(ifAssign(Vector(ifRef(Vector("if4"))),
                                         nIf(Vector(Ref(Cell("A","3"))),Vector(Ref(Cell("B","3"))),Vector(Ref(Cell("C","3"))))),
-                                        Assign(Cell("A","5"),nf(
+                                        Assign(Cell("A","5"),
                                           Add(numIfRef(ifRef(Vector("if3"))),numIfRef(ifRef(Vector("if4"))))
-                                        ))))))))))))))))))))
+                                        )))))))))))))))))))
 
     assert(o === expectedO)
   }

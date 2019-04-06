@@ -10,14 +10,6 @@ object Evaluator extends Attribution {
 
   import syntax.ExpParserSyntax._
 
-  var currentCell = "";
-
-  def setCurrentCell(c: String) : String = {
-    currentCell = c;
-
-    return "";
-  }
-
   def expvalue (a: Exp) : String = a match {
       case Assign(c, v) => assignValue(Assign(c, v))
       case stmts(l,r) => expvalue(l) + expvalue(r)
@@ -26,7 +18,7 @@ object Evaluator extends Attribution {
 
   def assignValue (a: Exp) : String = a match {
       case Assign(l, numIF(nIf(fb, f1, f2))) => numIfVal(l, fb, f1, f2)
-      case Assign(l, r) => setCurrentCell(FormAsserts(l)) + FormAsserts(r) + getType(r) + FormValue(l) + "=" + FormValue(r) + ";\n"
+      case Assign(l, r) => FormAsserts(r) + getType(r) + FormValue(l) + "=" + FormValue(r) + ";\n"
     }
 
   def getType(f: Formula) : String = f match {

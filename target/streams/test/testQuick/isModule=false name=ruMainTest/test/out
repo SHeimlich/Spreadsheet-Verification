@@ -1,7 +1,6 @@
 [0m[[0m[0minfo[0m] [0m[0m[32mruMainTest:[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- runMain.simpleAddTest[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m- runMain.arrayTest *** FAILED ***[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[31m  Left(stmts(Assign(Cell(A,3),nf(Num(3))),stmts(Assign(Cell(A,8),nf(Num(8))),stmts(Assign(Cell(A,4),nf(Num(4))),stmts(Assign(Cell(A,1),nf(Num(1))),stmts(Assign(Cell(A,7),nf(Num(7))),stmts(Assign(Cell(A,5),nf(Num(5))),stmts(Assign(Cell(A,6),nf(Num(6))),stmts(Assign(Cell(A,2),nf(Num(2))),Assign(Cell(B,1),nf(SUM(Vector(Arg(Arr(Cell(A,1),Cell(A,8)))))))))))))))) did not equal Left(stmts(Assign(Cell(A,3),nf(Num(3))),stmts(Assign(Cell(A,8),nf(Num(8))),stmts(Assign(Cell(A,4),nf(Num(4))),stmts(Assign(Cell(A,1),nf(Num(1))),stmts(Assign(Cell(A,7),nf(Num(7))),stmts(Assign(Cell(A,5),nf(Num(5))),stmts(Assign(Cell(A,6),nf(Num(6))),Assign(Cell(A,2),nf(Num(2))))))))))) (ruMainTest.scala:37)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- runMain.arrayTest[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- runMain.embeddedArgTest[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- runMain.ifTest[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- runMain.optimise[0m[0m

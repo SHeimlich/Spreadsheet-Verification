@@ -1,12 +1,12 @@
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\test\scala\ruMainTest.scala:118:13: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\test\scala\ruMainTest.scala:117:13: match may not be exhaustive.[0m
 [0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: Right(_)[0m
 [0m[[0m[33mwarn[0m] [0m[0m    val e = ast match {[0m
 [0m[[0m[33mwarn[0m] [0m[0m            ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\test\scala\ruMainTest.scala:142:13: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\test\scala\ruMainTest.scala:141:13: match may not be exhaustive.[0m
 [0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: Right(_)[0m
 [0m[[0m[33mwarn[0m] [0m[0m    val e = ast match {[0m
 [0m[[0m[33mwarn[0m] [0m[0m            ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\test\scala\ruMainTest.scala:171:13: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\test\scala\ruMainTest.scala:170:13: match may not be exhaustive.[0m
 [0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: Right(_)[0m
 [0m[[0m[33mwarn[0m] [0m[0m    val e = ast match {[0m
 [0m[[0m[33mwarn[0m] [0m[0m            ^[0m
