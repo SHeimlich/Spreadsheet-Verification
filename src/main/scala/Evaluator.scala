@@ -35,9 +35,45 @@ object Evaluator extends Attribution {
 
   def ifValue (a: assignIf) : String = a match {
       case ifAssign(r, nIf(b, f1, f2)) =>
-        "int " + getIfRef(r) + "=0;\nif(" + FormValue(b(0)) + ") { \n" +
-          "\t" + getIfRef(r) + "=" + numVecVal(f1) + "; \n} else { \n" +
+        "int " + getIfRef(r) + "=0;\nif(" + FormValue(b(0)) + "!= 0) { \n" +
+          "\t" + getIfRef(r) + "=" + numVecVal(f1) + "; \n" +
+          "\t" + getIfRef(r) + "Num =" + getIsNumForm(f1) + "; \n" +
+          "} else { \n" +
+          "\t" + getIfRef(r) + "Num =" + getIsNumForm(f2) + "; \n" +
           "\t" + getIfRef(r) + "=" + numVecVal(f2) + "; \n}\n"
+  }
+
+  def getIsNumForm(formulas: Vector[ExpParserSyntax.Formula]): String = {
+    var rtn = "";
+    for (i <- 0 until formulas.length) {
+      rtn = rtn + numValue(formulas(i))
+    }
+    return rtn
+  }
+
+  def numValue(f: ExpParserSyntax.Formula) : String = f match {
+    case Num (i)    => "1"
+    case Boo (b)    => "1"
+    case Cell(c, r) => r + c + "Num"
+    case Div(l, r) => "1"
+    case Add (l, r) => "1"
+    case Mul (l, r) => "1"
+    case Sub (l, r) => "1"
+    case and (l, r) => "1"
+    case equal (l, r) => "1"
+    case great (l, r)  => "1"
+    case greatEqual (l, r)  => "1"
+    case less (l, r)  => "1"
+    case lessEqual (l, r)  => "1"
+    case pow (l, r)  => "1"
+    case Arr(b, e) => "0"
+    case SUM(a) => "1"
+    case AVERAGE(a) => "1"
+    case numIF(nIf(b, f1, f2)) => "0"
+    case Ref(Cell(r,c)) => r + c + "Num"
+    case numIfRef(r) => r.rows(0) + "Num"
+    case nullNum() => "1"
+    case strConst(r) => "0"
   }
 
   def getIfRef(r: Vector[ifRef]) : String = {
@@ -113,8 +149,10 @@ object Evaluator extends Attribution {
   def numIfVal(c: Formula, b: Vector[ExpParserSyntax.Formula], f: Vector[ExpParserSyntax.Formula], f1: Vector[ExpParserSyntax.Formula]) : String = {
     var rtn = numVecAsserts(f, f1)
     rtn = rtn + "if(" + numVecVal(b) + "!=0) { \n"
-    rtn = rtn + FormValue(c) + "=" + numVecVal(f) + "; \n} else {\n"
-    rtn = rtn + FormValue(c) + "=" + numVecVal(f1) + "; \n}"
+    rtn = rtn + FormValue(c) + "=" + numVecVal(f) + "; \n"
+    rtn = rtn + "int " + FormValue(c) + "Num = " + numVecVal(f) + "} else {\n"
+    rtn = rtn + FormValue(c) + "=" + numVecVal(f1)
+    rtn = rtn + "int " + FormValue(c) + "Num = " + numVecVal(f) + "; \n}"
     return rtn;
   }
 
