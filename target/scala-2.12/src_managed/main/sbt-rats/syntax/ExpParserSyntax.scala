@@ -17,63 +17,56 @@ object ExpParserSyntax {
         val fixity = org.bitbucket.inkytonik.kiama.output.Infix (org.bitbucket.inkytonik.kiama.output.NonAssoc)
     }
      
-    case class Assign (cell : NumFormula, formula : Formula) extends Exp with org.bitbucket.inkytonik.kiama.output.PrettyNaryExpression {
+    case class Assign (cell : Formula, formula : Formula) extends Exp with org.bitbucket.inkytonik.kiama.output.PrettyNaryExpression {
         val priority = 0
         val fixity = org.bitbucket.inkytonik.kiama.output.Infix (org.bitbucket.inkytonik.kiama.output.NonAssoc)
     }
-     
-    sealed abstract class Formula extends ASTNode
-    case class nf (numFormula : NumFormula) extends Formula  
-    case class sf (stringFormula : StringFormula) extends Formula  
      
     sealed abstract class assignIf extends ASTNode
     case class ifAssign (ifRefs : Vector[ifRef], nIf : nIf) extends assignIf  {
         require (ifRefs.length > 0, "ifRefs field can't be empty")
     }
      
-    sealed abstract class NumFormula extends ASTNode
-    case class numIF (nIf : nIf) extends NumFormula  
-    case class SUM (numArgumentss : Vector[NumArguments]) extends NumFormula  {
+    sealed abstract class Formula extends ASTNode
+    case class numIF (nIf : nIf) extends Formula  
+    case class SUM (numArgumentss : Vector[NumArguments]) extends Formula  {
         require (numArgumentss.length > 0, "numArgumentss field can't be empty")
     }
-    case class AVERAGE (numArgumentss : Vector[NumArguments]) extends NumFormula  {
+    case class AVERAGE (numArgumentss : Vector[NumArguments]) extends Formula  {
         require (numArgumentss.length > 0, "numArgumentss field can't be empty")
     }
-    case class Add (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
-    case class Sub (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
-    case class Mul (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
-    case class Div (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
-    case class pow (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
-    case class and (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
-    case class less (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
-    case class great (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
-    case class equal (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
-    case class lessEqual (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
-    case class greatEqual (numFormula1 : NumFormula, numFormula2 : NumFormula) extends NumFormula  
-    case class numIfRef (ifRef : ifRef) extends NumFormula  
-    case class nullNum () extends NumFormula  
+    case class conCat (numArgumentss : Vector[NumArguments]) extends Formula  {
+        require (numArgumentss.length > 0, "numArgumentss field can't be empty")
+    }
+    case class Add (formula1 : Formula, formula2 : Formula) extends Formula  
+    case class Sub (formula1 : Formula, formula2 : Formula) extends Formula  
+    case class Mul (formula1 : Formula, formula2 : Formula) extends Formula  
+    case class Div (formula1 : Formula, formula2 : Formula) extends Formula  
+    case class pow (formula1 : Formula, formula2 : Formula) extends Formula  
+    case class and (formula1 : Formula, formula2 : Formula) extends Formula  
+    case class less (formula1 : Formula, formula2 : Formula) extends Formula  
+    case class great (formula1 : Formula, formula2 : Formula) extends Formula  
+    case class equal (formula1 : Formula, formula2 : Formula) extends Formula  
+    case class lessEqual (formula1 : Formula, formula2 : Formula) extends Formula  
+    case class greatEqual (formula1 : Formula, formula2 : Formula) extends Formula  
+    case class numIfRef (ifRef : ifRef) extends Formula  
+    case class strConst (str : String) extends Formula  
+    case class nullNum () extends Formula  
      
-    case class nIf (numFormulas1 : Vector[NumFormula], numFormulas2 : Vector[NumFormula], numFormulas3 : Vector[NumFormula]) extends ASTNode
-     
-    sealed abstract class StringFormula extends ASTNode
-    case class conCat (numArgumentss : Vector[NumArguments]) extends StringFormula  {
-        require (numArgumentss.length > 0, "numArgumentss field can't be empty")
-    }
-    case class strConst (str : String) extends StringFormula  
-    case class NumAsStr (numFormula : NumFormula) extends StringFormula  
+    case class nIf (formulas1 : Vector[Formula], formulas2 : Vector[Formula], formulas3 : Vector[Formula]) extends ASTNode
      
     sealed abstract class NumArguments extends ASTNode
-    case class Args (numFormula : NumFormula, numArguments : NumArguments) extends NumArguments  
-    case class Arg (numFormula : NumFormula) extends NumArguments  
+    case class Args (formula : Formula, numArguments : NumArguments) extends NumArguments  
+    case class Arg (formula : Formula) extends NumArguments  
      
-    case class Num (integer : String) extends NumFormula  
-    case class Boo (bool : String) extends NumFormula  
+    case class Num (integer : String) extends Formula  
+    case class Boo (bool : String) extends Formula  
      
-    case class Arr (cell1 : NumFormula, cell2 : NumFormula) extends NumFormula  
+    case class Arr (cell1 : Formula, cell2 : Formula) extends Formula  
      
-    case class Ref (cell : NumFormula) extends NumFormula  
+    case class Ref (cell : Formula) extends Formula  
      
-    case class Cell (col : String, row : String) extends NumFormula  
+    case class Cell (col : String, row : String) extends Formula  
        
     case class ifRef (rows : Vector[String]) extends ASTNode
             

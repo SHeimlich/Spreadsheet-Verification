@@ -19,10 +19,6 @@ trait ExpParserPrettyPrinter extends PP with PPP {
         astNode match {  
             case v : Exp =>
                 toParenDoc (v)  
-            case v @ nf (v1) =>
-                toDoc (v1) 
-            case v @ sf (v1) =>
-                toDoc (v1) 
             case v @ ifAssign (v1, v2) =>
                 ssep (v1.map (toDoc), emptyDoc) <> text ("=") <> space <> toDoc (v2) 
             case v @ numIF (v1) =>
@@ -30,6 +26,8 @@ trait ExpParserPrettyPrinter extends PP with PPP {
             case v @ SUM (v1) =>
                 emptyDoc <> ssep (v1.map (toDoc), emptyDoc) <> text (")") <> space 
             case v @ AVERAGE (v1) =>
+                emptyDoc <> ssep (v1.map (toDoc), emptyDoc) <> text (")") <> space 
+            case v @ conCat (v1) =>
                 emptyDoc <> ssep (v1.map (toDoc), emptyDoc) <> text (")") <> space 
             case v @ Add (v1, v2) =>
                 toDoc (v1) <> text ("+") <> space <> toDoc (v2) 
@@ -54,17 +52,13 @@ trait ExpParserPrettyPrinter extends PP with PPP {
             case v @ greatEqual (v1, v2) =>
                 toDoc (v1) <> text (">=") <> space <> toDoc (v2)   
             case v @ numIfRef (v1) =>
-                toDoc (v1)   
+                toDoc (v1)  
+            case v @ strConst (v1) =>
+                value (v1)  
             case v @ nullNum () =>
                 text ("null") <> space 
             case v @ nIf (v1, v2, v3) =>
                 emptyDoc <> ssep (v1.map (toDoc), emptyDoc) <> emptyDoc <> ssep (v2.map (toDoc), emptyDoc) <> emptyDoc <> ssep (v3.map (toDoc), emptyDoc) <> text (")") <> space 
-            case v @ conCat (v1) =>
-                emptyDoc <> ssep (v1.map (toDoc), emptyDoc) <> text (")") <> space 
-            case v @ strConst (v1) =>
-                value (v1) 
-            case v @ NumAsStr (v1) =>
-                toDoc (v1) 
             case v @ Args (v1, v2) =>
                 toDoc (v1) <> text (";") <> space <> toDoc (v2) 
             case v @ Arg (v1) =>

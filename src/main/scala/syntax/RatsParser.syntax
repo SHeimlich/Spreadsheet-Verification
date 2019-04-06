@@ -12,59 +12,52 @@ Exp {paren} =
 Assign : Exp =
   Cell sp " = " Formula ",".
 
-Formula =
-     NumFormula  {nf}
-     |     StringFormula {sf}.
-
 assignIf =
     ifRef + "=" nIf {ifAssign}.
 
-NumFormula =
+Formula =
       nIf                           {numIF}
     | "SUM(" + NumArguments + ")"    {SUM}
     | "AVERAGE(" + NumArguments + ")"    {AVERAGE}
-    | NumFormula "+" NumFormula             {Add, left, 2}
-    | NumFormula "-" NumFormula           {Sub, left, 2}
-    | NumFormula "*" NumFormula           {Mul, left, 1}
-    | NumFormula "/" NumFormula           {Div, left, 1}
-    | NumFormula "^" NumFormula        {pow, left, 3}
-    | NumFormula "&" NumFormula        {and, left, 3}
-    | NumFormula "<" NumFormula        {less, left, 3}
-    | NumFormula ">" NumFormula        {great, left, 3}
-    | NumFormula "=" NumFormula        {equal, left, 3}
-    | NumFormula "<=" NumFormula       {lessEqual, left, 3}
-    | NumFormula ">=" NumFormula       {greatEqual, left, 3}
+    | "CONCATENATE(" + NumArguments + ")"    {conCat}
+    | Formula "+" Formula             {Add, left, 2}
+    | Formula "-" Formula           {Sub, left, 2}
+    | Formula "*" Formula           {Mul, left, 1}
+    | Formula "/" Formula           {Div, left, 1}
+    | Formula "^" Formula        {pow, left, 3}
+    | Formula "&" Formula        {and, left, 3}
+    | Formula "<" Formula        {less, left, 3}
+    | Formula ">" Formula        {great, left, 3}
+    | Formula "=" Formula        {equal, left, 3}
+    | Formula "<=" Formula       {lessEqual, left, 3}
+    | Formula ">=" Formula       {greatEqual, left, 3}
     | Array
     | CellRef
     | ifRef                             {numIfRef}
     | NumConstant
-    | '(' NumFormula ')'
+    | Str           {strConst}
+    | '(' Formula ')'
     | "null"        {nullNum}.
 
 nIf =
-    "IF(" + NumFormula + ";" + NumFormula + ";" + NumFormula + ")".
-
-StringFormula =
-    "CONCATENATE(" + NumArguments + ")"    {conCat}
-    | Str           {strConst}
-    | NumFormula   {NumAsStr}.
+    "IF(" + Formula + ";" + Formula + ";" + Formula + ")".
 
 
 NumArguments =
-    NumFormula ";" NumArguments {Args}
-  | NumFormula     {Arg}.
+    Formula ";" NumArguments {Args}
+  | Formula     {Arg}.
 
-NumConstant : NumFormula =
+NumConstant : Formula =
     Integer     {Num}
   | Bool        {Boo}.
 
-Array : NumFormula =
+Array : Formula =
     "[." Cell ":." Cell "]"         {Arr}.
 
-CellRef : NumFormula =
+CellRef : Formula =
   "[." Cell "]"      {Ref}.
 
-Cell : NumFormula =
+Cell : Formula =
   col row.
 
 col : String =

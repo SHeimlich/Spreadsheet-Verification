@@ -1,4 +1,4 @@
-import Evaluator.{NumFormAsserts, NumFormValue, getArgAsserts, getArgsLength, numVecAsserts}
+import Evaluator.{FormAsserts, FormValue, getArgAsserts, getArgsLength, numVecAsserts}
 
 class Optimiser {
 
@@ -28,19 +28,19 @@ class Optimiser {
     }
 
   def stmtSimplifier (x: Exp): Exp = x match {
-    case Assign(Cell(c, r), nf(f)) => AssignSimplifier(Cell(c, r), f)
+    case Assign(Cell(c, r), f) => AssignSimplifier(Cell(c, r), f)
     case Assign(a, b) => Assign(a, b)
     //case stmt(a) => stmt(stmtSimplifier(a))
     case stmts(a, b) => stmts(stmtSimplifier(a), stmtSimplifier(b))
     case ifStmt(a, b) => ifStmt(a, stmtSimplifier(b))
   }
 
-  def AssignSimplifier (c: Cell, f: NumFormula) : Exp = {
+  def AssignSimplifier (c: Cell, f: Formula) : Exp = {
     if(formulaHasIf(f)) {
       return ifStmt(getIf(c, f), AssignSimplifier(c, removeIf(f)))
     }
     else {
-      return Assign(c, nf(f))
+      return Assign(c, f)
     }
   }
 
@@ -59,7 +59,7 @@ class Optimiser {
     case Arg(r) => getIf(cell, r)
   }
 
-  def getIf(cell: Cell, x: NumFormula) : assignIf = x match {
+  def getIf(cell: Cell, x: Formula) : assignIf = x match {
     case numIF(nIf(a, b, c)) => {
       if(formulaHasIf(a(0))) return getIf(cell, a(0))
       if(formulaHasIf(b(0))) return getIf(cell, b(0))
@@ -71,13 +71,13 @@ class Optimiser {
     case Div(l, r) => {if(formulaHasIf(l)){ getIf(cell, l); } else { getIf(cell, r); }}
   }
 
-  def getAssignIf(c: Cell, a: Vector[NumFormula], nfVec1: Vector[NumFormula], nfVec2: Vector[NumFormula]) : assignIf = {
+  def getAssignIf(c: Cell, a: Vector[Formula], nfVec1: Vector[Formula], nfVec2: Vector[Formula]) : assignIf = {
     ifCount = ifCount + 1
     val str = "if" + ifCount
     return ifAssign(Vector(ifRef(Vector(str))), nIf(a, nfVec1, nfVec2))
   }
 
-  def removeIf (x: NumFormula) : NumFormula = x match {
+  def removeIf (x: Formula) : Formula = x match {
     case numIF(nIf(a, b, c)) => {
       if(formulaHasIf(a(0))) return numIF(nIf(Vector(removeIf(a(0))), b, c))
       if(formulaHasIf(b(0))) {return numIF(nIf(a, Vector(removeIf(b(0))), c)) }
@@ -104,6 +104,7 @@ class Optimiser {
     case Ref(Cell(r,c)) => Ref(Cell(r, c))
     case numIfRef(r) => numIfRef(r)
     case nullNum() => nullNum()
+    case strConst(s) => strConst(s)
   }
 
   def argsRemoveIf(a: Vector[NumArguments]): Vector[NumArguments] = {
@@ -122,7 +123,7 @@ class Optimiser {
     }
   }
 
-  def formulaHasIf (x: NumFormula) : Boolean = x match {
+  def formulaHasIf (x: Formula) : Boolean = x match {
     case numIF(nIf(_,_,_)) => true
     case Num (i)    => false
     case Boo (b)    => false
@@ -144,6 +145,7 @@ class Optimiser {
     case Ref(Cell(r,c)) => false
     case numIfRef(r) => false
     case nullNum() => false
+    case strConst(s) => false
   }
 
   def argsHasIf(a: Vector[NumArguments]): Boolean = {
