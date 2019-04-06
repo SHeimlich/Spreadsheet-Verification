@@ -18,12 +18,12 @@ object Evaluator extends Attribution {
 
   def assignValue (a: Exp) : String = a match {
       case Assign(l, numIF(nIf(fb, f1, f2))) => numIfVal(l, fb, f1, f2)
-      case Assign(l, r) => FormAsserts(r) + getType(r) + FormValue(l) + "=" + FormValue(r) + ";\n"
+      case Assign(l, r) => FormAsserts(r) + getType(l, r) + FormValue(l) + "=" + FormValue(r) + ";\n"
     }
 
-  def getType(f: Formula) : String = f match {
-    case strConst(s) => "char[] "
-    case _ => "int "
+  def getType(c: Formula, f: Formula) : String = f match {
+    case strConst(s) => "bool " + FormValue(c) + "Num = false; \nchar[] "
+    case _ => "bool " + FormValue(c) + "Num = true; \nint "
   }
 
 
@@ -49,18 +49,19 @@ object Evaluator extends Attribution {
       case Boo (b)    => ""
       //case S (s)    => ""
       case Cell(c, r) => ""
-      case Div(l, r) => FormAsserts(l) + "if(" + FormValue(r) + " == 0) \n\t __VERIFIER_error(); \n"
-      case Add (l, r) => FormAsserts (l) + FormAsserts (r)
-      case Mul (l, r) => FormAsserts (l)  + FormAsserts (r)
-      case Sub (l, r) => FormAsserts (l) + FormAsserts (r)
-      case and (l, r) => FormAsserts(l) + FormAsserts (r)
-      case equal (l, r) => FormAsserts(l) + FormAsserts (r)
-      case great (l, r)  => FormAsserts(l) + FormAsserts (r)
-      case greatEqual (l, r)  => FormAsserts(l) + FormAsserts (r)
-      case less (l, r)  => FormAsserts(l) + FormAsserts (r)
-      case lessEqual (l, r)  => FormAsserts(l) + FormAsserts (r)
-      case pow (l, r)  => FormAsserts(l) + FormAsserts (r)
+      case Div(l, r) => AssertNum(l) + AssertNum(r) + FormAsserts(l) + "if(" + FormValue(r) + " == 0) \n\t __VERIFIER_error(); \n"
+      case Add (l, r) => AssertNum(l) + AssertNum(r) + FormAsserts (l) + FormAsserts (r)
+      case Mul (l, r) => AssertNum(l) + AssertNum(r) + FormAsserts (l)  + FormAsserts (r)
+      case Sub (l, r) => AssertNum(l) + AssertNum(r) + FormAsserts (l) + FormAsserts (r)
+      case and (l, r) => AssertNum(l) + AssertNum(r) + FormAsserts(l) + FormAsserts (r)
+      case equal (l, r) => AssertNum(l) + AssertNum(r) + FormAsserts(l) + FormAsserts (r)
+      case great (l, r)  => AssertNum(l) + AssertNum(r) + FormAsserts(l) + FormAsserts (r)
+      case greatEqual (l, r)  => AssertNum(l) + AssertNum(r) + FormAsserts(l) + FormAsserts (r)
+      case less (l, r)  => AssertNum(l) + AssertNum(r) + FormAsserts(l) + FormAsserts (r)
+      case lessEqual (l, r)  => AssertNum(l) + AssertNum(r) + FormAsserts(l) + FormAsserts (r)
+      case pow (l, r)  => AssertNum(l) + AssertNum(r) + FormAsserts(l) + FormAsserts (r)
       case Arr(b, e) => ""
+      // TODO: add AssertNumArgs
       case SUM(a) => getArgAsserts(a)
       case AVERAGE(a) => getArgAsserts(a) + "if(" + getArgsLength(a) + " == 0) \n\t __VERIFIER_error(); \n"
       case numIF(nIf(b, f1, f2)) => numVecAsserts(f1, f2)
@@ -69,6 +70,15 @@ object Evaluator extends Attribution {
       case nullNum() => ""
       case strConst(r) => ""
     }
+
+  def AssertNum(f: Formula) : String = {
+    f match {
+      case Ref(c) => "if(!" + FormValue(c) + "Num) \n\t __VERIFIER_error(); \n";
+      case conCat(a) => "__VERIFIER_error(); \n"
+      case strConst(r) => "__VERIFIER_error(); \n"
+      case _ => ""
+    }
+  }
 
 
 
