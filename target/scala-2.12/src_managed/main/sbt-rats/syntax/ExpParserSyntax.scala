@@ -56,6 +56,9 @@ object ExpParserSyntax {
     case class nIf (numFormulas1 : Vector[NumFormula], numFormulas2 : Vector[NumFormula], numFormulas3 : Vector[NumFormula]) extends ASTNode
      
     sealed abstract class StringFormula extends ASTNode
+    case class conCat (numArgumentss : Vector[NumArguments]) extends StringFormula  {
+        require (numArgumentss.length > 0, "numArgumentss field can't be empty")
+    }
     case class strConst (str : String) extends StringFormula  
     case class NumAsStr (numFormula : NumFormula) extends StringFormula  
      

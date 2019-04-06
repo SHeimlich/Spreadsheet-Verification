@@ -45,7 +45,8 @@ nIf =
     "IF(" + NumFormula + ";" + NumFormula + ";" + NumFormula + ")".
 
 StringFormula =
-    Str {strConst}
+    "CONCATENATE(" + NumArguments + ")"    {conCat}
+    | Str           {strConst}
     | NumFormula   {NumAsStr}.
 
 

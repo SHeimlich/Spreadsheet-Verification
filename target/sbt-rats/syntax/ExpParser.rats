@@ -79,6 +79,12 @@ String Symbol2 =
 transient String Symbol2Alts =
     "<=" / ">=" / "[." / ":.";
 
+String Symbol12 =
+    Symbol12Alts Spacing;
+
+transient String Symbol12Alts =
+    "CONCATENATE(";
+
 String Symbol3 =
     Symbol3Alts Spacing;
 
@@ -139,7 +145,10 @@ public nIf nIf =
     ;
 
 public StringFormula StringFormula =
-    v1:Str {
+    (void:"CONCATENATE(":Symbol12)+ v1:(NumArguments)+ void:")":Symbol1 {
+        yyValue = new conCat (v1);
+    }
+    / v1:Str {
         yyValue = new strConst (v1);
     }
     / v1:NumFormula {

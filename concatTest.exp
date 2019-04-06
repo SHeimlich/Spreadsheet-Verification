@@ -1,0 +1,1 @@
+A1 = 'G'day ', A3 = 3132, A2 = 'world ', A4 = CONCATENATE([.A1];[.A2]), A5 = CONCATENATE([.A4];[.A3]),

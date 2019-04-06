@@ -7,8 +7,21 @@ int A4=__VERIFIER_nondet_int();
 int A1=__VERIFIER_nondet_int();
 int A7=__VERIFIER_nondet_int();
 int A5=__VERIFIER_nondet_int();
+int A9=__VERIFIER_nondet_int();
 int A6=__VERIFIER_nondet_int();
 int A2=__VERIFIER_nondet_int();
-int B1=A1 + A2 + A3 + A4 + A5 + A6 + A7 + A8;
+int if1=0;
+if(A2) { 
+	if1=A3; 
+} else { 
+	if1=A4; 
+}
+int if2=0;
+if(A7) { 
+	if2=A8; 
+} else { 
+	if2=A9; 
+}
+int B1=A1 + if1 + A5 + A6 + if2;
 
 }
