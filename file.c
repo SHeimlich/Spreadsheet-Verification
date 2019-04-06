@@ -4,7 +4,7 @@ int main() {
 int A1Num = 1; 
 int A1=__VERIFIER_nondet_int();
 int A2Num = 0; 
-char[] A2="gday";
+int A2=__VERIFIER_nondet_int();
 if(A1Num == 0) 
 	 __VERIFIER_error(); 
 if(A2Num == 0) 

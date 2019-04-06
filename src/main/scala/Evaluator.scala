@@ -22,7 +22,7 @@ object Evaluator extends Attribution {
     }
 
   def getType(c: Formula, f: Formula) : String = f match {
-    case strConst(s) => "int " + FormValue(c) + "Num = 0; \nchar[] "
+    case strConst(s) => "int " + FormValue(c) + "Num = 0; \nint "
     case _ => "int " + FormValue(c) + "Num = 1; \nint "
   }
 
@@ -107,7 +107,7 @@ object Evaluator extends Attribution {
       case Ref(Cell(c, r)) => c + "" + r;
       case numIfRef(r) => r.rows(0)
       case nullNum() => "0"
-      case strConst(v) => "\"" + v.substring(1, v.length-1) + "\""
+      case strConst(v) => "__VERIFIER_nondet_int()" //"\"" + v.substring(1, v.length-1) + "\""
     }
 
   def numIfVal(c: Formula, b: Vector[ExpParserSyntax.Formula], f: Vector[ExpParserSyntax.Formula], f1: Vector[ExpParserSyntax.Formula]) : String = {
