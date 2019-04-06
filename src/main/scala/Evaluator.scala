@@ -35,6 +35,7 @@ object Evaluator extends Attribution {
 
   def ifValue (a: assignIf) : String = a match {
       case ifAssign(r, nIf(b, f1, f2)) =>
+        "int " + getIfRef(r) + "Num = 0 \n" +
         "int " + getIfRef(r) + "=0;\nif(" + FormValue(b(0)) + "!= 0) { \n" +
           "\t" + getIfRef(r) + "=" + numVecVal(f1) + "; \n" +
           "\t" + getIfRef(r) + "Num =" + getIsNumForm(f1) + "; \n" +
