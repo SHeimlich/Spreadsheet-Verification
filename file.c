@@ -2,7 +2,7 @@ extern void __VERIFIER_error() __attribute__ ((__noreturn__));
 unsigned int __VERIFIER_nondet_uint();
 int main() {
 int C1Num = 1; 
-int C1=1;
+int C1=__VERIFIER_nondet_int();
 int B1Num = 0; 
 int B1=__VERIFIER_nondet_int();
 int A1Num = 1; 

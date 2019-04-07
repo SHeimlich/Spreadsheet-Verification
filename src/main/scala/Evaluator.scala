@@ -120,8 +120,8 @@ object Evaluator extends Attribution {
 
   def FormValue(f: Formula) : String = f match {
       case Num (i)    => "__VERIFIER_nondet_int()"
-      case Boo ("true")    => "1"
-      case Boo ("false") => "0"
+      case Boo ("true")    => "__VERIFIER_nondet_int()"
+      case Boo ("false") => "__VERIFIER_nondet_int()"
      // case S (s)    => s
       case Cell(c, r) => c + r
       case Div(l, r) => FormValue (l) + "/" + FormValue (r)
