@@ -16,7 +16,7 @@ if(C1!= 0) {
 	if1Num =B1Num; 
 	if1=B1; 
 }
-int A2Num = 1; 
+int A2Num = if1Num; 
 int A2=if1;
 if(A1Num == 0) 
 	 __VERIFIER_error(); 

@@ -21,9 +21,8 @@ object Evaluator extends Attribution {
       case Assign(l, r) => FormAsserts(r) + getType(l, r) + FormValue(l) + "=" + FormValue(r) + ";\n"
     }
 
-  def getType(c: Formula, f: Formula) : String = f match {
-    case strConst(s) => "int " + FormValue(c) + "Num = 0; \nint "
-    case _ => "int " + FormValue(c) + "Num = 1; \nint "
+  def getType(c: Formula, f: Formula) : String = {
+    return "int " + FormValue(c) + "Num = " + numValue(f) + "; \nint "
   }
 
 
