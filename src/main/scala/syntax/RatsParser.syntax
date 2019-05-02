@@ -70,7 +70,8 @@ ifRef =
   row + "if".
 
 Integer : String =
-  Digits Spacing.
+      Digits "." Digits
+    | Digits Spacing .
 
 Digits : String =
   Digit+.

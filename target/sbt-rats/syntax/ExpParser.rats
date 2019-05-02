@@ -70,8 +70,8 @@ String Symbol1 =
     Symbol1Alts Spacing;
 
 transient String Symbol1Alts =
-    "*" / "]" / "=" / "<" / "&" / ")" / "-" / "," / ";" / "'" / "+" / "(" /
-    "^" / "/" / ">";
+    "*" / "." / "]" / "=" / "<" / "&" / ")" / "-" / "," / ";" / "'" / "+" /
+    "(" / "^" / "/" / ">";
 
 String Symbol2 =
     Symbol2Alts Spacing;
@@ -186,7 +186,8 @@ public ifRef ifRef =
     ;
 
 public String Integer =
-    Digits Spacing
+    Digits "." Digits
+    / Digits Spacing
     ;
 
 public String Digits =

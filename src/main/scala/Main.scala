@@ -39,7 +39,7 @@ object ruMain extends CompilerBase[Exp,Config] {
 
   def process (source : Source, e : Exp, config : Config) {
     val output = config.output()
-    //output.emitln ("e = " + e)
+    output.emitln ("e = " + e)
     //output.emitln ("e tree:")
     output.emitln (layout (any (e)))
     //output.emitln(test(any(e)))

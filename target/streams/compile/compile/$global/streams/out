@@ -1,20 +1,15 @@
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:19:39: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
-[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def assignValue (a: Exp) : String = a match {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                      ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:54:55: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
-[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def numValue(f: ExpParserSyntax.Formula) : String = f match {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                                      ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:83:42: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
-[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def FormAsserts(f: Formula) : String = f match{[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                         ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:143:38: unreachable code[0m
-[0m[[0m[33mwarn[0m] [0m[0m      case Ref(Cell(c, r)) => c + "" + r;[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                     ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:121:40: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
-[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def FormValue(f: Formula) : String = f match {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                       ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m5 warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Main.scala:65:16: a pure expression does nothing in statement position[0m
+[0m[[0m[33mwarn[0m] [0m[0m        return ""[0m
+[0m[[0m[33mwarn[0m] [0m[0m               ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Main.scala:65:9: enclosing method process has result type Unit: return value discarded[0m
+[0m[[0m[33mwarn[0m] [0m[0m        return ""[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\OuterParser.scala:18:17: postfix operator getGraph should be enabled[0m
+[0m[[0m[33mwarn[0m] [0m[0mby making the implicit value scala.language.postfixOps visible.[0m
+[0m[[0m[33mwarn[0m] [0m[0mThis can be achieved by adding the import clause 'import scala.language.postfixOps'[0m
+[0m[[0m[33mwarn[0m] [0m[0mor by setting the compiler option -language:postfixOps.[0m
+[0m[[0m[33mwarn[0m] [0m[0mSee the Scaladoc for value scala.language.postfixOps for a discussion[0m
+[0m[[0m[33mwarn[0m] [0m[0mwhy the feature should be explicitly enabled.[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val g = p getGraph;[0m
+[0m[[0m[33mwarn[0m] [0m[0m                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mthree warnings found[0m

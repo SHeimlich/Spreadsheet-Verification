@@ -1,28 +1,109 @@
 extern void __VERIFIER_error() __attribute__ ((__noreturn__));
 unsigned int __VERIFIER_nondet_uint();
 int main() {
-int C1Num = 1; 
-int C1=__VERIFIER_nondet_int();
-int B1Num = 0; 
-int B1=__VERIFIER_nondet_int();
-int A1Num = 1; 
-int A1=__VERIFIER_nondet_int();
-int if1Num = 0; 
-int if1=0;
-if(C1!= 0) { 
-	if1=A1; 
-	if1Num =A1Num; 
-} else { 
-	if1Num =B1Num; 
-	if1=B1; 
-}
-int A2Num = if1Num; 
-int A2=if1;
-if(A1Num == 0) 
+int C14Num = 0; 
+int C14=__VERIFIER_nondet_int();
+int C11Num = 0; 
+int C11=__VERIFIER_nondet_int();
+int G8Num = 0; 
+int G8=__VERIFIER_nondet_int();
+int I11Num = 1; 
+int I11=__VERIFIER_nondet_int();
+int L12Num = 0; 
+int L12=__VERIFIER_nondet_int();
+int G16Num = 0; 
+int G16=__VERIFIER_nondet_int();
+int E11Num = 1; 
+int E11=__VERIFIER_nondet_int();
+int C12Num = 0; 
+int C12=__VERIFIER_nondet_int();
+int K9Num = 0; 
+int K9=__VERIFIER_nondet_int();
+int E5Num = 0; 
+int E5=__VERIFIER_nondet_int();
+int G20Num = 0; 
+int G20=__VERIFIER_nondet_int();
+int K12Num = 0; 
+int K12=__VERIFIER_nondet_int();
+int G24Num = 0; 
+int G24=__VERIFIER_nondet_int();
+int M11Num = 1; 
+int M11=0;
+int I15Num = 1; 
+int I15=0;
+int E8Num = 1; 
+int E8=__VERIFIER_nondet_int();
+int I13Num = 1; 
+int I13=0;
+int I14Num = 1; 
+int I14=__VERIFIER_nondet_int();
+int K8Num = 0; 
+int K8=__VERIFIER_nondet_int();
+int M8Num = 1; 
+int M8=__VERIFIER_nondet_int();
+int M9Num = 1; 
+int M9=__VERIFIER_nondet_int();
+int I20Num = 1; 
+int I20=__VERIFIER_nondet_int();
+int G18Num = 0; 
+int G18=__VERIFIER_nondet_int();
+int I12Num = 1; 
+int I12=__VERIFIER_nondet_int();
+int G21Num = 0; 
+int G21=__VERIFIER_nondet_int();
+int G11Num = 0; 
+int G11=__VERIFIER_nondet_int();
+int M12Num = 1; 
+int M12=__VERIFIER_nondet_int();
+int G14Num = 0; 
+int G14=__VERIFIER_nondet_int();
+int C10Num = 0; 
+int C10=__VERIFIER_nondet_int();
+int C8Num = 0; 
+int C8=__VERIFIER_nondet_int();
+int G12Num = 0; 
+int G12=__VERIFIER_nondet_int();
+int M10Num = 1; 
+int M10=0;
+int E13Num = 1; 
+int E13=0;
+int E10Num = 1; 
+int E10=__VERIFIER_nondet_int();
+int I10Num = 1; 
+int I10=__VERIFIER_nondet_int();
+int G10Num = 0; 
+int G10=__VERIFIER_nondet_int();
+int L8Num = 0; 
+int L8=__VERIFIER_nondet_int();
+int E12Num = 1; 
+int E12=__VERIFIER_nondet_int();
+int C16Num = 0; 
+int C16=__VERIFIER_nondet_int();
+int M13Num = 1; 
+int M13=M8 + M9 + M10 + M11 + M12;
+int I16Num = 1; 
+int I16=I10 + I11 + I12 + I13 + I14 + I15;
+int E14Num = 1; 
+int E14=E10 + E11 + E12 + E13;
+int I8Num = M13Num; 
+int I8=M13;
+if(E8Num == 0) 
 	 __VERIFIER_error(); 
-if(A2Num == 0) 
+if(E14Num == 0) 
 	 __VERIFIER_error(); 
-int B2Num = 1; 
-int B2=A1+A2;
+int E16Num = 1; 
+int E16=E8-E14;
+if(I8Num == 0) 
+	 __VERIFIER_error(); 
+if(I16Num == 0) 
+	 __VERIFIER_error(); 
+int I18Num = 1; 
+int I18=I8-I16;
+if(I18Num == 0) 
+	 __VERIFIER_error(); 
+if(I20Num == 0) 
+	 __VERIFIER_error(); 
+int I24Num = 1; 
+int I24=I18-I20;
 
 }
