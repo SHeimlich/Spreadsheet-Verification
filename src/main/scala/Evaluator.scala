@@ -54,7 +54,7 @@ object Evaluator extends Attribution {
   def numValue(f: ExpParserSyntax.Formula) : String = f match {
     case Num (i)    => "1"
     case Boo (b)    => "1"
-    case Cell(c, r) => r + c + "Num"
+    case Cell(c, r) => c.replace("$", "") + r.replace("$", "") + "Num"
     case Div(l, r) => "1"
     case Add (l, r) => "1"
     case Mul (l, r) => "1"
@@ -71,7 +71,7 @@ object Evaluator extends Attribution {
     case SUM(a) => "1"
     case AVERAGE(a) => "1"
     case numIF(nIf(b, f1, f2)) => "0"
-    case Ref(Cell(r,c)) => r + c + "Num"
+    case Ref(Cell(r,c)) => r.replace("$", "") + c.replace("$", "") + "Num"
     case numIfRef(r) => r.rows(0) + "Num"
     case nullNum() => "1"
     case strConst(r) => "0"
@@ -124,7 +124,7 @@ object Evaluator extends Attribution {
       case Boo ("true")    => "__VERIFIER_nondet_int()"
       case Boo ("false") => "__VERIFIER_nondet_int()"
      // case S (s)    => s
-      case Cell(c, r) => c + r
+      case Cell(c, r) => c.replace("$", "") + r.replace("$", "")
       case Div(l, r) => FormValue (l) + "/" + FormValue (r)
       case Add (l, r) => FormValue (l) + "+" + FormValue (r)
       case Mul (l, r) => FormValue (l) + "*" + FormValue (r)
@@ -142,7 +142,7 @@ object Evaluator extends Attribution {
       case SUM(a) => getSum(a)
       case AVERAGE(a) => getAverage(a)
       case numIF(nIf(b, f1, f2)) => "IF(" + b + ") { \n" + numVecVal(f1) + "; \n } else {" + numVecVal(f2) + "; \n}"
-      case Ref(Cell(c, r)) => c + "" + r;
+      case Ref(Cell(c, r)) => c.replace("$", "") + "" + r.replace("$", "");
       case numIfRef(r) => r.rows(0)
       case nullNum() => "0"
       case strConst(v) => "__VERIFIER_nondet_int()" //"\"" + v.substring(1, v.length-1) + "\""
@@ -179,12 +179,12 @@ object Evaluator extends Attribution {
 
 
   def getCol(f: Formula) : String = f match {
-      case Ref(Cell(c, r)) => c
+      case Ref(Cell(c, r)) => c.replace("$", "")
       case _ => ""
     }
 
   def getRow(f: Formula) : Int = f match {
-      case Ref(Cell(c, r)) => r.toInt
+      case Ref(Cell(c, r)) => r.replace("$", "").toInt
       case _ => 0
     }
 

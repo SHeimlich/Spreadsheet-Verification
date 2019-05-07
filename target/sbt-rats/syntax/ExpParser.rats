@@ -166,17 +166,17 @@ public Formula CellRef =
     ;
 
 public Formula Cell =
-    (void:"$":Word)? v1:col (void:"$":Word)? v2:row {
+    v1:col v2:row {
         yyValue = new Cell (v1, v2);
     }
     ;
 
 public String col =
-    ([A-Z])+
+    ("$")? ([A-Z])+
     ;
 
 public String row =
-    [1-9] ([0-9])*
+    ("$")? [1-9] ([0-9])*
     ;
 
 public ifRef ifRef =
