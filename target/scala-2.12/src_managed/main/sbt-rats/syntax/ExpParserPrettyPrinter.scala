@@ -74,7 +74,7 @@ trait ExpParserPrettyPrinter extends PP with PPP {
             case v @ Ref (v1) =>
                 text ("[.") <> space <> toDoc (v1) <> text ("]") <> space 
             case v @ Cell (v1, v2) =>
-                value (v1) <> value (v2)   
+                emptyDoc <> value (v1) <> emptyDoc <> value (v2)   
             case v @ ifRef (v1) =>
                 ssep (v1.map (text), emptyDoc) <> text ("if") <> space        
         }

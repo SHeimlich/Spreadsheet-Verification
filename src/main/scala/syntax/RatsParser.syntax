@@ -59,13 +59,13 @@ CellRef : Formula =
   "[." Cell "]"      {Ref}.
 
 Cell : Formula =
-  col row.
+  "$"? col "$"? row.
 
 col : String =
-  "$"? [A-Z]+.
+  [A-Z]+.
 
 row : String =
-  "$"? [1-9][0-9]*.
+  [1-9][0-9]*.
 
 ifRef =
   row + "if".
