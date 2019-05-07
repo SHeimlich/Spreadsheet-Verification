@@ -39,15 +39,15 @@ object ruMain extends CompilerBase[Exp,Config] {
 
   def process (source : Source, e : Exp, config : Config) {
     val output = config.output()
-    output.emitln ("e = " + e)
+    //output.emitln ("e = " + e)
     //output.emitln ("e tree:")
-    output.emitln (layout (any (e)))
+    //output.emitln (layout (any (e)))
     //output.emitln(test(any(e)))
     //output.emitln ("value (e) = \n" + expvalue (e))
     val opt = new Optimiser();
     val o = opt.optimise (e)
-    output.emitln ("e optimised = " + layout( any (o)))
-    output.emitln ("value (e optimised) = " + expvalue (o))
+    //output.emitln ("e optimised = " + layout( any (o)))
+    //output.emitln ("value (e optimised) = " + expvalue (o))
 
 
     val file = new File("file.c")

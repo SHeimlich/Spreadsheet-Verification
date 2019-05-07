@@ -70,8 +70,8 @@ String Symbol1 =
     Symbol1Alts Spacing;
 
 transient String Symbol1Alts =
-    "*" / "." / "]" / "=" / "<" / "&" / ")" / "-" / "," / ";" / "'" / "+" /
-    "(" / "^" / "/" / ">";
+    "*" / "%" / "." / "]" / "=" / "<" / "&" / ")" / "-" / "," / ";" / "'" /
+    "+" / "(" / "$" / "^" / "/" / ">";
 
 String Symbol2 =
     Symbol2Alts Spacing;
@@ -172,11 +172,11 @@ public Formula Cell =
     ;
 
 public String col =
-    ([A-Z])+
+    ("$")? ([A-Z])+
     ;
 
 public String row =
-    [1-9] ([0-9])*
+    ("$")? [1-9] ([0-9])*
     ;
 
 public ifRef ifRef =
@@ -358,6 +358,9 @@ public Formula FormulaLevel0 =
     }
     / (void:"CONCATENATE(":Symbol12)+ v1:(NumArguments)+ void:")":Symbol1 {
         yyValue = new conCat (v1);
+    }
+    / v1:Integer void:"%":Symbol1 {
+        yyValue = new percent (v1);
     }
     / v1:Array 
     / v1:CellRef 

@@ -6,38 +6,20 @@
 [0m[[0m[0mdebug[0m] [0m[0mInvalidated products: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mExternal API changes: API Changes: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mModified binary dependencies: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(syntax.ExpParser.Chunk3)[0m
+[0m[[0m[0mdebug[0m] [0m[0mInitial directly invalidated classes: Set(syntax.ExpParser.Chunk4, syntax.ExpParser.Chunk3)[0m
 [0m[[0m[0mdebug[0m] [0m[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0mSources indirectly invalidated by:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	product: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	binary dep: Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0m	external source: Set()[0m
-[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(syntax.ExpParser.Chunk3)[0m
+[0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated classes: Set(syntax.ExpParser.Chunk4, syntax.ExpParser.Chunk3)[0m
 [0m[[0m[0mdebug[0m] [0m[0mAll initially invalidated sources:Set(C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\src_managed\main\sbt-rats\syntax\ExpParser.java)[0m
 [0m[[0m[0minfo[0m] [0m[0mCompiling 1 Java source to C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes ...[0m
-[0m[[0m[0mdebug[0m] [0m[0mAttempting to call com.sun.tools.javac.api.JavacTool@4ead7c1b directly...[0m
-[0m[[0m[0mdebug[0m] [0m[0mJava compilation took 1.267510917 s[0m
-[0m[[0m[0mdebug[0m] [0m[0mJava analysis took 0.05059849 s[0m
-[0m[[0m[0mdebug[0m] [0m[0mJava compilation + analysis took 1.330077648 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mAttempting to call com.sun.tools.javac.api.JavacTool@3d607603 directly...[0m
+[0m[[0m[0mdebug[0m] [0m[0mJava compilation took 1.059430992 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mJava analysis took 0.079822548 s[0m
+[0m[[0m[0mdebug[0m] [0m[0mJava compilation + analysis took 1.150351485 s[0m
 [0m[[0m[0minfo[0m] [0m[0mDone compiling.[0m
-[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from syntax.ExpParser.Chunk3...[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Set(syntax.ExpParser.Chunk3)[0m
-[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(syntax.ExpParser.Chunk3)[0m
-[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(syntax.ExpParser.Chunk3,ModifiedNames(changes = UsedName(fFormulaLevel2$$Star1,[Default]), UsedName(fWord,[Default]))) invalidates 1 classes due to The syntax.ExpParser.Chunk3 has the following regular definitions changed:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	UsedName(fFormulaLevel2$$Star1,[Default]), UsedName(fWord,[Default]).[0m
-[0m[[0m[0mdebug[0m] [0m[0m	> by transitive inheritance: Set(syntax.ExpParser.Chunk3)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	> [0m
-[0m[[0m[0mdebug[0m] [0m[0m	> [0m
-[0m[[0m[0mdebug[0m] [0m[0m        [0m
-[0m[[0m[0mdebug[0m] [0m[0mInvalidating (transitively) by inheritance from syntax.ExpParser.Chunk4...[0m
-[0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Set(syntax.ExpParser.Chunk4)[0m
-[0m[[0m[0mdebug[0m] [0m[0mInvalidated by transitive inheritance dependency: Set(syntax.ExpParser.Chunk4)[0m
-[0m[[0m[0mdebug[0m] [0m[0mChange NamesChange(syntax.ExpParser.Chunk4,ModifiedNames(changes = UsedName(toString,[Default]), UsedName(notifyAll,[Default]), UsedName(fWord,[Default]), UsedName(notify,[Default]), UsedName(equals,[Default]), UsedName(wait,[Default]), UsedName(getClass,[Default]), UsedName(hashCode,[Default]), UsedName(syntax;ExpParser$Chunk4;init;,[Default]), UsedName(Chunk4,[Default]))) invalidates 1 classes due to The syntax.ExpParser.Chunk4 has the following regular definitions changed:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	UsedName(toString,[Default]), UsedName(notifyAll,[Default]), UsedName(fWord,[Default]), UsedName(notify,[Default]), UsedName(equals,[Default]), UsedName(wait,[Default]), UsedName(getClass,[Default]), UsedName(hashCode,[Default]), UsedName(syntax;ExpParser$Chunk4;init;,[Default]), UsedName(Chunk4,[Default]).[0m
-[0m[[0m[0mdebug[0m] [0m[0m	> by transitive inheritance: Set(syntax.ExpParser.Chunk4)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	> [0m
-[0m[[0m[0mdebug[0m] [0m[0m	> [0m
-[0m[[0m[0mdebug[0m] [0m[0m        [0m
 [0m[[0m[0mdebug[0m] [0m[0mNew invalidations:[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Set()[0m
 [0m[[0m[0mdebug[0m] [0m[0mInitial set of included nodes: Set()[0m

@@ -38,6 +38,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParser$10.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$Args$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$Args$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$percent.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$percent.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	sbtrats\SList$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\sbtrats\SList$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$const.class[0m
@@ -182,6 +184,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\Condition.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Condition$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\Condition$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$percent$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$percent$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$Cell$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$Cell$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$AVERAGE.class[0m

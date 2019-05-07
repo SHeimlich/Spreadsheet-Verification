@@ -37,9 +37,12 @@ class Parsing (){
     while (r <= end.y) {
       var c = start.x
       while (c <= end.x) {
-        val cell = s.getCellAt(getLocationName(c, r));
-        if(cell.getFormula != null || cell.getValue != "") {
-          parseCell(s, c, r, reached)
+        println(getLocationName(c,r))
+        if(s.isCellValid(c,r)) {
+          val cell = s.getCellAt(getLocationName(c, r));
+          if (cell.getFormula != null || cell.getValue != "") {
+            parseCell(s, c, r, reached)
+          }
         }
         c += 1;
       }
@@ -60,8 +63,8 @@ class Parsing (){
       val formula = getParsedFormula(cell);
 
       if (formula == null) { // Simple case, no formula
-
         val newCell = getMyCell(cell, getColNum(col), getRowString(row));
+        println("noFormula = " + newCell)
         val edge = LDiEdge(newCell, constCell)(trueCondition);
         g = g + edge;
         return newCell;
@@ -121,10 +124,10 @@ class Parsing (){
     if (cell.getValue.toString == "") {
       return MyCell(row, col, "null", false)
     }
-
-    if (cell.getValueType.toString == "STRING") {
+    if (cell.getValueType.toString == "STRING" || cell.getValueType.toString == "DATE") {
       return MyCell(row, col, "\'" + cell.getValue + "\'", false)
     }
+    println("Type = " + cell.getValueType)
     return MyCell(row, col, cell.getValue.toString, false);
   }
 
@@ -188,7 +191,7 @@ class Parsing (){
     var col = startCol
     for(row <- startRow to endRow) {
       for(col <- startCol to endCol) {
-        arr = arr + "[." + ('A' + row).toChar + (col + 1) + "];"
+        arr = arr + "[." + getRowString(row) + getColNum(col) + "];"
       }
     }
     return arr.stripSuffix(";")

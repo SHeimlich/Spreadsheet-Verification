@@ -34,7 +34,7 @@ class ParsingTest extends FunSuite {
     assert(p.getLocationName(1, 56) === "B57")
     assert(p.getLocationName(25,100) === "Z101")
     assert(p.getLocationName(26, 2) === "AA3")
-    assert(p.getLocationName(27, 5) === "AB6")
+    assert(p.getLocationName(27, 154) === "AB155")
   }
 
 }

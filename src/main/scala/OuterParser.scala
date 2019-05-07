@@ -8,7 +8,14 @@ class OuterParser {
     val file = new File(fileName + ".ods")
     try {
       val writer = new PrintWriter(new File(fileName + ".exp"))
-      val sheet = SpreadSheet.createFromFile(file).getSheet(0)
+      val spreadSheet = SpreadSheet.createFromFile(file)
+      var sheet = spreadSheet.getSheet(0)
+      val numSheets = spreadSheet.getSheetCount();
+      var i = 0;
+      while(sheet.getUsedRange() == null && i < numSheets) {
+        sheet = spreadSheet.getSheet(i)
+        i = i + 1;
+      }
       val start = sheet.getUsedRange.getStartPoint
       val end = sheet.getUsedRange.getEndPoint
       val p = new Parsing()

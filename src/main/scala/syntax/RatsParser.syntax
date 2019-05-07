@@ -31,6 +31,7 @@ Formula =
     | Formula "=" Formula        {equal, left, 3}
     | Formula "<=" Formula       {lessEqual, left, 3}
     | Formula ">=" Formula       {greatEqual, left, 3}
+    | Integer "%"                {percent}
     | Array
     | CellRef
     | ifRef                             {numIfRef}
@@ -61,10 +62,10 @@ Cell : Formula =
   col row.
 
 col : String =
-  [A-Z]+.
+  "$"? [A-Z]+.
 
 row : String =
-  [1-9][0-9]*.
+  "$"? [1-9][0-9]*.
 
 ifRef =
   row + "if".

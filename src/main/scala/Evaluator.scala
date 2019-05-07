@@ -63,6 +63,7 @@ object Evaluator extends Attribution {
     case equal (l, r) => "1"
     case great (l, r)  => "1"
     case greatEqual (l, r)  => "1"
+    case percent(v) => "1"
     case less (l, r)  => "1"
     case lessEqual (l, r)  => "1"
     case pow (l, r)  => "1"
@@ -132,6 +133,7 @@ object Evaluator extends Attribution {
       case equal (l, r) => FormValue(l) + "==" + FormValue (r)
       case great (l, r)  => FormValue(l) + ">" + FormValue (r)
       case greatEqual (l, r)  => FormValue(l) + ">=" + FormValue (r)
+      case percent(v) => v + " / 100"
       case less (l, r)  => FormValue(l) + "<" + FormValue (r)
       case lessEqual (l, r)  => FormValue(l) + "<=" + FormValue (r)
       case pow (l, r)  => FormValue(l) + "^" + FormValue (r)

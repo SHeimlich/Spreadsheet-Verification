@@ -1,5 +1,6 @@
 [0m[[0m[0minfo[0m] [0m[0m[32mOuterParserTest:[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[32m- OuterParser.addTest[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- OuterParser.addTest *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  "[I11 = 1, A2 = 6, A1 = 5, I12 = 2, A3 = [.A1]+[.A2], I13 = [.I11]+[.I1]2]," did not equal "[A2 = 6, A1 = 5, A3 = [.A1]+[.A]2]," (OuterParserTest.scala:9)[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- OuterParser.emptyCellTest[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- OuterParser.ifTest[0m[0m
 [0m[[0m[0minfo[0m] [0m[0m[32m- OuterParser.simpleArgTest[0m[0m
