@@ -377,7 +377,9 @@ public Formula FormulaLevel0 =
     / v1:Str {
         yyValue = new strConst (v1);
     }
-    / void:"(":Symbol1 v1:Formula void:")":Symbol1 
+    / void:"(":Symbol1 v1:Formula void:")":Symbol1 {
+        yyValue = new parenthesis (v1);
+    }
     / void:"null":Word {
         yyValue = new nullNum ();
     }

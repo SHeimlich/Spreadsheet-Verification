@@ -32,6 +32,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$Arr$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	ruMain.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\ruMain.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$parenthesis.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$parenthesis.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Evaluator.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\Evaluator.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParser$4.class[0m
@@ -206,6 +208,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\Optimiser.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	ruMain$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\ruMain$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$parenthesis$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$parenthesis$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$conCat$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$conCat$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Evaluator$.class[0m

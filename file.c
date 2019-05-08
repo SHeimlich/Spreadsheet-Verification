@@ -398,7 +398,7 @@ if(D4Num == 0)
 if(0.6 == 0) 
 	 __VERIFIER_error(); 
 int L4Num = 1; 
-int L4=(E4 + F4 + G4 + H4 + I4 + J4)/6*0.15+C4*0.15+D4*0.2+K4/0.6;
+int L4=((E4 + F4 + G4 + H4 + I4 + J4)/6*0.15+C4*0.15+D4*0.2+K4)/0.6;
 if(K5Num == 0) 
 	 __VERIFIER_error(); 
 if(J5Num == 0) 
@@ -422,7 +422,7 @@ if(D5Num == 0)
 if(0.6 == 0) 
 	 __VERIFIER_error(); 
 int L5Num = 1; 
-int L5=(E5 + F5 + G5 + H5 + I5 + J5)/6*0.15+C5*0.15+D5*0.2+K5/0.6;
+int L5=((E5 + F5 + G5 + H5 + I5 + J5)/6*0.15+C5*0.15+D5*0.2+K5)/0.6;
 if(K8Num == 0) 
 	 __VERIFIER_error(); 
 if(J8Num == 0) 
@@ -446,7 +446,7 @@ if(D8Num == 0)
 if(0.6 == 0) 
 	 __VERIFIER_error(); 
 int L8Num = 1; 
-int L8=(E8 + F8 + G8 + H8 + I8 + J8)/6*0.15+B8*0.15+D8*0.2+K8/0.6;
+int L8=((E8 + F8 + G8 + H8 + I8 + J8)/6*0.15+B8*0.15+D8*0.2+K8)/0.6;
 if(K6Num == 0) 
 	 __VERIFIER_error(); 
 if(J6Num == 0) 
@@ -470,7 +470,7 @@ if(D6Num == 0)
 if(0.6 == 0) 
 	 __VERIFIER_error(); 
 int L6Num = 1; 
-int L6=(E6 + F6 + G6 + H6 + I6 + J6)/6*0.15+C6*0.15+D6*0.2+K6/0.6;
+int L6=((E6 + F6 + G6 + H6 + I6 + J6)/6*0.15+C6*0.15+D6*0.2+K6)/0.6;
 if(K7Num == 0) 
 	 __VERIFIER_error(); 
 if(J7Num == 0) 
@@ -494,7 +494,7 @@ if(D7Num == 0)
 if(0.6 == 0) 
 	 __VERIFIER_error(); 
 int L7Num = 1; 
-int L7=(E7 + F7 + G7 + H7 + I7 + J7)/6*0.15+C7*0.15+D7*0.2+K7/0.6;
+int L7=((E7 + F7 + G7 + H7 + I7 + J7)/6*0.15+C7*0.15+D7*0.2+K7)/0.6;
 if(K2Num == 0) 
 	 __VERIFIER_error(); 
 if(J2Num == 0) 
@@ -518,7 +518,7 @@ if(D2Num == 0)
 if(0.6 == 0) 
 	 __VERIFIER_error(); 
 int L2Num = 1; 
-int L2=(E2 + F2 + G2 + H2 + I2 + J2)/6*0.15+C2*0.15+D2*0.2+K2/0.6;
+int L2=((E2 + F2 + G2 + H2 + I2 + J2)/6*0.15+C2*0.15+D2*0.2+K2)/0.6;
 if(K3Num == 0) 
 	 __VERIFIER_error(); 
 if(J3Num == 0) 
@@ -542,7 +542,7 @@ if(D3Num == 0)
 if(0.6 == 0) 
 	 __VERIFIER_error(); 
 int L3Num = 1; 
-int L3=(E3 + F3 + G3 + H3 + I3 + J3)/6*0.15+C3*0.15+D3*0.2+K3/0.6;
+int L3=((E3 + F3 + G3 + H3 + I3 + J3)/6*0.15+C3*0.15+D3*0.2+K3)/0.6;
 if(K9Num == 0) 
 	 __VERIFIER_error(); 
 if(J9Num == 0) 
@@ -566,7 +566,7 @@ if(D9Num == 0)
 if(0.6 == 0) 
 	 __VERIFIER_error(); 
 int L9Num = 1; 
-int L9=(E9 + F9 + G9 + H9 + I9 + J9)/6*0.15+C9*0.15+D9*0.2+K9/0.6;
+int L9=((E9 + F9 + G9 + H9 + I9 + J9)/6*0.15+C9*0.15+D9*0.2+K9)/0.6;
 if(K10Num == 0) 
 	 __VERIFIER_error(); 
 if(J10Num == 0) 
@@ -590,7 +590,7 @@ if(D10Num == 0)
 if(0.6 == 0) 
 	 __VERIFIER_error(); 
 int L10Num = 1; 
-int L10=(E10 + F10 + G10 + H10 + I10 + J10)/6*0.15+C10*0.15+D10*0.2+K10/0.6;
+int L10=((E10 + F10 + G10 + H10 + I10 + J10)/6*0.15+C10*0.15+D10*0.2+K10)/0.6;
 if(W10Num == 0) 
 	 __VERIFIER_error(); 
 if(W9Num == 0) 
@@ -620,13 +620,13 @@ if(L4Num == 0)
 if(0.95 == 0) 
 	 __VERIFIER_error(); 
 int N4Num = 1; 
-int N4=M4*0.35+L4*0.6/0.95;
+int N4=(M4*0.35+L4*0.6)/0.95;
 if(M4Num == 0) 
 	 __VERIFIER_error(); 
 if(L4Num == 0) 
 	 __VERIFIER_error(); 
 int V4Num = 1; 
-int V4=M4-L4;
+int V4=(M4-L4);
 if(M5Num == 0) 
 	 __VERIFIER_error(); 
 if(L5Num == 0) 
@@ -634,7 +634,7 @@ if(L5Num == 0)
 if(0.95 == 0) 
 	 __VERIFIER_error(); 
 int N5Num = 1; 
-int N5=M5*0.35+L5*0.6/0.95;
+int N5=(M5*0.35+L5*0.6)/0.95;
 if(M8Num == 0) 
 	 __VERIFIER_error(); 
 if(L8Num == 0) 
@@ -642,13 +642,13 @@ if(L8Num == 0)
 if(0.95 == 0) 
 	 __VERIFIER_error(); 
 int N8Num = 1; 
-int N8=M8*0.35+L8*0.6/0.95;
+int N8=(M8*0.35+L8*0.6)/0.95;
 if(M8Num == 0) 
 	 __VERIFIER_error(); 
 if(L8Num == 0) 
 	 __VERIFIER_error(); 
 int V8Num = 1; 
-int V8=M8-L8;
+int V8=(M8-L8);
 if(M6Num == 0) 
 	 __VERIFIER_error(); 
 if(L6Num == 0) 
@@ -656,7 +656,7 @@ if(L6Num == 0)
 if(0.95 == 0) 
 	 __VERIFIER_error(); 
 int N6Num = 1; 
-int N6=M6*0.35+L6*0.6/0.95;
+int N6=(M6*0.35+L6*0.6)/0.95;
 if(M7Num == 0) 
 	 __VERIFIER_error(); 
 if(L7Num == 0) 
@@ -664,19 +664,19 @@ if(L7Num == 0)
 if(0.95 == 0) 
 	 __VERIFIER_error(); 
 int N7Num = 1; 
-int N7=M7*0.35+L7*0.6/0.95;
+int N7=(M7*0.35+L7*0.6)/0.95;
 if(M7Num == 0) 
 	 __VERIFIER_error(); 
 if(L7Num == 0) 
 	 __VERIFIER_error(); 
 int V7Num = 1; 
-int V7=M7-L7;
+int V7=(M7-L7);
 if(M2Num == 0) 
 	 __VERIFIER_error(); 
 if(L2Num == 0) 
 	 __VERIFIER_error(); 
 int V2Num = 1; 
-int V2=M2-L2;
+int V2=(M2-L2);
 if(M2Num == 0) 
 	 __VERIFIER_error(); 
 if(L2Num == 0) 
@@ -684,7 +684,7 @@ if(L2Num == 0)
 if(0.95 == 0) 
 	 __VERIFIER_error(); 
 int N2Num = 1; 
-int N2=M2*0.35+L2*0.6/0.95;
+int N2=(M2*0.35+L2*0.6)/0.95;
 if(M3Num == 0) 
 	 __VERIFIER_error(); 
 if(L3Num == 0) 
@@ -692,13 +692,13 @@ if(L3Num == 0)
 if(0.95 == 0) 
 	 __VERIFIER_error(); 
 int N3Num = 1; 
-int N3=M3*0.35+L3*0.6/0.95;
+int N3=(M3*0.35+L3*0.6)/0.95;
 if(M3Num == 0) 
 	 __VERIFIER_error(); 
 if(L3Num == 0) 
 	 __VERIFIER_error(); 
 int V3Num = 1; 
-int V3=M3-L3;
+int V3=(M3-L3);
 if(M9Num == 0) 
 	 __VERIFIER_error(); 
 if(L9Num == 0) 
@@ -706,13 +706,13 @@ if(L9Num == 0)
 if(0.95 == 0) 
 	 __VERIFIER_error(); 
 int N9Num = 1; 
-int N9=M9*0.35+L9*0.6/0.95;
+int N9=(M9*0.35+L9*0.6)/0.95;
 if(M9Num == 0) 
 	 __VERIFIER_error(); 
 if(L9Num == 0) 
 	 __VERIFIER_error(); 
 int V9Num = 1; 
-int V9=M9-L9;
+int V9=(M9-L9);
 if(M10Num == 0) 
 	 __VERIFIER_error(); 
 if(L10Num == 0) 
@@ -720,7 +720,7 @@ if(L10Num == 0)
 if(0.95 == 0) 
 	 __VERIFIER_error(); 
 int N10Num = 1; 
-int N10=M10*0.35+L10*0.6/0.95;
+int N10=(M10*0.35+L10*0.6)/0.95;
 int if77Num = 0; 
 int if77=0;
 if(N4>49!= 0) { 

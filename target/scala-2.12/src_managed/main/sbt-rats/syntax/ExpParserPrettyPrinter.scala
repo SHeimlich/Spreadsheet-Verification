@@ -56,7 +56,9 @@ trait ExpParserPrettyPrinter extends PP with PPP {
             case v @ numIfRef (v1) =>
                 toDoc (v1)  
             case v @ strConst (v1) =>
-                value (v1)  
+                value (v1) 
+            case v @ parenthesis (v1) =>
+                text ("(") <> toDoc (v1) <> text (")") 
             case v @ nullNum () =>
                 text ("null") <> space 
             case v @ nIf (v1, v2, v3) =>

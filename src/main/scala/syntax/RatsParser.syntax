@@ -37,7 +37,7 @@ Formula =
     | ifRef                             {numIfRef}
     | NumConstant
     | Str           {strConst}
-    | '(' Formula ')'
+    | '(' Formula ')'       {parenthesis}
     | "null"        {nullNum}.
 
 nIf =

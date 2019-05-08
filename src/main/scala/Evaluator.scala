@@ -58,6 +58,7 @@ object Evaluator extends Attribution {
   def numValue(f: ExpParserSyntax.Formula) : String = f match {
     case Num (i)    => "1"
     case Decimal(w,p) => "1"
+    case parenthesis(f) => numValue(f)
     case Boo (b)    => "1"
     case Cell(c, r) => c.replace("$", "") + r.replace("$", "") + "Num"
     case Div(l, r) => "1"
@@ -92,6 +93,7 @@ object Evaluator extends Attribution {
       case Boo (b)    => ""
       //case S (s)    => ""
       case Cell(c, r) => ""
+      case parenthesis(f) => FormAsserts(f)
       case Div(l, r) => AssertNum(l) + AssertNum(r) + FormAsserts(l) + "if(" + FormValue(r) + " == 0) \n\t __VERIFIER_error(); \n"
       case Add (l, r) => AssertNum(l) + AssertNum(r) + FormAsserts (l) + FormAsserts (r)
       case Mul (l, r) => AssertNum(l) + AssertNum(r) + FormAsserts (l)  + FormAsserts (r)
@@ -128,6 +130,7 @@ object Evaluator extends Attribution {
   def FormValue(f: Formula) : String = f match {
       case Num (i)    => i
       case Decimal(w,p) => w + "." + p
+      case parenthesis(f) => "(" + FormValue(f) + ")"
       case Boo ("true")    => "true"
       case Boo ("false") => "false"
      // case S (s)    => s

@@ -85,6 +85,7 @@ class Optimiser {
       return numIfRef(ifRef(Vector("if" + ifCount)))
     }
     case Num (i)    => Num(i)
+    case parenthesis(f) => parenthesis(removeIf(f))
     case Decimal(w,p) => Decimal(w,p)
     case Boo (b)    => Boo(b)
     case Cell(c, r) => Cell(c, r)
@@ -130,6 +131,7 @@ class Optimiser {
     case Decimal(w,p) => false
     case Boo (b)    => false
     case Cell(c, r) => false
+    case parenthesis(f) => formulaHasIf(f)
     case Div(l, r) => formulaHasIf(l) || formulaHasIf(r)
     case Add (l, r) => formulaHasIf(l) || formulaHasIf(r)
     case Mul (l, r) => formulaHasIf(l) || formulaHasIf(r)

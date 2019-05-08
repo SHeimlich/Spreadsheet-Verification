@@ -52,6 +52,7 @@ object ExpParserSyntax {
     case class percent (number : String) extends Formula  
     case class numIfRef (ifRef : ifRef) extends Formula  
     case class strConst (str : String) extends Formula  
+    case class parenthesis (formula : Formula) extends Formula  
     case class nullNum () extends Formula  
      
     case class nIf (formulas1 : Vector[Formula], formulas2 : Vector[Formula], formulas3 : Vector[Formula]) extends ASTNode
