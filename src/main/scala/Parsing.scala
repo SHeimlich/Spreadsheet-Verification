@@ -118,6 +118,7 @@ class Parsing (){
 
   def getMyCell(cell: MutableCell[SpreadSheet], col: Int, row: String): MyCell = {
     val formula = getParsedFormula(cell)
+    println("Type of " + row + " " + col + " = " + cell.getValueType)
     if (formula != null) {
       return MyCell(row, col, formula, false);
     }
@@ -125,9 +126,8 @@ class Parsing (){
       return MyCell(row, col, "null", false)
     }
     if (cell.getValueType.toString == "STRING" || cell.getValueType.toString == "DATE") {
-      return MyCell(row, col, "\'" + cell.getValue + "\'", false)
+      return MyCell(row, col, "\"" + cell.getValue + "\"", false)
     }
-    println("Type = " + cell.getValueType)
     return MyCell(row, col, cell.getValue.toString, false);
   }
 

@@ -78,10 +78,10 @@ Digits : String =
   Digit+.
 
 Str : String =
-  "\'" middleOfString .
+  "\"" middleOfString .
 
 middleOfString : String =
-    "\'"
+    "\""
   | _ middleOfString.
 
 Digit : String =
