@@ -365,6 +365,12 @@ public Formula FormulaLevel0 =
     / (void:"CONCATENATE(":Symbol12)+ v1:(NumArguments)+ void:")":Symbol1 {
         yyValue = new conCat (v1);
     }
+    / void:"+":Symbol1 v1:FormulaLevel0 {
+        yyValue = new AddNull (v1);
+    }
+    / void:"-":Symbol1 v1:FormulaLevel0 {
+        yyValue = new SubNull (v1);
+    }
     / v1:Number void:"%":Symbol1 {
         yyValue = new percent (v1);
     }

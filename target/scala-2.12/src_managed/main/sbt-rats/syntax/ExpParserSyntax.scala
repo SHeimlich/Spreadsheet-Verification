@@ -39,7 +39,9 @@ object ExpParserSyntax {
         require (numArgumentss.length > 0, "numArgumentss field can't be empty")
     }
     case class Add (formula1 : Formula, formula2 : Formula) extends Formula  
+    case class AddNull (formula : Formula) extends Formula  
     case class Sub (formula1 : Formula, formula2 : Formula) extends Formula  
+    case class SubNull (formula : Formula) extends Formula  
     case class Mul (formula1 : Formula, formula2 : Formula) extends Formula  
     case class Div (formula1 : Formula, formula2 : Formula) extends Formula  
     case class pow (formula1 : Formula, formula2 : Formula) extends Formula  

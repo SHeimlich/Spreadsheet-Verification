@@ -67,6 +67,10 @@ class Optimiser {
       return getAssignIf(cell, a, b, c)
     }
     case Add(l, r) => {if(formulaHasIf(l)){ getIf(cell, l); } else { getIf(cell, r); }}
+    case Sub(l, r)  => {if(formulaHasIf(l)){ getIf(cell, l); } else { getIf(cell, r); }}
+    case Mul(l, r)  => {if(formulaHasIf(l)){ getIf(cell, l); } else { getIf(cell, r); }}
+    case AddNull(l) => getIf(cell, l)
+    case SubNull(l) => getIf(cell, l)
     case SUM(a) => getIfArgs(cell, a)
     case Div(l, r) => {if(formulaHasIf(l)){ getIf(cell, l); } else { getIf(cell, r); }}
   }
@@ -91,8 +95,10 @@ class Optimiser {
     case Cell(c, r) => Cell(c, r)
     case Div(l, r) => if(formulaHasIf(l)) {Div(removeIf(l), r); } else {Div(l, removeIf(r)); }
     case Add (l, r) => if(formulaHasIf(l)) {Add(removeIf(l), r); } else {Add(l, removeIf(r)); }
+    case AddNull(l) => AddNull(removeIf(l))
     case Mul (l, r) => if(formulaHasIf(l)) {Mul(removeIf(l), r); } else {Mul(l, removeIf(r)); }
     case Sub (l, r) => if(formulaHasIf(l)) {Sub(removeIf(l), r); } else {Sub(l, removeIf(r)); }
+    case SubNull(l) => SubNull(removeIf(l))
     case and (l, r) => if(formulaHasIf(l)) {and(removeIf(l), r); } else {and(l, removeIf(r)); }
     case equal (l, r) => if(formulaHasIf(l)) {equal(removeIf(l), r); } else {equal(l, removeIf(r)); }
     case great (l, r)  => if(formulaHasIf(l)) {great(removeIf(l), r); } else {great(l, removeIf(r)); }
@@ -134,8 +140,10 @@ class Optimiser {
     case parenthesis(f) => formulaHasIf(f)
     case Div(l, r) => formulaHasIf(l) || formulaHasIf(r)
     case Add (l, r) => formulaHasIf(l) || formulaHasIf(r)
+    case AddNull(l) => formulaHasIf(l)
     case Mul (l, r) => formulaHasIf(l) || formulaHasIf(r)
     case Sub (l, r) => formulaHasIf(l) || formulaHasIf(r)
+    case SubNull(l) => formulaHasIf(l)
     case and (l, r) => formulaHasIf(l) || formulaHasIf(r)
     case equal (l, r) => formulaHasIf(l) || formulaHasIf(r)
     case great (l, r)  => formulaHasIf(l) || formulaHasIf(r)

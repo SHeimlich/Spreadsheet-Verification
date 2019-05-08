@@ -6,15 +6,27 @@
 [0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
 [0m[[0m[33mwarn[0m] [0m[0m  def numValue(f: ExpParserSyntax.Formula) : String = f match {[0m
 [0m[[0m[33mwarn[0m] [0m[0m                                                      ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:90:42: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:92:42: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
 [0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
 [0m[[0m[33mwarn[0m] [0m[0m  def FormAsserts(f: Formula) : String = f match{[0m
 [0m[[0m[33mwarn[0m] [0m[0m                                         ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:155:55: unreachable code[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:161:55: unreachable code[0m
 [0m[[0m[33mwarn[0m] [0m[0m      case Ref(Cell(c, r)) => c.replace("$", "") + "" + r.replace("$", "");[0m
 [0m[[0m[33mwarn[0m] [0m[0m                                                      ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:130:40: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:134:40: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
 [0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
 [0m[[0m[33mwarn[0m] [0m[0m  def FormValue(f: Formula) : String = f match {[0m
 [0m[[0m[33mwarn[0m] [0m[0m                                       ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m5 warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Optimiser.scala:62:50: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
+[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def getIf(cell: Cell, x: Formula) : assignIf = x match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                 ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Optimiser.scala:84:41: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
+[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def removeIf (x: Formula) : Formula = x match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Optimiser.scala:134:45: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
+[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def formulaHasIf (x: Formula) : Boolean = x match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                            ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m8 warnings found[0m

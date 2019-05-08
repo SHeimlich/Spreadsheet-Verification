@@ -21,7 +21,9 @@ Formula =
     | "AVERAGE(" + NumArguments + ")"    {AVERAGE}
     | "CONCATENATE(" + NumArguments + ")"    {conCat}
     | Formula "+" Formula             {Add, left, 2}
+    | "+" Formula                   {AddNull}
     | Formula "-" Formula           {Sub, left, 2}
+    | "-" Formula                   {SubNull}
     | Formula "*" Formula           {Mul, left, 1}
     | Formula "/" Formula           {Div, left, 1}
     | Formula "^" Formula        {pow, left, 3}

@@ -31,8 +31,12 @@ trait ExpParserPrettyPrinter extends PP with PPP {
                 emptyDoc <> ssep (v1.map (toDoc), emptyDoc) <> text (")") <> space 
             case v @ Add (v1, v2) =>
                 toDoc (v1) <> text ("+") <> space <> toDoc (v2) 
+            case v @ AddNull (v1) =>
+                text ("+") <> space <> toDoc (v1) 
             case v @ Sub (v1, v2) =>
                 toDoc (v1) <> text ("-") <> space <> toDoc (v2) 
+            case v @ SubNull (v1) =>
+                text ("-") <> space <> toDoc (v1) 
             case v @ Mul (v1, v2) =>
                 toDoc (v1) <> text ("*") <> space <> toDoc (v2) 
             case v @ Div (v1, v2) =>
