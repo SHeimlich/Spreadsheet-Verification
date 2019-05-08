@@ -1,4 +1,4 @@
-import Evaluator.{FormAsserts, FormValue, getArgAsserts, getArgsLength, numVecAsserts}
+import Evaluator.{FormAsserts, FormValue, getArgNumAsserts, getArgsLength, numVecAsserts}
 
 class Optimiser {
 

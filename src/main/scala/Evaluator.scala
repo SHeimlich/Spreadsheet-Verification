@@ -18,6 +18,9 @@ object Evaluator extends Attribution {
 
   def assignValue (a: Exp) : String = a match {
       case Assign(l, numIF(nIf(fb, f1, f2))) => numIfVal(l, fb, f1, f2)
+      case Assign(l, Num(v)) =>   getType(l, Num(v)) + FormValue(l) + "=" + "__VERIFIER_nondet_int();\n"
+      case Assign(l, strConst(v)) =>  getType(l, strConst(v)) + FormValue(l) + "=" + "__VERIFIER_nondet_int();\n"
+      case Assign(l, Boo(v)) => getType(l, Boo(v)) + FormValue(l) + "=" + "__VERIFIER_nondet_int();\n"
       case Assign(l, r) => FormAsserts(r) + getType(l, r) + FormValue(l) + "=" + FormValue(r) + ";\n"
     }
 
@@ -99,8 +102,8 @@ object Evaluator extends Attribution {
       case pow (l, r)  => AssertNum(l) + AssertNum(r) + FormAsserts(l) + FormAsserts (r)
       case Arr(b, e) => ""
       // TODO: add AssertNumArgs
-      case SUM(a) => getArgAsserts(a)
-      case AVERAGE(a) => getArgAsserts(a) + "if(" + getArgsLength(a) + " == 0) \n\t __VERIFIER_error(); \n"
+      case SUM(a) => getArgNumAsserts(a)
+      case AVERAGE(a) => getArgNumAsserts(a) + "if(" + getArgsLength(a) + " == 0) \n\t __VERIFIER_error(); \n"
       case numIF(nIf(b, f1, f2)) => numVecAsserts(f1, f2)
       case Ref(Cell(r,c)) => ""
       case numIfRef(r) => ""
@@ -120,9 +123,9 @@ object Evaluator extends Attribution {
 
 
   def FormValue(f: Formula) : String = f match {
-      case Num (i)    => "__VERIFIER_nondet_int()"
-      case Boo ("true")    => "__VERIFIER_nondet_int()"
-      case Boo ("false") => "__VERIFIER_nondet_int()"
+      case Num (i)    => i
+      case Boo ("true")    => "true"
+      case Boo ("false") => "false"
      // case S (s)    => s
       case Cell(c, r) => c.replace("$", "") + r.replace("$", "")
       case Div(l, r) => FormValue (l) + "/" + FormValue (r)
@@ -145,7 +148,7 @@ object Evaluator extends Attribution {
       case Ref(Cell(c, r)) => c.replace("$", "") + "" + r.replace("$", "");
       case numIfRef(r) => r.rows(0)
       case nullNum() => "0"
-      case strConst(v) => "__VERIFIER_nondet_int()" //"\"" + v.substring(1, v.length-1) + "\""
+      case strConst(v) => "__VERIFIER_nondet_int()"
     }
 
   def numIfVal(c: Formula, b: Vector[ExpParserSyntax.Formula], f: Vector[ExpParserSyntax.Formula], f1: Vector[ExpParserSyntax.Formula]) : String = {
@@ -200,15 +203,15 @@ object Evaluator extends Attribution {
       case Arg(r) => List(r)
     }
 
-  def getArgAsserts(v: Vector[NumArguments]): String = {
+  def getArgNumAsserts(v: Vector[NumArguments]): String = {
     var rtn = ""
     v.foreach((a: NumArguments) => rtn = rtn + argAsserts(a))
     return rtn
   }
 
   def argAsserts(f: NumArguments) : String = f match {
-      case Args(l, r) => argAsserts(r) + FormAsserts(l)
-      case Arg(r) => FormAsserts(r)
+      case Args(l, r) => argAsserts(r) + FormAsserts(l) + AssertNum(l)
+      case Arg(r) => FormAsserts(r) + AssertNum(r)
     }
 
 
