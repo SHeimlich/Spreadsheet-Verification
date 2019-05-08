@@ -145,7 +145,8 @@ public NumArguments NumArguments =
     ;
 
 public Formula NumConstant =
-    v1:Integer {
+    v1:Decimal 
+    / v1:Number {
         yyValue = new Num (v1);
     }
     / v1:Bool {
@@ -185,9 +186,14 @@ public ifRef ifRef =
     }
     ;
 
-public String Integer =
-    Digits "." Digits
-    / Digits Spacing
+public String Number =
+    Digits Spacing
+    ;
+
+public Formula Decimal =
+    v1:Digits void:".":Symbol1 v2:Digits {
+        yyValue = new Decimal (v1, v2);
+    }
     ;
 
 public String Digits =
@@ -359,7 +365,7 @@ public Formula FormulaLevel0 =
     / (void:"CONCATENATE(":Symbol12)+ v1:(NumArguments)+ void:")":Symbol1 {
         yyValue = new conCat (v1);
     }
-    / v1:Integer void:"%":Symbol1 {
+    / v1:Number void:"%":Symbol1 {
         yyValue = new percent (v1);
     }
     / v1:Array 

@@ -37,7 +37,6 @@ class Parsing (){
     while (r <= end.y) {
       var c = start.x
       while (c <= end.x) {
-        println(getLocationName(c,r))
         if(s.isCellValid(c,r)) {
           val cell = s.getCellAt(getLocationName(c, r));
           if (cell.getFormula != null || cell.getValue != "") {
@@ -64,7 +63,6 @@ class Parsing (){
 
       if (formula == null) { // Simple case, no formula
         val newCell = getMyCell(cell, getColNum(col), getRowString(row));
-        println("noFormula = " + newCell)
         val edge = LDiEdge(newCell, constCell)(trueCondition);
         g = g + edge;
         return newCell;
@@ -118,7 +116,6 @@ class Parsing (){
 
   def getMyCell(cell: MutableCell[SpreadSheet], col: Int, row: String): MyCell = {
     val formula = getParsedFormula(cell)
-    println("Type of " + row + " " + col + " = " + cell.getValueType)
     if (formula != null) {
       return MyCell(row, col, formula, false);
     }

@@ -85,6 +85,7 @@ class Optimiser {
       return numIfRef(ifRef(Vector("if" + ifCount)))
     }
     case Num (i)    => Num(i)
+    case Decimal(w,p) => Decimal(w,p)
     case Boo (b)    => Boo(b)
     case Cell(c, r) => Cell(c, r)
     case Div(l, r) => if(formulaHasIf(l)) {Div(removeIf(l), r); } else {Div(l, removeIf(r)); }
@@ -126,6 +127,7 @@ class Optimiser {
   def formulaHasIf (x: Formula) : Boolean = x match {
     case numIF(nIf(_,_,_)) => true
     case Num (i)    => false
+    case Decimal(w,p) => false
     case Boo (b)    => false
     case Cell(c, r) => false
     case Div(l, r) => formulaHasIf(l) || formulaHasIf(r)

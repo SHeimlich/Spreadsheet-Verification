@@ -10,6 +10,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$Boo$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$great$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$great$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$Decimal.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$Decimal.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$terminal.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$terminal.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Optimiser$$anonfun$simplifier$lzycompute$1.class[0m
@@ -98,6 +100,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$ifStmt$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$t$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$t$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$Decimal$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$Decimal$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	sbtrats\Action.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\sbtrats\Action.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$nullNum.class[0m

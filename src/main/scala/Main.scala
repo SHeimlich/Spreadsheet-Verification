@@ -41,7 +41,7 @@ object ruMain extends CompilerBase[Exp,Config] {
     val output = config.output()
     //output.emitln ("e = " + e)
     //output.emitln ("e tree:")
-    //output.emitln (layout (any (e)))
+    output.emitln (layout (any (e)))
     //output.emitln(test(any(e)))
     //output.emitln ("value (e) = \n" + expvalue (e))
     val opt = new Optimiser();

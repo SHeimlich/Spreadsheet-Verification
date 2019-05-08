@@ -49,7 +49,7 @@ object ExpParserSyntax {
     case class equal (formula1 : Formula, formula2 : Formula) extends Formula  
     case class lessEqual (formula1 : Formula, formula2 : Formula) extends Formula  
     case class greatEqual (formula1 : Formula, formula2 : Formula) extends Formula  
-    case class percent (integer : String) extends Formula  
+    case class percent (number : String) extends Formula  
     case class numIfRef (ifRef : ifRef) extends Formula  
     case class strConst (str : String) extends Formula  
     case class nullNum () extends Formula  
@@ -60,7 +60,7 @@ object ExpParserSyntax {
     case class Args (formula : Formula, numArguments : NumArguments) extends NumArguments  
     case class Arg (formula : Formula) extends NumArguments  
      
-    case class Num (integer : String) extends Formula  
+    case class Num (number : String) extends Formula  
     case class Boo (bool : String) extends Formula  
      
     case class Arr (cell1 : Formula, cell2 : Formula) extends Formula  
@@ -70,5 +70,7 @@ object ExpParserSyntax {
     case class Cell (col : String, row : String) extends Formula  
        
     case class ifRef (rows : Vector[String]) extends ASTNode
-            
+      
+    case class Decimal (digits1 : String, digits2 : String) extends Formula  
+           
 }

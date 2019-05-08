@@ -31,7 +31,7 @@ Formula =
     | Formula "=" Formula        {equal, left, 3}
     | Formula "<=" Formula       {lessEqual, left, 3}
     | Formula ">=" Formula       {greatEqual, left, 3}
-    | Integer "%"                {percent}
+    | Number "%"                {percent}
     | Array
     | CellRef
     | ifRef                             {numIfRef}
@@ -49,7 +49,8 @@ NumArguments =
   | Formula     {Arg}.
 
 NumConstant : Formula =
-    Integer     {Num}
+    Decimal
+  | Number     {Num}
   | Bool        {Boo}.
 
 Array : Formula =
@@ -70,9 +71,11 @@ row : String =
 ifRef =
   row + "if".
 
-Integer : String =
-      Digits "." Digits
-    | Digits Spacing .
+Number : String =
+      Digits Spacing.
+
+Decimal : Formula =
+    Digits "." Digits.
 
 Digits : String =
   Digit+.

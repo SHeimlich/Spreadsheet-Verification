@@ -19,6 +19,7 @@ object Evaluator extends Attribution {
   def assignValue (a: Exp) : String = a match {
       case Assign(l, numIF(nIf(fb, f1, f2))) => numIfVal(l, fb, f1, f2)
       case Assign(l, Num(v)) =>   getType(l, Num(v)) + FormValue(l) + "=" + "__VERIFIER_nondet_int();\n"
+      case Assign(l, Decimal(w, p))  => getType(l, Decimal(w, p)) + FormValue(l) + "=" + "__VERIFIER_nondet_int();\n"
       case Assign(l, strConst(v)) =>  getType(l, strConst(v)) + FormValue(l) + "=" + "__VERIFIER_nondet_int();\n"
       case Assign(l, Boo(v)) => getType(l, Boo(v)) + FormValue(l) + "=" + "__VERIFIER_nondet_int();\n"
       case Assign(l, r) => FormAsserts(r) + getType(l, r) + FormValue(l) + "=" + FormValue(r) + ";\n"
@@ -56,6 +57,7 @@ object Evaluator extends Attribution {
 
   def numValue(f: ExpParserSyntax.Formula) : String = f match {
     case Num (i)    => "1"
+    case Decimal(w,p) => "1"
     case Boo (b)    => "1"
     case Cell(c, r) => c.replace("$", "") + r.replace("$", "") + "Num"
     case Div(l, r) => "1"
@@ -86,6 +88,7 @@ object Evaluator extends Attribution {
 
   def FormAsserts(f: Formula) : String = f match{
       case Num (i)    => ""
+      case Decimal(w, p) => ""
       case Boo (b)    => ""
       //case S (s)    => ""
       case Cell(c, r) => ""
@@ -124,6 +127,7 @@ object Evaluator extends Attribution {
 
   def FormValue(f: Formula) : String = f match {
       case Num (i)    => i
+      case Decimal(w,p) => w + "." + p
       case Boo ("true")    => "true"
       case Boo ("false") => "false"
      // case S (s)    => s
@@ -271,13 +275,13 @@ object Evaluator extends Attribution {
     for (i <- 0 until v.length) {
       argsVec = argsVec ::: argumentsValue(v(i))
     }
-    var builder = ""
+    var builder = "("
     for (j <- 0 until argsVec.length - 1) {
       val str = FormValue(argsVec(j)) + " + "
       builder += str
     }
     builder += FormValue(argsVec.last)
-    return builder
+    return builder + ")"
   }
 
   def getAverage (v: Vector[NumArguments]) : String = {

@@ -64,7 +64,7 @@ trait ExpParserPrettyPrinter extends PP with PPP {
             case v @ Args (v1, v2) =>
                 toDoc (v1) <> text (";") <> space <> toDoc (v2) 
             case v @ Arg (v1) =>
-                toDoc (v1) 
+                toDoc (v1)  
             case v @ Num (v1) =>
                 value (v1) 
             case v @ Boo (v1) =>
@@ -76,7 +76,9 @@ trait ExpParserPrettyPrinter extends PP with PPP {
             case v @ Cell (v1, v2) =>
                 value (v1) <> value (v2)   
             case v @ ifRef (v1) =>
-                ssep (v1.map (text), emptyDoc) <> text ("if") <> space        
+                ssep (v1.map (text), emptyDoc) <> text ("if") <> space  
+            case v @ Decimal (v1, v2) =>
+                value (v1) <> text (".") <> space <> value (v2)       
         }
     
     override def toParenDoc (astNode : org.bitbucket.inkytonik.kiama.output.PrettyExpression) : Doc =
