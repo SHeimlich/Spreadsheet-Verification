@@ -96,6 +96,7 @@ class Optimiser {
     case Div(l, r) => if(formulaHasIf(l)) {Div(removeIf(l), r); } else {Div(l, removeIf(r)); }
     case Add (l, r) => if(formulaHasIf(l)) {Add(removeIf(l), r); } else {Add(l, removeIf(r)); }
     case AddNull(l) => AddNull(removeIf(l))
+    case now() => now()
     case Mul (l, r) => if(formulaHasIf(l)) {Mul(removeIf(l), r); } else {Mul(l, removeIf(r)); }
     case Sub (l, r) => if(formulaHasIf(l)) {Sub(removeIf(l), r); } else {Sub(l, removeIf(r)); }
     case SubNull(l) => SubNull(removeIf(l))
@@ -141,6 +142,7 @@ class Optimiser {
     case Div(l, r) => formulaHasIf(l) || formulaHasIf(r)
     case Add (l, r) => formulaHasIf(l) || formulaHasIf(r)
     case AddNull(l) => formulaHasIf(l)
+    case now() => false
     case Mul (l, r) => formulaHasIf(l) || formulaHasIf(r)
     case Sub (l, r) => formulaHasIf(l) || formulaHasIf(r)
     case SubNull(l) => formulaHasIf(l)

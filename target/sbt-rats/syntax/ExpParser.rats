@@ -66,6 +66,12 @@ public String formatParseError (ParseError error, Boolean showCoord) throws IOEx
 option setOfString (KEYWORDS), withLocation;
 
 
+String Symbol5 =
+    Symbol5Alts Spacing;
+
+transient String Symbol5Alts =
+    "NOW()";
+
 String Symbol1 =
     Symbol1Alts Spacing;
 
@@ -364,6 +370,9 @@ public Formula FormulaLevel0 =
     }
     / (void:"CONCATENATE(":Symbol12)+ v1:(NumArguments)+ void:")":Symbol1 {
         yyValue = new conCat (v1);
+    }
+    / void:"NOW()":Symbol5 {
+        yyValue = new now ();
     }
     / void:"+":Symbol1 v1:FormulaLevel0 {
         yyValue = new AddNull (v1);

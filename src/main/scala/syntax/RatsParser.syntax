@@ -20,6 +20,7 @@ Formula =
     | "SUM(" + NumArguments + ")"    {SUM}
     | "AVERAGE(" + NumArguments + ")"    {AVERAGE}
     | "CONCATENATE(" + NumArguments + ")"    {conCat}
+    | "NOW()"                           {now}
     | Formula "+" Formula             {Add, left, 2}
     | "+" Formula                   {AddNull}
     | Formula "-" Formula           {Sub, left, 2}

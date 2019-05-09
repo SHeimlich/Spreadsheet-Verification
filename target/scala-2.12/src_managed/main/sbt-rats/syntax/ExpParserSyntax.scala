@@ -38,6 +38,7 @@ object ExpParserSyntax {
     case class conCat (numArgumentss : Vector[NumArguments]) extends Formula  {
         require (numArgumentss.length > 0, "numArgumentss field can't be empty")
     }
+    case class now () extends Formula  
     case class Add (formula1 : Formula, formula2 : Formula) extends Formula  
     case class AddNull (formula : Formula) extends Formula  
     case class Sub (formula1 : Formula, formula2 : Formula) extends Formula  

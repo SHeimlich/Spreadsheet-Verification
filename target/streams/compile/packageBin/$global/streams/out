@@ -1,5 +1,7 @@
 [0m[[0m[0minfo[0m] [0m[0mPackaging C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\rats_2.12-0.1.0.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$now.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$now.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$AddNull$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$AddNull$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$t.class[0m
@@ -176,6 +178,8 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$numIF.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$greatEqual$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$greatEqual$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$now$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParserSyntax$now$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParser$Chunk2.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  C:\Users\sarah\Spreadsheet-Verification\target\scala-2.12\classes\syntax\ExpParser$Chunk2.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	syntax\ExpParserSyntax$strConst.class[0m

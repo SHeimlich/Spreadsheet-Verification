@@ -64,6 +64,7 @@ object Evaluator extends Attribution {
     case Div(l, r) => "1"
     case Add (l, r) => "1"
     case AddNull(l) => "1"
+    case now() => "1"
     case Mul (l, r) => "1"
     case Sub (l, r) => "1"
     case SubNull(l) => "1"
@@ -99,6 +100,7 @@ object Evaluator extends Attribution {
       case Div(l, r) => AssertNum(l) + AssertNum(r) + FormAsserts(l) + "if(" + FormValue(r) + " == 0) \n\t __VERIFIER_error(); \n"
       case Add (l, r) => AssertNum(l) + AssertNum(r) + FormAsserts (l) + FormAsserts (r)
       case AddNull(l) => AssertNum(l) + FormAsserts(l)
+      case now() => ""
       case Mul (l, r) => AssertNum(l) + AssertNum(r) + FormAsserts (l)  + FormAsserts (r)
       case Sub (l, r) => AssertNum(l) + AssertNum(r) + FormAsserts (l) + FormAsserts (r)
       case SubNull(l) => AssertNum(l) + FormAsserts(l)
@@ -142,6 +144,7 @@ object Evaluator extends Attribution {
       case Div(l, r) => FormValue (l) + "/" + FormValue (r)
       case Add (l, r) => FormValue (l) + "+" + FormValue (r)
       case AddNull(l) => "0 + " + FormValue(l)
+      case now() => "__VERIFIER_nondet_int()"
       case Mul (l, r) => FormValue (l) + "*" + FormValue (r)
       case Sub (l, r) => FormValue (l) + "-" + FormValue (r)
       case SubNull(l) => "0 - " + FormValue(l)
