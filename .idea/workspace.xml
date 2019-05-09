@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f5f5a10-111a-4173-8334-b69450fcbac7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/true-barry-10.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -25,75 +24,64 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/false-barry-31.c">
+        <entry file="file://$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.30.exp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/true-barry-30.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="502" column="1" selection-start-line="502" selection-start-column="1" selection-end-line="502" selection-end-column="1" />
+            <state relative-caret-position="-11321" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.56.exp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/true-barry-56.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3739" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.65.exp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/true-barry-65.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="122" column="1" lean-forward="true" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/true-andrea-42.c">
+        <entry file="file://$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.67.exp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/true-barry-67.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="124" column="17" selection-start-line="124" selection-start-column="17" selection-end-line="124" selection-end-column="17" />
-            </state>
+            <state relative-caret-position="-1801" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/true_andrea_ring_000_1_1.pst.42.exp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="1180" lean-forward="true" selection-start-column="1180" selection-end-column="1180" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/true-barry-10.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5983" />
-          </provider>
+        <entry file="file://$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.75.exp">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.10.exp">
+        <entry file="file://$PROJECT_DIR$/true-barry-75.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="2987" lean-forward="true" selection-start-column="2987" selection-end-column="2987" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/syntax/RatsParser.syntax">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="22" column="43" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/Evaluator.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="149" column="31" selection-start-line="149" selection-start-column="31" selection-end-line="149" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/Optimiser.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
-            </state>
+            <state relative-caret-position="-11015" />
           </provider>
         </entry>
       </file>
@@ -226,7 +214,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557365479629" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557379355391" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="ScalaTest" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.ScalaTest" value="org.scalatest.FunSuite" />
@@ -663,62 +651,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/complexIfArgs.exp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="67" lean-forward="true" selection-start-column="67" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/embeddedArgTest.exp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" selection-end-column="155" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/multipleIfs.exp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/build.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/plugins.sbt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/sbt-rats/syntax/ExpParser.rats">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="135" selection-start-line="135" selection-end-line="135" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/scala-2.12/src_managed/main/sbt-rats/syntax/ExpParserPrettyPrinter.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/emptyCellTest.exp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addTest.ods.exp" />
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/NumberFormatException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/emptyCellRef.exp">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -973,6 +905,48 @@
         <state>
           <caret column="2987" lean-forward="true" selection-start-column="2987" selection-end-column="2987" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.30.exp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/true-barry-30.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11321" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.56.exp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/true-barry-56.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3739" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.65.exp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/true-barry-65.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="122" column="1" lean-forward="true" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.67.exp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/true-barry-67.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1801" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.75.exp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/true-barry-75.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11015" />
       </provider>
     </entry>
   </component>
