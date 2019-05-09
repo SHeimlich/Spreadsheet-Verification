@@ -75,7 +75,7 @@ class Parsing (){
         // Deal with Dependencies
         val cellRegex = "[A-Z]+[1-9][0-9]*";
         val pattern = Pattern.compile(cellRegex);
-        val m = pattern.matcher(formula);
+        val m = pattern.matcher(formula.replace("$", ""));
         while (m.find()) {
           val s = m.group(0);
           val r = Pattern.compile("[A-Z]+").matcher(s);
@@ -103,7 +103,7 @@ class Parsing (){
     if (formula == null) {
       return null //"null"
     }
-    formula = formula.substring(4)
+    formula = formula.substring(4).replace("$", "")
     val cellRegex = "[A-Z]+[1-9][0-9]*";
     val arrayPattern = Pattern.compile("\\[\\." + cellRegex + ":\\." + cellRegex + "\\]");
     val arrayMatcher = arrayPattern.matcher(formula);
@@ -163,7 +163,8 @@ class Parsing (){
     return rtn
   }
 
-  def convertArrayToRefs(str: String) : String = {
+  def convertArrayToRefs(s: String) : String = {
+    val str = s.replace("$", "")
     val r = Pattern.compile("[A-Z]+").matcher(str);
     r.find()
     val rStr = r.group(0)
