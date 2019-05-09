@@ -2,33 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f5f5a10-111a-4173-8334-b69450fcbac7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/true-andrea-42.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.~lock.divTest.ods#" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.~lock.true_barry_tycholiz_000_1_1.pst.31.ods#" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.~lock.true_barry_tycholiz_000_1_1.pst.32.ods#" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/true-barry-10.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Evaluator.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Evaluator.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Optimiser.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Optimiser.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/syntax/RatsParser.syntax" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/syntax/RatsParser.syntax" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/packageBin/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/packageBin/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/true-barry-31.c" beforeDir="false" afterPath="$PROJECT_DIR$/false-barry-31.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/true-barry-32.c" beforeDir="false" afterPath="$PROJECT_DIR$/false-barry-32.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/true-brad-1.c" beforeDir="false" afterPath="$PROJECT_DIR$/false-brad-1.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/true-chris-1.c" beforeDir="false" afterPath="$PROJECT_DIR$/false-chris-1.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/true_andrew_lewis_000_1_1.pst.12.exp" beforeDir="false" afterPath="$PROJECT_DIR$/false_andrew_lewis_000_1_1.pst.12.exp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/true_andrew_lewis_000_1_1.pst.12.ods" beforeDir="false" afterPath="$PROJECT_DIR$/false_andrew_lewis_000_1_1.pst.12.ods" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.13.exp" beforeDir="false" afterPath="$PROJECT_DIR$/false_barry_tycholiz_000_1_1.pst.13.exp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.13.ods" beforeDir="false" afterPath="$PROJECT_DIR$/false_barry_tycholiz_000_1_1.pst.13.ods" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.31.exp" beforeDir="false" afterPath="$PROJECT_DIR$/false_barry_tycholiz_000_1_1.pst.31.exp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.31.ods" beforeDir="false" afterPath="$PROJECT_DIR$/false_barry_tycholiz_000_1_1.pst.31.ods" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.32.exp" beforeDir="false" afterPath="$PROJECT_DIR$/false_barry_tycholiz_000_1_1.pst.32.exp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.32.ods" beforeDir="false" afterPath="$PROJECT_DIR$/false_barry_tycholiz_000_1_1.pst.32.ods" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/true_brad_mckay_000_1_1.pst.0.exp" beforeDir="false" afterPath="$PROJECT_DIR$/false_brad_mckay_000_1_1.pst.0.exp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/true_brad_mckay_000_1_1.pst.0.ods" beforeDir="false" afterPath="$PROJECT_DIR$/false_brad_mckay_000_1_1.pst.0.ods" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/true_chris_stokley_000_1_1.pst.37.exp" beforeDir="false" afterPath="$PROJECT_DIR$/false_chris_stokley_000_1_1.pst.37.exp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/true_chris_stokley_000_1_1.pst.37.ods" beforeDir="false" afterPath="$PROJECT_DIR$/false_chris_stokley_000_1_1.pst.37.ods" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -77,6 +52,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/true-barry-10.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-5983" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.10.exp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="2987" lean-forward="true" selection-start-column="2987" selection-end-column="2987" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/syntax/RatsParser.syntax">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
@@ -97,7 +88,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Optimiser.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="43">
@@ -145,9 +136,9 @@
       <find>print</find>
       <find>o28</find>
       <find>k10Num</find>
-      <find>E15</find>
       <find>NOW</find>
       <find>AddNull</find>
+      <find>E15</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -235,7 +226,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557365082713" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557365479629" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="ScalaTest" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.ScalaTest" value="org.scalatest.FunSuite" />
@@ -578,8 +569,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1292" height="692" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.86709887" visible="true" weight="0.23381877" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.86709887" visible="true" weight="0.23381877" />
       <window_info id="Structure" order="1" sideWeight="0.13290113" side_tool="true" weight="0.12693334" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -594,7 +586,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49919093" weight="0.3280142" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4894822" weight="0.33510637" />
-      <window_info active="true" anchor="bottom" id="sbt-shell-toolwindow" order="8" sideWeight="0.79288024" visible="true" weight="0.50886524" />
+      <window_info anchor="bottom" id="sbt-shell-toolwindow" order="8" sideWeight="0.79288024" visible="true" weight="0.5319149" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.487055" weight="0.24113475" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.20711975" side_tool="true" weight="0.23404256" />
       <window_info anchor="bottom" id="Build" order="11" weight="0.3217768" />
@@ -671,16 +663,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/../.ivy2/cache/org.bitbucket.inkytonik.kiama/kiama-extras_2.12/srcs/kiama-extras_2.12-2.2.0-sources.jar!/org/bitbucket/inkytonik/kiama/util/Compiler.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="121" column="26" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/embeddedIfTest.exp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/complexIfArgs.exp">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -950,13 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/true_andrea_ring_000_1_1.pst.42.exp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1180" lean-forward="true" selection-start-column="1180" selection-end-column="1180" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/syntax/RatsParser.syntax">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -978,6 +953,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="43">
           <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/true_andrea_ring_000_1_1.pst.42.exp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1180" lean-forward="true" selection-start-column="1180" selection-end-column="1180" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/true-barry-10.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5983" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/true_barry_tycholiz_000_1_1.pst.10.exp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2987" lean-forward="true" selection-start-column="2987" selection-end-column="2987" />
         </state>
       </provider>
     </entry>
