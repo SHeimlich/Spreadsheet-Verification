@@ -50,8 +50,11 @@ class Parsing (){
   }
 
   def parseCell(sheet: Sheet, row: Int, col: Int, reached: Array[Array[Boolean]]): MyCell = {
-    val outsideRange = row - start.x >= reached.length | col - start.y >= reached(row - start.x).length
-    if(outsideRange) {
+    //val outsideRange = row - start.x >= reached.length | col - start.y >= reached(row - start.x).length
+    if(row - start.x >= reached.length) {
+      return new MyCell(getRowString(row), getColNum(col), "null", true);
+    }
+    if(col - start.y >= reached(row - start.x).length) {
       return new MyCell(getRowString(row), getColNum(col), "null", true);
     }
 
