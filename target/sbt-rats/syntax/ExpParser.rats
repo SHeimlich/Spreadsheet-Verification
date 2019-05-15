@@ -380,7 +380,7 @@ public Formula FormulaLevel0 =
     / void:"-":Symbol1 v1:FormulaLevel0 {
         yyValue = new SubNull (v1);
     }
-    / v1:Number void:"%":Symbol1 {
+    / v1:NumConstant void:"%":Symbol1 {
         yyValue = new percent (v1);
     }
     / v1:Array 

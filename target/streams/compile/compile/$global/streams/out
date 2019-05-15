@@ -1,32 +1,7 @@
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:19:39: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
-[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def assignValue (a: Exp) : String = a match {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                      ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:58:55: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
-[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def numValue(f: ExpParserSyntax.Formula) : String = f match {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                                      ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:93:42: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
-[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def FormAsserts(f: Formula) : String = f match{[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                         ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:164:55: unreachable code[0m
-[0m[[0m[33mwarn[0m] [0m[0m      case Ref(Cell(c, r)) => c.replace("$", "") + "" + r.replace("$", "");[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                                      ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Evaluator.scala:136:40: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
-[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def FormValue(f: Formula) : String = f match {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                       ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Optimiser.scala:62:50: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
-[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def getIf(cell: Cell, x: Formula) : assignIf = x match {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                                 ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Optimiser.scala:84:41: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
-[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def removeIf (x: Formula) : Formula = x match {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                        ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Optimiser.scala:135:45: Exhaustivity analysis reached max recursion depth, not all missing cases are reported.[0m
-[0m[[0m[33mwarn[0m] [0m[0m(Please try with scalac -Ypatmat-exhaust-depth 40 or -Ypatmat-exhaust-depth off.)[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def formulaHasIf (x: Formula) : Boolean = x match {[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                            ^[0m
-[0m[[0m[33mwarn[0m] [0m[0m8 warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Main.scala:65:16: a pure expression does nothing in statement position[0m
+[0m[[0m[33mwarn[0m] [0m[0m        return ""[0m
+[0m[[0m[33mwarn[0m] [0m[0m               ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\sarah\Spreadsheet-Verification\src\main\scala\Main.scala:65:9: enclosing method process has result type Unit: return value discarded[0m
+[0m[[0m[33mwarn[0m] [0m[0m        return ""[0m
+[0m[[0m[33mwarn[0m] [0m[0m        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m

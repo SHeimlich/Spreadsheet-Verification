@@ -47,6 +47,7 @@ class Parsing (){
       }
       r += 1;
     }
+    println("Num cells = " + g.nodes.size)
   }
 
   def parseCell(sheet: Sheet, row: Int, col: Int, reached: Array[Array[Boolean]]): MyCell = {

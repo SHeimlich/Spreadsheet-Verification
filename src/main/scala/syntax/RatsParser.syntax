@@ -34,7 +34,7 @@ Formula =
     | Formula "=" Formula        {equal, left, 3}
     | Formula "<=" Formula       {lessEqual, left, 3}
     | Formula ">=" Formula       {greatEqual, left, 3}
-    | Number "%"                {percent}
+    | NumConstant "%"                {percent}
     | Array
     | CellRef
     | ifRef                             {numIfRef}

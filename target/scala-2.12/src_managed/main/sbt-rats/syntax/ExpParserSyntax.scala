@@ -52,7 +52,7 @@ object ExpParserSyntax {
     case class equal (formula1 : Formula, formula2 : Formula) extends Formula  
     case class lessEqual (formula1 : Formula, formula2 : Formula) extends Formula  
     case class greatEqual (formula1 : Formula, formula2 : Formula) extends Formula  
-    case class percent (number : String) extends Formula  
+    case class percent (numConstant : Formula) extends Formula  
     case class numIfRef (ifRef : ifRef) extends Formula  
     case class strConst (str : String) extends Formula  
     case class parenthesis (formula : Formula) extends Formula  

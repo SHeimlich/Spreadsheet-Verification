@@ -58,7 +58,7 @@ trait ExpParserPrettyPrinter extends PP with PPP {
             case v @ greatEqual (v1, v2) =>
                 toDoc (v1) <> text (">=") <> space <> toDoc (v2) 
             case v @ percent (v1) =>
-                value (v1) <> text ("%") <> space   
+                toDoc (v1) <> text ("%") <> space   
             case v @ numIfRef (v1) =>
                 toDoc (v1)  
             case v @ strConst (v1) =>

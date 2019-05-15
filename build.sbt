@@ -6,6 +6,9 @@ organization := "mq"
 scalaVersion := "2.12.8"
 scalacOptions ++= Seq ("-deprecation", "-feature", "-unchecked")
 
+
+javaOptions += "-Xss32m"
+
 // Interactive settings
 logLevel := Level.Info
 shellPrompt in ThisBuild := {
